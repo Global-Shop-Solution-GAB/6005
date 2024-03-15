@@ -1,0 +1,1253 @@
+Program.Sub.ScreenSU.Start
+Gui.F_Mat_Req..Create
+Gui.F_Mat_Req..Size(15300,10425)
+Gui.F_Mat_Req..MinX(0)
+Gui.F_Mat_Req..MinY(0)
+Gui.F_Mat_Req..Position(0,0)
+Gui.F_Mat_Req..BackColor(-2147483633)
+Gui.F_Mat_Req..MousePointer(0)
+Gui.F_Mat_Req..Event(UnLoad,F_Mat_Req_UnLoad)
+Gui.F_Mat_Req..Caption("Material Request Queue")
+Gui.F_Mat_Req.cmdRefresh.Create(Button)
+Gui.F_Mat_Req.cmdRefresh.Size(465,405)
+Gui.F_Mat_Req.cmdRefresh.Position(105,210)
+Gui.F_Mat_Req.cmdRefresh.Caption("Refresh")
+Gui.F_Mat_Req.cmdRefresh.Event(Click,cmdRefresh_Click)
+Gui.F_Mat_Req.gsgcMatReq.Create(GsGridControl)
+Gui.F_Mat_Req.gsgcMatReq.Size(15180,4320)
+Gui.F_Mat_Req.gsgcMatReq.Position(0,810)
+Gui.F_Mat_Req.gsgcMatReq.Anchor(15)
+Gui.F_Mat_Req.gsgcMatReq.Event(RowCellClick,gsgcMatReq_RowCellClick)
+Gui.F_Mat_Req.gsgcMatReq.Event(CellValueChanged,gsgcMatReq_CellValueChanged)
+Gui.F_Mat_Req.frameAutoRefresh.Create(Frame)
+Gui.F_Mat_Req.frameAutoRefresh.Size(2790,705)
+Gui.F_Mat_Req.frameAutoRefresh.Position(720,45)
+Gui.F_Mat_Req.frameAutoRefresh.Enabled(False)
+Gui.F_Mat_Req.lblAutoRefresh.Create(Label,"Refresh every",True,1215,255,0,165,390,True,0,"Arial",8,-2147483633,0)
+Gui.F_Mat_Req.lblAutoRefresh.Parent("frameAutoRefresh")
+Gui.F_Mat_Req.txtAutoRefresh.Create(TextBox,"5",True,720,300,0,1350,300,True,1,"Arial",8,-2147483643,1)
+Gui.F_Mat_Req.txtAutoRefresh.Parent("frameAutoRefresh")
+Gui.F_Mat_Req.txtAutoRefresh.NumericOnly(2)
+Gui.F_Mat_Req.txtAutoRefresh.Mask("0")
+Gui.F_Mat_Req.txtAutoRefresh.Event(LostFocus,txtAutoRefresh_LostFocus)
+Gui.F_Mat_Req.lblAutoRefreshMin.Create(Label,"min(s)",True,585,255,0,2130,390,True,0,"Arial",8,-2147483633,0)
+Gui.F_Mat_Req.lblAutoRefreshMin.Parent("frameAutoRefresh")
+Gui.F_Mat_Req.chkAutoRefresh.Create(CheckBox)
+Gui.F_Mat_Req.chkAutoRefresh.Size(1365,360)
+Gui.F_Mat_Req.chkAutoRefresh.Position(840,-15)
+Gui.F_Mat_Req.chkAutoRefresh.Caption("Auto Refresh")
+Gui.F_Mat_Req.chkAutoRefresh.DefaultValue("")
+Gui.F_Mat_Req.chkAutoRefresh.Event(Click,chkAutoRefresh_Click)
+Gui.F_Mat_Req.timerAutoRefresh.Create(Timer)
+Gui.F_Mat_Req.timerAutoRefresh.Size(495,495)
+Gui.F_Mat_Req.timerAutoRefresh.Position(3675,195)
+Gui.F_Mat_Req.timerAutoRefresh.Interval(300000)
+Gui.F_Mat_Req.timerAutoRefresh.Event(Timer,timerAutoRefresh_Timer)
+Gui.F_Mat_Req.lblLastRefresh.Create(Label,"",True,7665,255,0,7440,90,True,1,"Arial",8,-2147483633,0)
+Gui.F_Mat_Req.lblLastRefresh.Anchor(9)
+Gui.F_Mat_Req.cmdProcess.Create(Button)
+Gui.F_Mat_Req.cmdProcess.Size(1020,375)
+Gui.F_Mat_Req.cmdProcess.Position(3675,285)
+Gui.F_Mat_Req.cmdProcess.Caption("Process")
+Gui.F_Mat_Req.cmdProcess.Event(Click,cmdProcess_Click)
+Gui.F_Mat_Req.cmdLog.Create(Button)
+Gui.F_Mat_Req.cmdLog.Enabled(False)
+Gui.F_Mat_Req.cmdLog.Size(1020,375)
+Gui.F_Mat_Req.cmdLog.Position(4785,285)
+Gui.F_Mat_Req.cmdLog.Caption("View Log")
+Gui.F_Mat_Req.cmdLog.Event(Click,cmdLog_Click)
+Gui.F_Mat_Req.gsgcLotBin.Create(GsGridControl)
+Gui.F_Mat_Req.gsgcLotBin.Size(15180,5010)
+Gui.F_Mat_Req.gsgcLotBin.Position(0,5115)
+Gui.F_Mat_Req.gsgcLotBin.Anchor(14)
+Gui.F_Mat_Req.gsgcLotBin.Event(CellValueChanged,gsgcLotBin_CellValueChanged)
+'Gui.F_Mat_Req.gsgcLotBin.Event(GotFocus,gsgcLotBin_GotFocus)
+Gui.F_Mat_Req.cmdRpt.Create(Button)
+Gui.F_Mat_Req.cmdRpt.Size(1020,375)
+Gui.F_Mat_Req.cmdRpt.Position(5895,285)
+Gui.F_Mat_Req.cmdRpt.Caption("Print Rpt")
+Gui.F_Mat_Req.cmdRpt.Event(Click,cmdRpt_Click)
+Gui.F_Rej_Notes..Create
+Gui.F_Rej_Notes..Caption("Reject Notes")
+Gui.F_Rej_Notes..Size(6330,4620)
+Gui.F_Rej_Notes..MinX(0)
+Gui.F_Rej_Notes..MinY(0)
+Gui.F_Rej_Notes..Position(0,0)
+Gui.F_Rej_Notes..BackColor(-2147483633)
+Gui.F_Rej_Notes..MaxButton(False)
+Gui.F_Rej_Notes..MousePointer(0)
+Gui.F_Rej_Notes..Sizeable(False)
+Gui.F_Rej_Notes..Event(UnLoad,F_Rej_Notes_UnLoad)
+Gui.F_Rej_Notes.txtEmployee.Create(TextBox,"",True,930,300,0,75,315,True,0,"Arial",8,-2147483643,1)
+Gui.F_Rej_Notes.txtEmployee.Locked(True)
+Gui.F_Rej_Notes.lblEmployee.Create(Label,"Employee",True,900,255,0,75,105,True,0,"Arial",8,-2147483633,0)
+Gui.F_Rej_Notes.txtPart.Create(TextBox,"",True,2415,300,0,1095,315,True,0,"Arial",8,-2147483643,1)
+Gui.F_Rej_Notes.txtPart.Locked(True)
+Gui.F_Rej_Notes.lblPart.Create(Label,"Part",True,795,255,0,1095,105,True,0,"Arial",8,-2147483633,0)
+Gui.F_Rej_Notes.txtJob.Create(TextBox,"",True,915,300,0,3600,315,True,0,"Arial",8,-2147483643,1)
+Gui.F_Rej_Notes.txtJob.Locked(True)
+Gui.F_Rej_Notes.lblJob.Create(Label,"Job",True,675,255,0,3600,105,True,0,"Arial",8,-2147483633,0)
+Gui.F_Rej_Notes.txtSuffix.Create(TextBox,"",True,525,300,0,4605,315,True,0,"Arial",8,-2147483643,1)
+Gui.F_Rej_Notes.txtSuffix.Locked(True)
+Gui.F_Rej_Notes.lblSuffix.Create(Label,"Suffix",True,585,255,0,4605,105,True,0,"Arial",8,-2147483633,0)
+Gui.F_Rej_Notes.txtSeq.Create(TextBox,"",True,915,300,0,5220,315,True,0,"Arial",8,-2147483643,1)
+Gui.F_Rej_Notes.txtSeq.Locked(True)
+Gui.F_Rej_Notes.lblSeq.Create(Label,"Seq",True,435,255,0,5220,105,True,0,"Arial",8,-2147483633,0)
+Gui.F_Rej_Notes.txtQtyReq.Create(TextBox,"",True,1425,300,0,75,930,True,1,"Arial",8,-2147483643,1)
+Gui.F_Rej_Notes.txtQtyReq.Locked(True)
+Gui.F_Rej_Notes.lblQtyReq.Create(Label,"Qty Requested",True,1215,255,0,75,720,True,0,"Arial",8,-2147483633,0)
+Gui.F_Rej_Notes.txtDateReq.Create(TextBox,"",True,1215,300,0,1590,930,True,0,"Arial",8,-2147483643,1)
+Gui.F_Rej_Notes.txtDateReq.Locked(True)
+Gui.F_Rej_Notes.lblDateReq.Create(Label,"Date Requested",True,1290,255,0,1590,720,True,0,"Arial",8,-2147483633,0)
+Gui.F_Rej_Notes.txtTimeReq.Create(TextBox,"",True,1215,300,0,2895,930,True,0,"Arial",8,-2147483643,1)
+Gui.F_Rej_Notes.txtTimeReq.Locked(True)
+Gui.F_Rej_Notes.lblTimeReq.Create(Label,"Time Requested",True,1260,255,0,2895,720,True,0,"Arial",8,-2147483633,0)
+Gui.F_Rej_Notes.txtReject.Create(TextboxM)
+Gui.F_Rej_Notes.txtReject.Size(6210,2790)
+Gui.F_Rej_Notes.txtReject.Position(0,1545)
+Gui.F_Rej_Notes.lblReject.Create(Label,"Reject Notes",True,1080,255,0,75,1335,True,0,"Arial",8,-2147483633,0)
+Gui.F_Rej_Notes.lblRow.Create(Label,"",False,1935,255,0,4740,930,True,0,"Arial",8,-2147483633,0)
+Program.Sub.ScreenSU.End
+
+Program.Sub.Preflight.Start
+Program.External.Include.Library("GCG_6005_ErrorHandling.lib")
+V.Global.iInterval.Declare
+V.Global.iLotBin.Declare
+V.Global.bUseRev.Declare
+V.Global.bNotes.Declare
+Program.External.Include.Library("450100.lib")
+Program.External.Include.Library("GCG_6005_StandAloneIssueReceipts.lib")
+Program.External.Include.Library("300011.lib")
+Program.Sub.Preflight.End
+
+Program.Sub.Main.Start
+'Author: BixRB
+'Date: 18 Jun 2020
+'GCG_6005_MatReq_Approval.g2u
+'Atec Inc.
+'Dashboard for reviewing material requests from Shop Floor Control GUI, requests can be approved or denied from this screen
+F.Intrinsic.Control.Try
+
+F.Intrinsic.Control.CallSub(LoadAutoRefresh)
+
+F.Global.General.ReadOption("070008",0,False,"0000",V.Global.bUseRev)
+
+F.Intrinsic.Control.CallSub(cmdRefresh_Click)
+
+Gui.F_Mat_Req..Show
+
+F.Intrinsic.Control.Catch
+	F.Intrinsic.Control.CallSub(ErrorMessage,"ScriptFile",V.Caller.ScriptFile,"CurrentSubroutine",V.Ambient.CurrentSubroutine)
+	F.Intrinsic.Control.CallSub(F_Mat_Req_UnLoad)
+F.Intrinsic.Control.EndTry
+Program.Sub.Main.End
+
+Program.Sub.F_Mat_Req_UnLoad.Start
+F.Intrinsic.Control.Try
+F.Intrinsic.Control.CallSub(SaveAutoRefresh)
+F.Intrinsic.Control.If(V.DataTable.dtMaterialReq.Exists)
+	F.Intrinsic.Control.CallSub(Serialize)
+F.Intrinsic.Control.EndIf
+F.Intrinsic.Control.End
+F.Intrinsic.Control.Catch
+	F.Intrinsic.Control.CallSub(ErrorMessage,"ScriptFile",V.Caller.ScriptFile,"CurrentSubroutine",V.Ambient.CurrentSubroutine)
+	F.Intrinsic.Control.End
+F.Intrinsic.Control.EndTry
+Program.Sub.F_Mat_Req_UnLoad.End
+
+Program.Sub.GetDataTable.Start
+V.Local.sJobs.Declare
+V.Local.sParts.Declare
+V.Local.sLastRefresh.Declare
+V.Local.sFilter.Declare
+V.Local.iCnt.Declare
+F.Intrinsic.Control.Try
+
+'Intellisense nonsense
+F.Data.DataTable.Create("dtMaterialReq")
+F.Data.DataTable.Close("dtMaterialReq")
+F.Data.DataTable.Create("dtLotBin")
+F.Data.DataTable.Close("dtLotBin")
+
+F.ODBC.Connection!con.OpenCompanyConnection
+F.Intrinsic.UI.ChangeWaitStatus("Loading Request Queue",0,0,5)
+F.Intrinsic.String.Build("Last Refresh: {0}",V.Ambient.Now.String,V.Local.sLastRefresh)
+F.Data.DataTable.CreateFromSQL("dtQueue","con","select EMPLOYEE, PART, LOCATION, QTY_REQ, USE_GL, JOB, JOB as ORIG_JOB, SUFFIX, SUFFIX as ORIG_SUFFIX, GL_ACCOUNT, GL_ACCOUNT as ORIG_GL, DATE_REQ, TIME_REQ, ORIGIN_REQ from GCG_6005_MATREQ_Q;",False)
+F.Intrinsic.UI.ChangeWaitStatus("Loading Employee Data",1,0,5)
+F.Data.DataTable.CreateFromSQL("dtEmployees","con","select rtrim(EMPLOYEE) as EMPLOYEE, rtrim(NAME) as NAME, rtrim(DEPT_EMPLOYEE) as DEPT from V_EMPLOYEE_MSTR order by EMPLOYEE;",False)
+F.Intrinsic.UI.ChangeWaitStatus("Loading Material Data",2,0,5)
+F.Data.DataTable.CreateFromSQL("dtParts","con","select PART, LOCATION, PART+LOCATION as PARTLOC, rtrim(DESCRIPTION) as DESCRIPTION, QTY_ONHAND from V_INVENTORY_MSTR order by PART, LOCATION;",False)
+F.Data.Dictionary.CreateFromSQL("dictPartCost", "con","select PART+LOCN, COST from V_INVENTORY_COST;")
+F.Intrinsic.UI.ChangeWaitStatus("Loading Job Data",3,0,5)
+F.Data.DataView.Create("dtQueue","dvJobs")
+F.Data.DataView.ToString("dtQueue","dvJobs","JOB*!*SUFFIX","*!*","#$#",V.Local.sJobs)
+F.Intrinsic.String.Replace(V.Local.sJobs,"*!*","",V.Local.sJobs)
+F.Intrinsic.String.Replace(V.Local.sJobs,"#$#","', '",V.Local.sJobs)
+F.Intrinsic.String.Build("select rtrim(JOB) as JOB, rtrim(SUFFIX) as SUFFIX, rtrim(SEQ) as SEQ, rtrim(PART) as PART, LOCN as LOCATION, PART + LOCN as PARTLOC, rtrim(DESCRIPTION) as DESCRIPTION, HOURS_ESTIMATED as QTY_EST, HOURS_ACTUAL as QTY_ACT, if(HOURS_ESTIMATED - HOURS_ACTUAL > 0, HOURS_ESTIMATED - HOURS_ACTUAL, 0) as QTY_REM from V_JOB_OPERATIONS where LMO = 'M' and JOB+SUFFIX in ('{0}') order by JOB, SUFFIX, SEQ;",V.Local.sJobs,V.Local.sJobs)
+F.Data.DataTable.CreateFromSQL("dtJobOps","con",V.Local.sJobs,True)
+F.Data.DataView.ToString("dtQueue","dvJobs","PART*!*LOCATION","*!*","#$#",V.Local.sParts)
+F.Intrinsic.String.Replace(V.Local.sParts,"*!*","",V.Local.sParts)
+F.Intrinsic.String.Replace(V.Local.sParts,"#$#","', '",V.Local.sParts)
+F.Intrinsic.String.Build("select rtrim(PART) as PART, rtrim(LOCATION) as LOC, rtrim(LOT) as LOT, rtrim(BIN) as BIN, rtrim(HEAT) as HEAT, rtrim(SERIAL_NUMBER) as SERIAL, QUANTITY, UNIT_COST as COST from V_ITEM_MASTER where PART+LOCATION in ('{0}')  and QUANTITY > 0 order by LOT, BIN, HEAT, SERIAL_NUMBER;",V.Local.sParts,V.Local.sParts)
+F.Data.DataTable.CreateFromSQL("dtItemMaster","con",V.Local.sParts,True)
+F.ODBC.Connection!con.Close
+
+F.Data.DataTable.AddColumn("dtItemMaster","QTY_REQ","Float",0)
+
+F.Data.DataTable.AddColumn("dtItemMaster","EMPLOYEE","String")
+F.Data.DataTable.AddColumn("dtItemMaster","JOB","String")
+F.Data.DataTable.AddColumn("dtItemMaster","SUFFIX","String")
+F.Data.DataTable.AddColumn("dtItemMaster","GL_ACCOUNT","String")
+F.Data.DataTable.AddColumn("dtItemMaster","DATE_REQ","Date")
+F.Data.DataTable.AddColumn("dtItemMaster","TIME_REQ","DateTime")
+
+F.Data.DataView.Create("dtJobOps","dvJob")
+F.Data.DataTable.Clone("dtItemMaster","dtLotBin",True)
+F.Data.DataView.Create("dtItemMaster","dvPart")
+F.Data.DataView.Create("dtLotBin","dvPart")
+F.Data.DataView.SetFilter("dtLotBin","dvPart","[PART] = '' and [LOC] = '' and [EMPLOYEE] = '' and [JOB] = '' and [SUFFIX] = '' and [DATE_REQ] = #1/1/1900#")
+
+F.Intrinsic.UI.ChangeWaitStatus("Processing Data",4,0,5)
+
+F.Data.DataTable.AddColumn("dtParts","COST","Float")
+F.Data.Dictionary.SetDefaultReturn("dictPartCost",-1)
+F.Data.DataTable.FillFromDictionary("dtParts","dictPartCost","PARTLOC","COST")
+F.Data.Dictionary.Close("dictPartCost")
+
+'F.Data.Linq.Join("LeftJoin","DataTable","dtQueue*!*QUEUE","DataTable","dtEmployees*!*EMPL","QUEUE.EMPLOYEE = EMPL.EMPLOYEE","DataTable","dtParts*!*PART","QUEUE.PART = PART.PART and QUEUE.LOCATION = PART.LOCATION","DataTable","dtJobOps*!*OPER","QUEUE.JOB = OPER.JOB and QUEUE.SUFFIX = OPER.SUFFIX and QUEUE.SEQ = OPER.SEQ","QUEUE.EMPLOYEE*!*EMPL.NAME*!*EMPL.DEPT*!*QUEUE.PART*!*QUEUE.LOCATION*!*PART.DESCRIPTION*!*QUEUE.QTY_REQ*!*PART.QTY_ONHAND*!*PART.COST*!*QUEUE.JOB*!*QUEUE.SUFFIX*!*QUEUE.SEQ*!*OPER.DESCRIPTION as SEQ_DESCR*!*OPER.PART as SEQ_PART*!*OPER.LOCATION as SEQ_LOCN*!*OPER.QTY_EST*!*OPER.QTY_ACT*!*OPER.QTY_REM*!*QUEUE.DATE_REQ*!*QUEUE.TIME_REQ*!*QUEUE.ORIGIN_REQ","","","QUEUE.DATE_REQ asc, QUEUE.TIME_REQ asc, QUEUE.EMPLOYEE asc, QUEUE.JOB asc, QUEUE.SUFFIX asc, QUEUE.SEQ asc","dtMaterialReq",True)
+F.Data.Linq.Join("LeftJoin","DataTable","dtQueue*!*QUEUE","DataTable","dtEmployees*!*EMPL","QUEUE.EMPLOYEE = EMPL.EMPLOYEE","DataTable","dtParts*!*PART","QUEUE.PART = PART.PART and QUEUE.LOCATION = PART.LOCATION","QUEUE.EMPLOYEE*!*EMPL.NAME*!*EMPL.DEPT*!*QUEUE.PART*!*QUEUE.LOCATION*!*PART.DESCRIPTION*!*QUEUE.QTY_REQ*!*PART.QTY_ONHAND*!*PART.COST*!*QUEUE.USE_GL*!*QUEUE.JOB*!*QUEUE.ORIG_JOB*!*QUEUE.SUFFIX*!*QUEUE.ORIG_SUFFIX*!*QUEUE.GL_ACCOUNT*!*QUEUE.ORIG_GL*!*QUEUE.DATE_REQ*!*QUEUE.TIME_REQ*!*QUEUE.ORIGIN_REQ","","","QUEUE.DATE_REQ asc, QUEUE.TIME_REQ asc, QUEUE.EMPLOYEE asc, QUEUE.JOB asc, QUEUE.SUFFIX asc","dtMaterialReq",True)
+
+F.Data.DataTable.AddColumn("dtMaterialReq","SEQ","String")
+F.Data.DataTable.AddColumn("dtMaterialReq","SEQ_DESCR","String")
+F.Data.DataTable.AddColumn("dtMaterialReq","SEQ_PART","String")
+F.Data.DataTable.AddColumn("dtMaterialReq","SEQ_LOCN","String")
+F.Data.DataTable.AddColumn("dtMaterialReq","QTY_EST","Float")
+F.Data.DataTable.AddColumn("dtMaterialReq","QTY_ACT","Float")
+F.Data.DataTable.AddColumn("dtMaterialReq","QTY_REM","Float")
+
+F.Data.DataTable.Close("dtQueue")
+F.Data.DataTable.Close("dtEmployees")
+F.Data.DataTable.Close("dtParts")
+'F.Data.DataTable.Close("dtJobOps")
+
+F.Data.DataTable.AddExpressionColumn("dtMaterialReq","SCHED_PART","Boolean","[PART] = [SEQ_PART] and [LOCATION] = [SEQ_LOCN]")
+F.Data.DataTable.AddExpressionColumn("dtMaterialReq","MISC_SEQ","Boolean","[SEQ] >= '995000'")
+
+F.Data.DataView.Create("dtMaterialReq","dvQty")
+F.Data.DataView.SetFilter("dtMaterialReq","dvQty","[SCHED_PART] = False or [MISC_SEQ] = True")
+F.Data.DataView.SetValue("dtMaterialReq","dvQty",-1,"QTY_EST",V.Ambient.DBNull,"QTY_ACT",V.Ambient.DBNull,"QTY_REM",V.Ambient.DBNull)
+F.Data.DataView.Close("dtMaterialReq","dvQty")
+
+F.Data.DataTable.AddColumn("dtMaterialReq","WOSEQ_BRW","String","")
+F.Data.DataTable.AddColumn("dtMaterialReq","APPROVE","Boolean",False)
+F.Data.DataTable.AddColumn("dtMaterialReq","REJECT","Boolean",False)
+F.Data.DataTable.AddColumn("dtMaterialReq","SEQ_FLAG","Boolean",False)
+F.Data.DataTable.AddColumn("dtMaterialReq","QTY_FLAG","Boolean",False)
+F.Data.DataTable.AddColumn("dtMaterialReq","GL_FLAG","Boolean",False)
+F.Data.DataTable.AddColumn("dtMaterialReq","REJECT_NOTES","String","")
+F.Data.DataTable.AddExpressionColumn("dtMaterialReq","REJECT_NOTES_PRESENT","Boolean","trim([REJECT_NOTES]) <> ''")
+
+'Loop through matreq records and build dtLotBin
+F.Intrinsic.Control.For(V.Local.iCnt,0,V.DataTable.dtMaterialReq.RowCount--,1)
+	F.Intrinsic.String.Build("[PART] = '{0}' and [LOC] = '{1}'",V.DataTable.dtMaterialReq(V.Local.iCnt).PART!FieldVal,V.DataTable.dtMaterialReq(V.Local.iCnt).LOCATION!FieldVal,V.Local.sFilter)
+	F.Data.DataView.SetFilter("dtItemMaster","dvPart",V.Local.sFilter)
+	F.Data.DataView.SetValue("dtItemMaster","dvPart",-1,"EMPLOYEE",V.DataTable.dtMaterialReq(V.Local.iCnt).EMPLOYEE!FieldVal,"JOB",V.DataTable.dtMaterialReq(V.Local.iCnt).ORIG_JOB!FieldVal,"SUFFIX",V.DataTable.dtMaterialReq(V.Local.iCnt).ORIG_SUFFIX!FieldVal,"GL_ACCOUNT",V.DataTable.dtMaterialReq(V.Local.iCnt).ORIG_GL!FieldVal,"DATE_REQ",V.DataTable.dtMaterialReq(V.Local.iCnt).DATE_REQ!FieldVal,"TIME_REQ",V.DataTable.dtMaterialReq(V.Local.iCnt).TIME_REQ!FieldVal)
+	F.Data.DataView.ToDataTable("dtItemMaster","dvPart","dtTemp",True)
+	F.Data.DataTable.Merge("dtTemp","dtLotBin",True,2)
+	F.Data.DataTable.Close("dtTemp")
+F.Intrinsic.Control.Next(V.Local.iCnt)
+F.Data.DataTable.Close("dtItemMaster")
+
+Gui.F_Mat_Req.lblLastRefresh.Caption(V.Local.sLastRefresh)
+
+F.Intrinsic.Control.Catch
+	F.Intrinsic.Control.CallSub(ErrorMessage,"ScriptFile",V.Caller.ScriptFile,"CurrentSubroutine",V.Ambient.CurrentSubroutine)
+	F.Intrinsic.Control.CallSub(F_Mat_Req_UnLoad)
+F.Intrinsic.Control.EndTry
+Program.Sub.GetDataTable.End
+
+Program.Sub.SetupGridView.Start
+V.Local.iVisibleIndex.Declare
+F.Intrinsic.Control.Try
+
+Gui.F_Mat_Req.gsgcMatReq.AddGridviewFromDataTable("gvMaterialReq","dtMaterialReq")
+
+'Gui.F_Mat_Req.gsgcMatReq.SetGridviewProperty("gvMaterialReq","Editable",False)
+Gui.F_Mat_Req.gsgcMatReq.SetGridviewProperty("gvMaterialReq","MultiSelect",False)
+Gui.F_Mat_Req.gsgcMatReq.SetGridviewProperty("gvMaterialReq","MultiSelectMode",1)
+Gui.F_Mat_Req.gsgcMatReq.SetGridviewProperty("gvMaterialReq","OptionsViewColumnAutoWidth",False)
+
+Gui.F_Mat_Req.gsgcMatReq.SetColumnProperty("gvMaterialReq","SEQ_PART","Visible",False)
+Gui.F_Mat_Req.gsgcMatReq.SetColumnProperty("gvMaterialReq","SEQ_PART","AllowShowHide",False)
+Gui.F_Mat_Req.gsgcMatReq.SetColumnProperty("gvMaterialReq","SEQ_LOCN","Visible",False)
+Gui.F_Mat_Req.gsgcMatReq.SetColumnProperty("gvMaterialReq","SEQ_LOCN","AllowShowHide",False)
+Gui.F_Mat_Req.gsgcMatReq.SetColumnProperty("gvMaterialReq","REJECT_NOTES_PRESENT","Visible",False)
+Gui.F_Mat_Req.gsgcMatReq.SetColumnProperty("gvMaterialReq","REJECT_NOTES_PRESENT","AllowShowHide",False)
+Gui.F_Mat_Req.gsgcMatReq.SetColumnProperty("gvMaterialReq","SEQ_FLAG","Visible",False)
+Gui.F_Mat_Req.gsgcMatReq.SetColumnProperty("gvMaterialReq","SEQ_FLAG","AllowShowHide",False)
+Gui.F_Mat_Req.gsgcMatReq.SetColumnProperty("gvMaterialReq","QTY_FLAG","Visible",False)
+Gui.F_Mat_Req.gsgcMatReq.SetColumnProperty("gvMaterialReq","QTY_FLAG","AllowShowHide",False)
+Gui.F_Mat_Req.gsgcMatReq.SetColumnProperty("gvMaterialReq","GL_FLAG","Visible",False)
+Gui.F_Mat_Req.gsgcMatReq.SetColumnProperty("gvMaterialReq","GL_FLAG","AllowShowHide",False)
+Gui.F_Mat_Req.gsgcMatReq.SetColumnProperty("gvMaterialReq","ORIG_JOB","Visible",False)
+Gui.F_Mat_Req.gsgcMatReq.SetColumnProperty("gvMaterialReq","ORIG_JOB","AllowShowHide",False)
+Gui.F_Mat_Req.gsgcMatReq.SetColumnProperty("gvMaterialReq","ORIG_SUFFIX","Visible",False)
+Gui.F_Mat_Req.gsgcMatReq.SetColumnProperty("gvMaterialReq","ORIG_SUFFIX","AllowShowHide",False)
+Gui.F_Mat_Req.gsgcMatReq.SetColumnProperty("gvMaterialReq","ORIG_GL","Visible",False)
+Gui.F_Mat_Req.gsgcMatReq.SetColumnProperty("gvMaterialReq","ORIG_GL","AllowShowHide",False)
+Gui.F_Mat_Req.gsgcMatReq.SetColumnProperty("gvMaterialReq","LOCATION","Visible",False)
+
+Gui.F_Mat_Req.gsgcMatReq.SetColumnProperty("gvMaterialReq","APPROVE","Fixed","Left")
+Gui.F_Mat_Req.gsgcMatReq.SetColumnProperty("gvMaterialReq","REJECT","Fixed","Left")
+Gui.F_Mat_Req.gsgcMatReq.SetColumnProperty("gvMaterialReq","REJECT_NOTES","Fixed","Right")
+Gui.F_Mat_Req.gsgcMatReq.SetColumnProperty("gvMaterialReq","ORIGIN_REQ","Fixed","Right")
+
+V.Local.iVisibleIndex.Set(-1)
+Gui.F_Mat_Req.gsgcMatReq.SetColumnProperty("gvMaterialReq","EMPLOYEE","VisibleIndex",V.Local.iVisibleIndex.++)
+Gui.F_Mat_Req.gsgcMatReq.SetColumnProperty("gvMaterialReq","NAME","VisibleIndex",V.Local.iVisibleIndex.++)
+Gui.F_Mat_Req.gsgcMatReq.SetColumnProperty("gvMaterialReq","DEPT","VisibleIndex",V.Local.iVisibleIndex.++)
+Gui.F_Mat_Req.gsgcMatReq.SetColumnProperty("gvMaterialReq","PART","VisibleIndex",V.Local.iVisibleIndex.++)
+'Gui.F_Mat_Req.gsgcMatReq.SetColumnProperty("gvMaterialReq","LOCATION","VisibleIndex",V.Local.iVisibleIndex.++)
+Gui.F_Mat_Req.gsgcMatReq.SetColumnProperty("gvMaterialReq","DESCRIPTION","VisibleIndex",V.Local.iVisibleIndex.++)
+Gui.F_Mat_Req.gsgcMatReq.SetColumnProperty("gvMaterialReq","QTY_REQ","VisibleIndex",V.Local.iVisibleIndex.++)
+Gui.F_Mat_Req.gsgcMatReq.SetColumnProperty("gvMaterialReq","QTY_ONHAND","VisibleIndex",V.Local.iVisibleIndex.++)
+Gui.F_Mat_Req.gsgcMatReq.SetColumnProperty("gvMaterialReq","COST","VisibleIndex",V.Local.iVisibleIndex.++)
+Gui.F_Mat_Req.gsgcMatReq.SetColumnProperty("gvMaterialReq","USE_GL","VisibleIndex",V.Local.iVisibleIndex.++)
+Gui.F_Mat_Req.gsgcMatReq.SetColumnProperty("gvMaterialReq","GL_ACCOUNT","VisibleIndex",V.Local.iVisibleIndex.++)
+Gui.F_Mat_Req.gsgcMatReq.SetColumnProperty("gvMaterialReq","JOB","VisibleIndex",V.Local.iVisibleIndex.++)
+Gui.F_Mat_Req.gsgcMatReq.SetColumnProperty("gvMaterialReq","SUFFIX","VisibleIndex",V.Local.iVisibleIndex.++)
+Gui.F_Mat_Req.gsgcMatReq.SetColumnProperty("gvMaterialReq","SEQ","VisibleIndex",V.Local.iVisibleIndex.++)
+Gui.F_Mat_Req.gsgcMatReq.SetColumnProperty("gvMaterialReq","WOSEQ_BRW","VisibleIndex",V.Local.iVisibleIndex.++)
+Gui.F_Mat_Req.gsgcMatReq.SetColumnProperty("gvMaterialReq","SEQ_DESCR","VisibleIndex",V.Local.iVisibleIndex.++)
+Gui.F_Mat_Req.gsgcMatReq.SetColumnProperty("gvMaterialReq","QTY_EST","VisibleIndex",V.Local.iVisibleIndex.++)
+Gui.F_Mat_Req.gsgcMatReq.SetColumnProperty("gvMaterialReq","QTY_ACT","VisibleIndex",V.Local.iVisibleIndex.++)
+Gui.F_Mat_Req.gsgcMatReq.SetColumnProperty("gvMaterialReq","QTY_REM","VisibleIndex",V.Local.iVisibleIndex.++)
+Gui.F_Mat_Req.gsgcMatReq.SetColumnProperty("gvMaterialReq","SCHED_PART","VisibleIndex",V.Local.iVisibleIndex.++)
+Gui.F_Mat_Req.gsgcMatReq.SetColumnProperty("gvMaterialReq","MISC_SEQ","VisibleIndex",V.Local.iVisibleIndex.++)
+Gui.F_Mat_Req.gsgcMatReq.SetColumnProperty("gvMaterialReq","DATE_REQ","VisibleIndex",V.Local.iVisibleIndex.++)
+Gui.F_Mat_Req.gsgcMatReq.SetColumnProperty("gvMaterialReq","TIME_REQ","VisibleIndex",V.Local.iVisibleIndex.++)
+
+Gui.F_Mat_Req.gsgcMatReq.SetColumnProperty("gvMaterialReq","APPROVE","Caption","Approve")
+Gui.F_Mat_Req.gsgcMatReq.SetColumnProperty("gvMaterialReq","REJECT","Caption","Reject")
+Gui.F_Mat_Req.gsgcMatReq.SetColumnProperty("gvMaterialReq","EMPLOYEE","Caption","Employee")
+Gui.F_Mat_Req.gsgcMatReq.SetColumnProperty("gvMaterialReq","NAME","Caption","Employee Name")
+Gui.F_Mat_Req.gsgcMatReq.SetColumnProperty("gvMaterialReq","DEPT","Caption","Employee Dept.")
+F.Intrinsic.Control.If(V.Global.bUseRev)
+	Gui.F_Mat_Req.gsgcMatReq.SetColumnProperty("gvMaterialReq","PART","Caption","Part/Rev")
+F.Intrinsic.Control.Else
+	Gui.F_Mat_Req.gsgcMatReq.SetColumnProperty("gvMaterialReq","PART","Caption","Part")
+F.Intrinsic.Control.EndIf
+Gui.F_Mat_Req.gsgcMatReq.SetColumnProperty("gvMaterialReq","LOCATION","Caption","Loc")
+Gui.F_Mat_Req.gsgcMatReq.SetColumnProperty("gvMaterialReq","DESCRIPTION","Caption","Part Descr.")
+Gui.F_Mat_Req.gsgcMatReq.SetColumnProperty("gvMaterialReq","QTY_REQ","Caption","Qty Requested")
+Gui.F_Mat_Req.gsgcMatReq.SetColumnProperty("gvMaterialReq","QTY_ONHAND","Caption","Qty On Hand")
+Gui.F_Mat_Req.gsgcMatReq.SetColumnProperty("gvMaterialReq","COST","Caption","Unit Cost")
+Gui.F_Mat_Req.gsgcMatReq.SetColumnProperty("gvMaterialReq","USE_GL","Caption","Use GL?")
+Gui.F_Mat_Req.gsgcMatReq.SetColumnProperty("gvMaterialReq","GL_ACCOUNT","Caption","GL Account")
+Gui.F_Mat_Req.gsgcMatReq.SetColumnProperty("gvMaterialReq","JOB","Caption","Job")
+Gui.F_Mat_Req.gsgcMatReq.SetColumnProperty("gvMaterialReq","SUFFIX","Caption","Suffix")
+Gui.F_Mat_Req.gsgcMatReq.SetColumnProperty("gvMaterialReq","SEQ","Caption","Seq")
+Gui.F_Mat_Req.gsgcMatReq.SetColumnProperty("gvMaterialReq","WOSEQ_BRW","ShowCaption",False)
+Gui.F_Mat_Req.gsgcMatReq.SetColumnProperty("gvMaterialReq","SEQ_DESCR","Caption","Seq Descr.")
+Gui.F_Mat_Req.gsgcMatReq.SetColumnProperty("gvMaterialReq","QTY_EST","Caption","Qty Est")
+Gui.F_Mat_Req.gsgcMatReq.SetColumnProperty("gvMaterialReq","QTY_ACT","Caption","Qty Act")
+Gui.F_Mat_Req.gsgcMatReq.SetColumnProperty("gvMaterialReq","QTY_REM","Caption","Qty Rem")
+Gui.F_Mat_Req.gsgcMatReq.SetColumnProperty("gvMaterialReq","SCHED_PART","Caption","Scheduled Part?")
+Gui.F_Mat_Req.gsgcMatReq.SetColumnProperty("gvMaterialReq","MISC_SEQ","Caption","Misc. Seq?")
+Gui.F_Mat_Req.gsgcMatReq.SetColumnProperty("gvMaterialReq","DATE_REQ","Caption","Date Requested")
+Gui.F_Mat_Req.gsgcMatReq.SetColumnProperty("gvMaterialReq","TIME_REQ","Caption","Time Requested")
+Gui.F_Mat_Req.gsgcMatReq.SetColumnProperty("gvMaterialReq","ORIGIN_REQ","ShowCaption",False)
+Gui.F_Mat_Req.gsgcMatReq.SetColumnProperty("gvMaterialReq","REJECT_NOTES","ShowCaption",False)
+
+Gui.F_Mat_Req.gsgcMatReq.SetColumnProperty("gvMaterialReq","APPROVE","Width",55)
+Gui.F_Mat_Req.gsgcMatReq.SetColumnProperty("gvMaterialReq","APPROVE","AllowSize",False)
+Gui.F_Mat_Req.gsgcMatReq.SetColumnProperty("gvMaterialReq","APPROVE","AllowMove",False)
+Gui.F_Mat_Req.gsgcMatReq.SetColumnProperty("gvMaterialReq","REJECT","Width",50)
+Gui.F_Mat_Req.gsgcMatReq.SetColumnProperty("gvMaterialReq","REJECT","AllowSize",False)
+Gui.F_Mat_Req.gsgcMatReq.SetColumnProperty("gvMaterialReq","REJECT","AllowMove",False)
+Gui.F_Mat_Req.gsgcMatReq.SetColumnProperty("gvMaterialReq","EMPLOYEE","Width",70)
+Gui.F_Mat_Req.gsgcMatReq.SetColumnProperty("gvMaterialReq","NAME","Width",95)
+Gui.F_Mat_Req.gsgcMatReq.SetColumnProperty("gvMaterialReq","DEPT","Width",95)
+Gui.F_Mat_Req.gsgcMatReq.SetColumnProperty("gvMaterialReq","PART","Width",120)
+Gui.F_Mat_Req.gsgcMatReq.SetColumnProperty("gvMaterialReq","LOCATION","Width",40)
+Gui.F_Mat_Req.gsgcMatReq.SetColumnProperty("gvMaterialReq","DESCRIPTION","Width",150)
+Gui.F_Mat_Req.gsgcMatReq.SetColumnProperty("gvMaterialReq","QTY_REQ","Width",100)
+Gui.F_Mat_Req.gsgcMatReq.SetColumnProperty("gvMaterialReq","QTY_ONHAND","Width",100)
+Gui.F_Mat_Req.gsgcMatReq.SetColumnProperty("gvMaterialReq","COST","Width",100)
+Gui.F_Mat_Req.gsgcMatReq.SetColumnProperty("gvMaterialReq","USE_GL","Width",65)
+Gui.F_Mat_Req.gsgcMatReq.SetColumnProperty("gvMaterialReq","USE_GL","AllowSize",False)
+Gui.F_Mat_Req.gsgcMatReq.SetColumnProperty("gvMaterialReq","GL_ACCOUNT","Width",100)
+Gui.F_Mat_Req.gsgcMatReq.SetColumnProperty("gvMaterialReq","JOB","Width",50)
+Gui.F_Mat_Req.gsgcMatReq.SetColumnProperty("gvMaterialReq","SUFFIX","Width",50)
+Gui.F_Mat_Req.gsgcMatReq.SetColumnProperty("gvMaterialReq","SEQ","Width",50)
+Gui.F_Mat_Req.gsgcMatReq.SetColumnProperty("gvMaterialReq","WOSEQ_BRW","Width",35)
+Gui.F_Mat_Req.gsgcMatReq.SetColumnProperty("gvMaterialReq","SEQ_DESCR","Width",150)
+Gui.F_Mat_Req.gsgcMatReq.SetColumnProperty("gvMaterialReq","QTY_EST","Width",100)
+Gui.F_Mat_Req.gsgcMatReq.SetColumnProperty("gvMaterialReq","QTY_ACT","Width",100)
+Gui.F_Mat_Req.gsgcMatReq.SetColumnProperty("gvMaterialReq","QTY_REM","Width",100)
+Gui.F_Mat_Req.gsgcMatReq.SetColumnProperty("gvMaterialReq","SCHED_PART","Width",100)
+Gui.F_Mat_Req.gsgcMatReq.SetColumnProperty("gvMaterialReq","MISC_SEQ","Width",75)
+Gui.F_Mat_Req.gsgcMatReq.SetColumnProperty("gvMaterialReq","DATE_REQ","Width",100)
+Gui.F_Mat_Req.gsgcMatReq.SetColumnProperty("gvMaterialReq","TIME_REQ","Width",100)
+Gui.F_Mat_Req.gsgcMatReq.SetColumnProperty("gvMaterialReq","ORIGIN_REQ","Width",90)
+Gui.F_Mat_Req.gsgcMatReq.SetColumnProperty("gvMaterialReq","REJECT_NOTES","Width",75)
+Gui.F_Mat_Req.gsgcMatReq.SetColumnProperty("gvMaterialReq","REJECT_NOTES","AllowSize",False)
+Gui.F_Mat_Req.gsgcMatReq.SetColumnProperty("gvMaterialReq","REJECT_NOTES","AllowMove",False)
+Gui.F_Mat_Req.gsgcMatReq.SetColumnProperty("gvMaterialReq","REJECT_NOTES","AllowSort",False)
+Gui.F_Mat_Req.gsgcMatReq.SetColumnProperty("gvMaterialReq","REJECT_NOTES","AllowFilter",False)
+
+Gui.F_Mat_Req.gsgcMatReq.SetColumnProperty("gvMaterialReq","APPROVE","AllowEdit",False)
+Gui.F_Mat_Req.gsgcMatReq.SetColumnProperty("gvMaterialReq","REJECT","AllowEdit",False)
+Gui.F_Mat_Req.gsgcMatReq.SetColumnProperty("gvMaterialReq","EMPLOYEE","AllowEdit",False)
+Gui.F_Mat_Req.gsgcMatReq.SetColumnProperty("gvMaterialReq","NAME","AllowEdit",False)
+Gui.F_Mat_Req.gsgcMatReq.SetColumnProperty("gvMaterialReq","DEPT","AllowEdit",False)
+Gui.F_Mat_Req.gsgcMatReq.SetColumnProperty("gvMaterialReq","PART","AllowEdit",False)
+Gui.F_Mat_Req.gsgcMatReq.SetColumnProperty("gvMaterialReq","LOCATION","AllowEdit",False)
+Gui.F_Mat_Req.gsgcMatReq.SetColumnProperty("gvMaterialReq","DESCRIPTION","AllowEdit",False)
+Gui.F_Mat_Req.gsgcMatReq.SetColumnProperty("gvMaterialReq","QTY_REQ","ReadOnly",False)
+Gui.F_Mat_Req.gsgcMatReq.SetColumnProperty("gvMaterialReq","QTY_ONHAND","AllowEdit",False)
+Gui.F_Mat_Req.gsgcMatReq.SetColumnProperty("gvMaterialReq","COST","AllowEdit",False)
+Gui.F_Mat_Req.gsgcMatReq.SetColumnProperty("gvMaterialReq","USE_GL","AllowEdit",False)
+Gui.F_Mat_Req.gsgcMatReq.SetColumnProperty("gvMaterialReq","GL_ACCOUNT","AllowEdit",False)
+Gui.F_Mat_Req.gsgcMatReq.SetColumnProperty("gvMaterialReq","JOB","AllowEdit",False)
+Gui.F_Mat_Req.gsgcMatReq.SetColumnProperty("gvMaterialReq","SUFFIX","AllowEdit",False)
+Gui.F_Mat_Req.gsgcMatReq.SetColumnProperty("gvMaterialReq","SEQ","AllowEdit",False)
+Gui.F_Mat_Req.gsgcMatReq.SetColumnProperty("gvMaterialReq","WOSEQ_BRW","AllowEdit",False)
+Gui.F_Mat_Req.gsgcMatReq.SetColumnProperty("gvMaterialReq","SEQ_DESCR","AllowEdit",False)
+Gui.F_Mat_Req.gsgcMatReq.SetColumnProperty("gvMaterialReq","QTY_EST","AllowEdit",False)
+Gui.F_Mat_Req.gsgcMatReq.SetColumnProperty("gvMaterialReq","QTY_ACT","AllowEdit",False)
+Gui.F_Mat_Req.gsgcMatReq.SetColumnProperty("gvMaterialReq","QTY_REM","AllowEdit",False)
+Gui.F_Mat_Req.gsgcMatReq.SetColumnProperty("gvMaterialReq","SCHED_PART","AllowEdit",False)
+Gui.F_Mat_Req.gsgcMatReq.SetColumnProperty("gvMaterialReq","MISC_SEQ","AllowEdit",False)
+Gui.F_Mat_Req.gsgcMatReq.SetColumnProperty("gvMaterialReq","DATE_REQ","AllowEdit",False)
+Gui.F_Mat_Req.gsgcMatReq.SetColumnProperty("gvMaterialReq","TIME_REQ","AllowEdit",False)
+Gui.F_Mat_Req.gsgcMatReq.SetColumnProperty("gvMaterialReq","ORIGIN_REQ","AllowEdit",False)
+Gui.F_Mat_Req.gsgcMatReq.SetColumnProperty("gvMaterialReq","REJECT_NOTES","AllowEdit",False)
+
+Gui.F_Mat_Req.gsgcMatReq.SetColumnProperty("gvMaterialReq","APPROVE","HeaderFontItalic",True)
+Gui.F_Mat_Req.gsgcMatReq.SetColumnProperty("gvMaterialReq","REJECT","HeaderFontItalic",True)
+Gui.F_Mat_Req.gsgcMatReq.SetColumnProperty("gvMaterialReq","USE_GL","HeaderFontItalic",True)
+Gui.F_Mat_Req.gsgcMatReq.SetColumnProperty("gvMaterialReq","GL_ACCOUNT","HeaderFontItalic",True)
+Gui.F_Mat_Req.gsgcMatReq.SetColumnProperty("gvMaterialReq","SEQ","HeaderFontItalic",True)
+Gui.F_Mat_Req.gsgcMatReq.SetColumnProperty("gvMaterialReq","APPROVE","CellBackColor","LightYellow")
+Gui.F_Mat_Req.gsgcMatReq.SetColumnProperty("gvMaterialReq","REJECT","CellBackColor","LightYellow")
+
+Gui.F_Mat_Req.gsgcMatReq.SetColumnProperty("gvMaterialReq","DATE_REQ","DisplayCustomDateTime","d")
+Gui.F_Mat_Req.gsgcMatReq.SetColumnProperty("gvMaterialReq","TIME_REQ","DisplayCustomDateTime","t")
+Gui.F_Mat_Req.gsgcMatReq.SetColumnProperty("gvMaterialReq","QTY_REQ","DisplayCustomNumeric","#,##0.0000")
+Gui.F_Mat_Req.gsgcMatReq.SetColumnProperty("gvMaterialReq","COST","DisplayCustomNumeric","#,##0.00")
+
+Gui.F_Mat_Req.gsgcMatReq.SetColumnProperty("gvMaterialReq","PART","CellForeColor","Blue")
+
+Gui.F_Mat_Req.gsgcMatReq.SetColumnProperty("gvMaterialReq","WOSEQ_BRW","Icon","^")
+Gui.F_Mat_Req.gsgcMatReq.ColumnEdit("gvMaterialReq","ORIGIN_REQ","EditorButton","View Req. Notes")
+Gui.F_Mat_Req.gsgcMatReq.ColumnEdit("gvMaterialReq","REJECT_NOTES","EditorButton","Reject Notes")
+
+Gui.F_Mat_Req.gsgcMatReq.AddStyleFormatCondition("gvMaterialReq","REJECT_NOTES","RejectNotesPopulated","Expression","[REJECT] and [REJECT_NOTES_PRESENT]")
+Gui.F_Mat_Req.gsgcMatReq.AddStyleFormatCondition("gvMaterialReq","REJECT_NOTES","RejectNotesNotPopulated","Expression","[REJECT] and [REJECT_NOTES_PRESENT] = False")
+Gui.F_Mat_Req.gsgcMatReq.AddStyleFormatCondition("gvMaterialReq","ORIGIN_REQ","RequestNotesPopulated","Expression","[ORIGIN_REQ] <> ''")
+Gui.F_Mat_Req.gsgcMatReq.AddStyleFormatCondition("gvMaterialReq","SEQ","ChangeSeq","Expression","[SEQ_FLAG] and [USE_GL] = False")
+Gui.F_Mat_Req.gsgcMatReq.AddStyleFormatCondition("gvMaterialReq","SEQ","ChangeSeqNot","Expression","[SEQ_FLAG] = False and [USE_GL] = False")
+Gui.F_Mat_Req.gsgcMatReq.AddStyleFormatCondition("gvMaterialReq","QTY_REQ","ChangeQty","Expression","[QTY_FLAG] = False and [APPROVE]")
+Gui.F_Mat_Req.gsgcMatReq.AddStyleFormatCondition("gvMaterialReq","QTY_REQ","ChangeQtyNot","Expression","[QTY_FLAG] or [APPROVE] = False")
+Gui.F_Mat_Req.gsgcMatReq.AddStyleFormatCondition("gvMaterialReq","GL_ACCOUNT","ChangeGL","Expression","[USE_GL] and [GL_FLAG]")
+Gui.F_Mat_Req.gsgcMatReq.AddStyleFormatCondition("gvMaterialReq","GL_ACCOUNT","ChangeGLNot","Expression","[USE_GL] and [GL_FLAG] = False")
+Gui.F_Mat_Req.gsgcMatReq.SetStyleFormatConditionProperty("gvMaterialReq","REJECT_NOTES","RejectNotesPopulated","BackColor","Green")
+Gui.F_Mat_Req.gsgcMatReq.SetStyleFormatConditionProperty("gvMaterialReq","REJECT_NOTES","RejectNotesNotPopulated","BackColor","Red")
+Gui.F_Mat_Req.gsgcMatReq.SetStyleFormatConditionProperty("gvMaterialReq","ORIGIN_REQ","RequestNotesPopulated","BackColor","Green")
+Gui.F_Mat_Req.gsgcMatReq.SetStyleFormatConditionProperty("gvMaterialReq","SEQ","ChangeSeq","BackColor","Pink")
+Gui.F_Mat_Req.gsgcMatReq.SetStyleFormatConditionProperty("gvMaterialReq","SEQ","ChangeSeqNot","BackColor","LightYellow")
+Gui.F_Mat_Req.gsgcMatReq.SetStyleFormatConditionProperty("gvMaterialReq","SEQ","ChangeSeqNot","ForeColor","Black")
+Gui.F_Mat_Req.gsgcMatReq.SetStyleFormatConditionProperty("gvMaterialReq","QTY_REQ","ChangeQty","BackColor","Red")
+Gui.F_Mat_Req.gsgcMatReq.SetStyleFormatConditionProperty("gvMaterialReq","QTY_REQ","ChangeQty","ForeColor","White")
+Gui.F_Mat_Req.gsgcMatReq.SetStyleFormatConditionProperty("gvMaterialReq","QTY_REQ","ChangeQtyNot","BackColor","LightYellow")
+Gui.F_Mat_Req.gsgcMatReq.SetStyleFormatConditionProperty("gvMaterialReq","QTY_REQ","ChangeQtyNot","ForeColor","Black")
+Gui.F_Mat_Req.gsgcMatReq.SetStyleFormatConditionProperty("gvMaterialReq","GL_ACCOUNT","ChangeGL","BackColor","Red")
+Gui.F_Mat_Req.gsgcMatReq.SetStyleFormatConditionProperty("gvMaterialReq","GL_ACCOUNT","ChangeGL","ForeColor","White")
+Gui.F_Mat_Req.gsgcMatReq.SetStyleFormatConditionProperty("gvMaterialReq","GL_ACCOUNT","ChangeGLNot","BackColor","LightYellow")
+Gui.F_Mat_Req.gsgcMatReq.SetStyleFormatConditionProperty("gvMaterialReq","GL_ACCOUNT","ChangeGLNot","ForeColor","Black")
+
+Gui.F_Mat_Req.gsgcMatReq.MainView("gvMaterialReq")
+
+Gui.F_Mat_Req.gsgcLotBin.AddGridviewFromDataview("gvLotBin","dtLotBin","dvPart")
+
+Gui.F_Mat_Req.gsgcLotBin.SetGridviewProperty("gvLotBin","MultiSelectMode",1)
+Gui.F_Mat_Req.gsgcLotBin.SetGridviewProperty("gvLotBin","OptionsViewColumnAutoWidth",False)
+
+Gui.F_Mat_Req.gsgcLotBin.SetColumnProperty("gvLotBin","PART","Visible",False)
+Gui.F_Mat_Req.gsgcLotBin.SetColumnProperty("gvLotBin","PART","AllowShowHide",False)
+Gui.F_Mat_Req.gsgcLotBin.SetColumnProperty("gvLotBin","LOC","Visible",False)
+Gui.F_Mat_Req.gsgcLotBin.SetColumnProperty("gvLotBin","LOC","AllowShowHide",False)
+Gui.F_Mat_Req.gsgcLotBin.SetColumnProperty("gvLotBin","EMPLOYEE","Visible",False)
+Gui.F_Mat_Req.gsgcLotBin.SetColumnProperty("gvLotBin","EMPLOYEE","AllowShowHide",False)
+Gui.F_Mat_Req.gsgcLotBin.SetColumnProperty("gvLotBin","JOB","Visible",False)
+Gui.F_Mat_Req.gsgcLotBin.SetColumnProperty("gvLotBin","JOB","AllowShowHide",False)
+Gui.F_Mat_Req.gsgcLotBin.SetColumnProperty("gvLotBin","SUFFIX","Visible",False)
+Gui.F_Mat_Req.gsgcLotBin.SetColumnProperty("gvLotBin","SUFFIX","AllowShowHide",False)
+Gui.F_Mat_Req.gsgcLotBin.SetColumnProperty("gvLotBin","DATE_REQ","Visible",False)
+Gui.F_Mat_Req.gsgcLotBin.SetColumnProperty("gvLotBin","DATE_REQ","AllowShowHide",False)
+Gui.F_Mat_Req.gsgcLotBin.SetColumnProperty("gvLotBin","TIME_REQ","Visible",False)
+Gui.F_Mat_Req.gsgcLotBin.SetColumnProperty("gvLotBin","TIME_REQ","AllowShowHide",False)
+Gui.F_Mat_Req.gsgcLotBin.SetColumnProperty("gvLotBin","GL_ACCOUNT","Visible",False)
+Gui.F_Mat_Req.gsgcLotBin.SetColumnProperty("gvLotBin","GL_ACCOUNT","AllowShowHide",False)
+
+Gui.F_Mat_Req.gsgcLotBin.SetColumnProperty("gvLotBin","QTY_REQ","Fixed","Right")
+
+V.Local.iVisibleIndex.Set(-1)
+Gui.F_Mat_Req.gsgcLotBin.SetColumnProperty("gvLotBin","LOT","VisibleIndex",V.Local.iVisibleIndex.++)
+Gui.F_Mat_Req.gsgcLotBin.SetColumnProperty("gvLotBin","BIN","VisibleIndex",V.Local.iVisibleIndex.++)
+Gui.F_Mat_Req.gsgcLotBin.SetColumnProperty("gvLotBin","HEAT","VisibleIndex",V.Local.iVisibleIndex.++)
+Gui.F_Mat_Req.gsgcLotBin.SetColumnProperty("gvLotBin","SERIAL","VisibleIndex",V.Local.iVisibleIndex.++)
+Gui.F_Mat_Req.gsgcLotBin.SetColumnProperty("gvLotBin","QUANTITY","VisibleIndex",V.Local.iVisibleIndex.++)
+Gui.F_Mat_Req.gsgcLotBin.SetColumnProperty("gvLotBin","COST","VisibleIndex",V.Local.iVisibleIndex.++)
+
+Gui.F_Mat_Req.gsgcLotBin.SetColumnProperty("gvLotBin","LOT","Caption","Lot")
+Gui.F_Mat_Req.gsgcLotBin.SetColumnProperty("gvLotBin","BIN","Caption","Bin")
+Gui.F_Mat_Req.gsgcLotBin.SetColumnProperty("gvLotBin","HEAT","Caption","Heat")
+Gui.F_Mat_Req.gsgcLotBin.SetColumnProperty("gvLotBin","SERIAL","Caption","Serial Number")
+Gui.F_Mat_Req.gsgcLotBin.SetColumnProperty("gvLotBin","QUANTITY","Caption","Qty On Hand")
+Gui.F_Mat_Req.gsgcLotBin.SetColumnProperty("gvLotBin","COST","Caption","Unit Cost")
+Gui.F_Mat_Req.gsgcLotBin.SetColumnProperty("gvLotBin","QTY_REQ","Caption","Qty To Issue")
+
+Gui.F_Mat_Req.gsgcLotBin.SetColumnProperty("gvLotBin","LOT","Width",75)
+Gui.F_Mat_Req.gsgcLotBin.SetColumnProperty("gvLotBin","BIN","Width",45)
+Gui.F_Mat_Req.gsgcLotBin.SetColumnProperty("gvLotBin","HEAT","Width",75)
+Gui.F_Mat_Req.gsgcLotBin.SetColumnProperty("gvLotBin","SERIAL","Width",150)
+Gui.F_Mat_Req.gsgcLotBin.SetColumnProperty("gvLotBin","QUANTITY","Width",100)
+Gui.F_Mat_Req.gsgcLotBin.SetColumnProperty("gvLotBin","COST","Width",100)
+Gui.F_Mat_Req.gsgcLotBin.SetColumnProperty("gvLotBin","QTY_REQ","Width",100)
+Gui.F_Mat_Req.gsgcLotBin.SetColumnProperty("gvLotBin","QTY_REQ","AllowMove",False)
+Gui.F_Mat_Req.gsgcLotBin.SetColumnProperty("gvLotBin","QTY_REQ","AllowSize",False)
+
+Gui.F_Mat_Req.gsgcLotBin.SetColumnProperty("gvLotBin","LOT","AllowEdit",False)
+Gui.F_Mat_Req.gsgcLotBin.SetColumnProperty("gvLotBin","BIN","AllowEdit",False)
+Gui.F_Mat_Req.gsgcLotBin.SetColumnProperty("gvLotBin","HEAT","AllowEdit",False)
+Gui.F_Mat_Req.gsgcLotBin.SetColumnProperty("gvLotBin","SERIAL","AllowEdit",False)
+Gui.F_Mat_Req.gsgcLotBin.SetColumnProperty("gvLotBin","QUANTITY","AllowEdit",False)
+Gui.F_Mat_Req.gsgcLotBin.SetColumnProperty("gvLotBin","COST","AllowEdit",False)
+Gui.F_Mat_Req.gsgcLotBin.SetColumnProperty("gvLotBin","QTY_REQ","ReadOnly",False)
+
+Gui.F_Mat_Req.gsgcLotBin.SetColumnProperty("gvLotBin","QTY_REQ","HeaderFontItalic",True)
+Gui.F_Mat_Req.gsgcLotBin.SetColumnProperty("gvLotBin","QTY_REQ","CellBackColor","LightYellow")
+Gui.F_Mat_Req.gsgcLotBin.SetColumnProperty("gvLotBin","QTY_REQ","CellForeColor","Black")
+
+Gui.F_Mat_Req.gsgcLotBin.SetColumnProperty("gvLotBin","QUANTITY","DisplayCustomNumeric","#,##0.0000")
+Gui.F_Mat_Req.gsgcLotBin.SetColumnProperty("gvLotBin","COST","DisplayCustomNumeric","#,##0.00")
+Gui.F_Mat_Req.gsgcLotBin.SetColumnProperty("gvLotBin","QTY_REQ","DisplayCustomNumeric","#,##0.0000")
+
+Gui.F_Mat_Req.gsgcLotBin.MainView("gvLotBin")
+
+F.Intrinsic.Control.Catch
+	F.Intrinsic.Control.CallSub(ErrorMessage,"ScriptFile",V.Caller.ScriptFile,"CurrentSubroutine",V.Ambient.CurrentSubroutine)
+	F.Intrinsic.Control.CallSub(F_Mat_Req_UnLoad)
+F.Intrinsic.Control.EndTry
+Program.Sub.SetupGridView.End
+
+Program.Sub.cmdRefresh_Click.Start
+F.Intrinsic.Control.Try
+
+F.Intrinsic.Control.BlockEvents
+
+F.Intrinsic.Control.If(V.DataTable.dtMaterialReq.Exists)
+	F.Intrinsic.Control.CallSub(Serialize)
+	F.Data.DataTable.Close("dtMaterialReq")
+	F.Data.DataTable.Close("dtLotBin")
+	F.Data.DataTable.Close("dtJobOps")
+F.Intrinsic.Control.EndIf
+
+F.Intrinsic.UI.InvokeWaitDialog("Loading Data","Material Request Approval Dashboard")
+
+F.Intrinsic.Control.CallSub(GetDataTable)
+
+F.Intrinsic.UI.ChangeWaitStatus("Setting Up Grid",5,0,5)
+
+F.Intrinsic.Control.CallSub(SetupGridView)
+F.Intrinsic.Control.CallSub(Deserialize)
+
+F.Intrinsic.UI.CloseWaitDialog
+
+F.Intrinsic.Control.If(V.Screen.F_Mat_Req!timerAutoRefresh.Enabled)
+	Gui.F_Mat_Req.timerAutoRefresh.Enabled(False)
+	Gui.F_Mat_Req.timerAutoRefresh.Enabled(True)
+F.Intrinsic.Control.EndIf
+
+F.Intrinsic.Control.UnBlockEvents
+
+F.Intrinsic.Control.Catch
+	F.Intrinsic.Control.CallSub(ErrorMessage,"ScriptFile",V.Caller.ScriptFile,"CurrentSubroutine",V.Ambient.CurrentSubroutine)
+	F.Intrinsic.Control.CallSub(F_Mat_Req_UnLoad)
+F.Intrinsic.Control.EndTry
+Program.Sub.cmdRefresh_Click.End
+
+Program.Sub.gsgcMatReq_RowCellClick.Start
+V.Local.sFilter.Declare
+V.Local.sBrowser.Declare
+V.Local.sRet.Declare
+V.Local.dTime.Declare
+V.Local.sTime.Declare
+V.Local.sFilterDate.Declare
+V.Local.sFilterTime.Declare
+V.Local.sJob.Declare
+V.Local.sSuffix.Declare
+V.Local.sGL.Declare
+F.Intrinsic.Control.Try
+
+F.Intrinsic.String.Format(V.DataTable.dtMaterialReq(V.Args.RowIndex).DATE_REQ!FieldVal,"M/D/YYYY",V.Local.sFilterDate)
+F.Intrinsic.String.Format(V.DataTable.dtMaterialReq(V.Args.RowIndex).TIME_REQ!FieldVal,"M/D/YYYY H:N:S AMPM",V.Local.sFilterTime)
+F.Intrinsic.String.Build("[PART] = '{0}' and [LOC] = '{1}' and [EMPLOYEE] = '{2}' and [JOB] = '{3}' and [SUFFIX] = '{4}' and isnull([GL_ACCOUNT], '') = '{7}' and [DATE_REQ] = #{5}# and [TIME_REQ] = #{6}#",V.DataTable.dtMaterialReq(V.Args.RowIndex).PART!FieldVal,V.DataTable.dtMaterialReq(V.Args.RowIndex).LOCATION!FieldVal,V.DataTable.dtMaterialReq(V.Args.RowIndex).EMPLOYEE!FieldVal,V.DataTable.dtMaterialReq(V.Args.RowIndex).ORIG_JOB!FieldVal,V.DataTable.dtMaterialReq(V.Args.RowIndex).ORIG_SUFFIX!FieldVal,V.Local.sFilterDate,V.Local.sFilterTime,V.DataTable.dtMaterialReq(V.Args.RowIndex).ORIG_GL!FieldVal,V.Local.sFilter)
+F.Data.DataView.SetFilter("dtLotBin","dvPart",V.Local.sFilter)
+V.Global.iLotBin.Set(V.Args.RowIndex)
+
+F.Intrinsic.Control.If(V.Args.Clicks,>,1,or,V.Args.Button.UCase,!=,"LEFT")
+	F.Intrinsic.Control.ExitSub
+F.Intrinsic.Control.EndIf
+
+F.Intrinsic.Control.SelectCase(V.Args.Column.UCase)
+	F.Intrinsic.Control.Case("APPROVE")
+		F.Data.DataTable.SetValue("dtMaterialReq",V.Args.RowIndex,"APPROVE",V.Args.CellValue.Not,"REJECT",False)
+	F.Intrinsic.Control.Case("REJECT")
+		F.Data.DataTable.SetValue("dtMaterialReq",V.Args.RowIndex,"APPROVE",False,"REJECT",V.Args.CellValue.Not)
+	F.Intrinsic.Control.Case("ORIGIN_REQ")
+		F.Intrinsic.Control.If(V.DataTable.dtMaterialReq(V.Args.RowIndex).ORIGIN_REQ!FieldVal,!=,"")
+			'Open request notes screen in read-only mode
+			Gui.F_Mat_Req..Enabled(False)
+			Gui.F_Rej_Notes.txtEmployee.Text(V.DataTable.dtMaterialReq(V.Args.RowIndex).NAME!FieldVal)
+			Gui.F_Rej_Notes.txtPart.Text(V.DataTable.dtMaterialReq(V.Args.RowIndex).PART!FieldVal)
+			Gui.F_Rej_Notes.txtJob.Text(V.DataTable.dtMaterialReq(V.Args.RowIndex).JOB!FieldVal)
+			Gui.F_Rej_Notes.txtSuffix.Text(V.DataTable.dtMaterialReq(V.Args.RowIndex).SUFFIX!FieldVal)
+			Gui.F_Rej_Notes.txtSeq.Text(V.DataTable.dtMaterialReq(V.Args.RowIndex).SEQ!FieldVal)
+			Gui.F_Rej_Notes.txtQtyReq.Text(V.DataTable.dtMaterialReq(V.Args.RowIndex).QTY_REQ!FieldValString)
+			Gui.F_Rej_Notes.txtDateReq.Text(V.DataTable.dtMaterialReq(V.Args.RowIndex).DATE_REQ!FieldValString)
+			V.Local.dTime.Set(V.DataTable.dtMaterialReq(V.Args.RowIndex).TIME_REQ!FieldVal)
+			F.Intrinsic.String.Format(V.Local.dTime,"HH:MM AMPM",V.Local.sTime)
+			Gui.F_Rej_Notes.txtTimeReq.Text(V.Local.sTime)
+			Gui.F_Rej_Notes.lblRow.Caption(V.Args.RowIndex.String)
+			
+			Gui.F_Rej_Notes..Caption("Request Notes")
+			Gui.F_Rej_Notes.lblReject.Caption("Request Notes")
+			Gui.F_Rej_Notes.txtReject.Locked(True)
+			
+			Gui.F_Rej_Notes.txtReject.Text(V.DataTable.dtMaterialReq(V.Args.RowIndex).ORIGIN_REQ!FieldVal)
+			
+			F.Intrinsic.Control.If(V.Global.bNotes)
+				Gui.F_Rej_Notes..Visible(True)
+			F.Intrinsic.Control.Else
+				Gui.F_Rej_Notes..Show
+				V.Global.bNotes.Set(True)
+			F.Intrinsic.Control.EndIf
+		F.Intrinsic.Control.EndIf
+	F.Intrinsic.Control.Case("REJECT_NOTES")
+		F.Intrinsic.Control.If(V.DataTable.dtMaterialReq(V.Args.RowIndex).REJECT!FieldVal)
+			'Open reject notes screen
+			Gui.F_Mat_Req..Enabled(False)
+			Gui.F_Rej_Notes.txtEmployee.Text(V.DataTable.dtMaterialReq(V.Args.RowIndex).NAME!FieldVal)
+			Gui.F_Rej_Notes.txtPart.Text(V.DataTable.dtMaterialReq(V.Args.RowIndex).PART!FieldVal)
+			Gui.F_Rej_Notes.txtJob.Text(V.DataTable.dtMaterialReq(V.Args.RowIndex).JOB!FieldVal)
+			Gui.F_Rej_Notes.txtSuffix.Text(V.DataTable.dtMaterialReq(V.Args.RowIndex).SUFFIX!FieldVal)
+			Gui.F_Rej_Notes.txtSeq.Text(V.DataTable.dtMaterialReq(V.Args.RowIndex).SEQ!FieldVal)
+			Gui.F_Rej_Notes.txtQtyReq.Text(V.DataTable.dtMaterialReq(V.Args.RowIndex).QTY_REQ!FieldValString)
+			Gui.F_Rej_Notes.txtDateReq.Text(V.DataTable.dtMaterialReq(V.Args.RowIndex).DATE_REQ!FieldValString)
+			V.Local.dTime.Set(V.DataTable.dtMaterialReq(V.Args.RowIndex).TIME_REQ!FieldVal)
+			F.Intrinsic.String.Format(V.Local.dTime,"HH:MM AMPM",V.Local.sTime)
+			Gui.F_Rej_Notes.txtTimeReq.Text(V.Local.sTime)
+			Gui.F_Rej_Notes.lblRow.Caption(V.Args.RowIndex.String)
+			
+			Gui.F_Rej_Notes.txtReject.Text(V.DataTable.dtMaterialReq(V.Args.RowIndex).REJECT_NOTES!FieldVal)
+			
+			F.Intrinsic.Control.If(V.Global.bNotes)
+				Gui.F_Rej_Notes..Visible(True)
+			F.Intrinsic.Control.Else
+				Gui.F_Rej_Notes..Show
+				V.Global.bNotes.Set(True)
+			F.Intrinsic.Control.EndIf
+		F.Intrinsic.Control.EndIf
+	F.Intrinsic.Control.Case("WOSEQ_BRW")
+		F.Intrinsic.Control.If(V.DataTable.dtMaterialReq(V.Args.RowIndex).USE_GL!FieldValNot)
+			'Based on WO
+			F.Intrinsic.Control.If(V.DataTable.dtMaterialReq(V.Args.RowIndex).JOB!FieldValTrim,=,"")
+				'No job found, ask for Job
+				F.Intrinsic.UI.Browser(1000,"",V.Local.sRet)
+				F.Intrinsic.Control.If(V.Local.sRet.IsCancel)
+					F.Intrinsic.Control.ExitSub
+				F.Intrinsic.Control.EndIf
+				F.Intrinsic.String.Split(V.Local.sRet,"*!*",V.Local.sRet)
+				F.Data.DataTable.SetValue("dtMaterialReq",V.Args.RowIndex,"JOB",V.Local.sRet(0),"SUFFIX",V.Local.sRet(1))
+				V.Local.sRet.Redim(0,0)
+			F.Intrinsic.Control.EndIf
+			F.Intrinsic.String.Build("[JOB] = '{0}' and [SUFFIX] = '{1}'",V.DataTable.dtMaterialReq(V.Args.RowIndex).JOB!FieldVal,V.DataTable.dtMaterialReq(V.Args.RowIndex).SUFFIX!FieldVal,V.Local.sFilter)
+			F.Data.DataView.SetFilter("dtJobOps","dvJob",V.Local.sFilter)
+			F.Data.DataView.ToString("dtJobOps","dvJob","JOB*!*SUFFIX*!*SEQ*!*PART*!*LOCATION*!*DESCRIPTION*!*QTY_EST*!*QTY_ACT*!*QTY_REM","*!*","#$#",V.Local.sBrowser)
+			
+			F.Intrinsic.UI.BrowserFromString("Job Operations",V.Local.sBrowser,"*!*","#$#","Job*!*Suffix*!*Seq*!*Raw Material*!*RM Loc*!*RM Description*!*Qty Est*!*Qty Issued*!*Qty Rem","20*!*5*!*20*!*50*!*5*!*65*!*25*!*25*!*25",15000,7500,V.Local.sRet)
+			
+			F.Intrinsic.Control.If(V.Local.sRet.IsNotCancel)
+				F.Intrinsic.String.Split(V.Local.sRet,"*!*",V.Local.sRet)
+				
+				F.Data.DataTable.SetValue("dtMaterialReq",V.Args.RowIndex,"SEQ",V.Local.sRet(2),"SEQ_DESCR",V.Local.sRet(5),"SEQ_PART",V.Ambient.DBNull,"SEQ_LOCN",V.Ambient.DBNull,"QTY_EST",V.Ambient.DBNUll,"QTY_ACT",V.Ambient.DBNull,"QTY_REM",V.Ambient.DBNull,"SEQ_FLAG",False)
+				F.Intrinsic.Control.If(V.Local.sRet,<,"995000")
+					F.Data.DataTable.SetValue("dtMaterialReq",V.Args.RowIndex,"SEQ_PART",V.Local.sRet(3),"SEQ_LOCN",V.Local.sRet(4),"QTY_EST",V.Local.sRet(6).Float,"QTY_ACT",V.Local.sRet(7).Float,"QTY_REM",V.Local.sRet(8).Float)
+				F.Intrinsic.Control.EndIf
+			F.Intrinsic.Control.EndIf
+		F.Intrinsic.Control.EndIf
+	F.Intrinsic.Control.Case("USE_GL")
+		F.Intrinsic.Control.If(V.Args.CellValue)
+			V.Local.sJob.Set(V.DataTable.dtMaterialReq(V.Args.RowIndex).ORIG_JOB!FieldVal)
+			V.Local.sSuffix.Set(V.DataTable.dtMaterialReq(V.Args.RowIndex).ORIG_SUFFIX!FieldVal)
+			V.Local.sGL.Set("")
+		F.Intrinsic.Control.Else
+			V.Local.sJob.Set("")
+			V.Local.sSuffix.Set("")
+			V.Local.sGL.Set(V.DataTable.dtMaterialReq(V.Args.RowIndex).ORIG_GL!FieldVal)
+		F.Intrinsic.Control.EndIf
+		F.Data.DataTable.SetValue("dtMaterialReq",V.Args.RowIndex,"USE_GL",V.Args.CellValue.Not,"GL_ACCOUNT",V.Local.sGL,"JOB",V.Local.sJob,"SUFFIX",V.Local.sSuffix,"SEQ",V.Ambient.DBNull,"SEQ_DESCR","","SEQ_PART",V.Ambient.DBNull,"SEQ_LOCN",V.Ambient.DBNull,"QTY_EST",V.Ambient.DBNull,"QTY_ACT",V.Ambient.DBNull,"QTY_REM",V.Ambient.DBNull,"SEQ_FLAG",False,"GL_FLAG",False)
+	F.Intrinsic.Control.Case("GL_ACCOUNT")
+		F.Intrinsic.Control.If(V.DataTable.dtMaterialReq(V.Args.RowIndex).USE_GL!FieldValNot)
+			F.Intrinsic.Control.ExitSub
+		F.Intrinsic.Control.EndIf
+		'Open GL Browser
+		F.Intrinsic.UI.Browser(6000,"",V.Local.sRet)
+		
+		F.Intrinsic.Control.If(V.Local.sRet.IsNotCancel)
+			F.Intrinsic.String.Split(v.Local.sRet,"*!*",v.Local.sRet)
+			F.Data.DataTable.SetValue("dtMaterialReq",V.Args.RowIndex,"GL_ACCOUNT",V.Local.sRet(0),"GL_FLAG",False)
+		F.Intrinsic.Control.EndIf
+	F.Intrinsic.Control.Case("PART")
+		'Open Supply and Demand
+		F.Intrinsic.Control.BlockEvents
+		F.Data.DataTable.AddRow("300011","Part",V.DataTable.dtMaterialReq(V.Args.RowIndex).PART!FieldVal,"Location",V.DataTable.dtMaterialReq(V.Args.RowIndex).LOCATION!FieldVal,"Switch","")
+		F.Intrinsic.Control.CallSub(300011Sync)
+		F.Intrinsic.Control.UnBlockEvents
+F.Intrinsic.Control.EndSelect
+
+F.Intrinsic.Control.Catch
+	F.Intrinsic.Control.CallSub(ErrorMessage,"ScriptFile",V.Caller.ScriptFile,"CurrentSubroutine",V.Ambient.CurrentSubroutine)
+	F.Intrinsic.Control.CallSub(F_Mat_Req_UnLoad)
+F.Intrinsic.Control.EndTry
+Program.Sub.gsgcMatReq_RowCellClick.End
+
+Program.Sub.chkAutoRefresh_Click.Start
+F.Intrinsic.Control.Try
+
+Gui.F_Mat_Req.frameAutoRefresh.Enabled(V.Screen.F_Mat_Req!chkAutoRefresh.CheckedAsBoolean)
+Gui.F_Mat_Req.timerAutoRefresh.Enabled(V.Screen.F_Mat_Req!chkAutoRefresh.CheckedAsBoolean)
+
+F.Intrinsic.Control.Catch
+	F.Intrinsic.Control.CallSub(ErrorMessage,"ScriptFile",V.Caller.ScriptFile,"CurrentSubroutine",V.Ambient.CurrentSubroutine)
+	F.Intrinsic.Control.CallSub(F_Mat_Req_UnLoad)
+F.Intrinsic.Control.EndTry
+Program.Sub.chkAutoRefresh_Click.End
+
+Program.Sub.txtAutoRefresh_LostFocus.Start
+V.Local.iInterval.Declare
+F.Intrinsic.Control.Try
+
+F.Intrinsic.Control.If(V.Screen.F_Mat_Req!txtAutoRefresh.Text.Long,=,0)
+	F.Intrinsic.Math.Div(V.Global.iInterval,60000,V.Local.iInterval)
+	Gui.F_Mat_Req.txtAutoRefresh.Text(V.Local.iInterval.String)
+F.Intrinsic.Control.Else
+	F.Intrinsic.Math.Mult(V.Screen.F_Mat_Req!txtAutoRefresh.Text.Long,60000,V.Local.iInterval)
+	F.Intrinsic.Control.If(V.Local.iInterval,!=,V.Global.iInterval)
+		V.Global.iInterval.Set(V.Local.iInterval)
+		Gui.F_Mat_Req.timerAutoRefresh.Interval(V.Local.iInterval)
+		Gui.F_Mat_Req.timerAutoRefresh.Enabled(False)
+		Gui.F_Mat_Req.timerAutoRefresh.Enabled(True)
+	F.Intrinsic.Control.EndIf
+F.Intrinsic.Control.EndIf
+
+F.Intrinsic.Control.Catch
+	F.Intrinsic.Control.CallSub(ErrorMessage,"ScriptFile",V.Caller.ScriptFile,"CurrentSubroutine",V.Ambient.CurrentSubroutine)
+	F.Intrinsic.Control.CallSub(F_Mat_Req_UnLoad)
+F.Intrinsic.Control.EndTry
+Program.Sub.txtAutoRefresh_LostFocus.End
+
+Program.Sub.timerAutoRefresh_Timer.Start
+F.Intrinsic.Control.Try
+
+F.Intrinsic.Control.CallSub(cmdRefresh_Click)
+
+F.Intrinsic.Control.Catch
+	F.Intrinsic.Control.CallSub(ErrorMessage,"ScriptFile",V.Caller.ScriptFile,"CurrentSubroutine",V.Ambient.CurrentSubroutine)
+	F.Intrinsic.Control.CallSub(F_Mat_Req_UnLoad)
+F.Intrinsic.Control.EndTry
+Program.Sub.timerAutoRefresh_Timer.End
+
+Program.Sub.F_Rej_Notes_UnLoad.Start
+F.Intrinsic.Control.Try
+
+F.Intrinsic.Control.If(V.Screen.F_Rej_Notes.Caption,=,"Reject Notes")
+	F.Data.DataTable.SetValue("dtMaterialReq",V.Screen.F_Rej_Notes!lblRow.Caption.Long,"REJECT_NOTES",V.Screen.F_Rej_Notes!txtReject.Text.Trim)
+F.Intrinsic.Control.EndIf
+
+Gui.F_Rej_Notes..Visible(False)
+Gui.F_Rej_Notes..Caption("Reject Notes")
+Gui.F_Rej_Notes.lblReject.Caption("Reject Notes")
+Gui.F_Rej_Notes.txtReject.Locked(False)
+Gui.F_Mat_Req..Enabled(True)
+Gui.F_Mat_Req..SetFocus
+
+F.Intrinsic.Control.Catch
+	F.Intrinsic.Control.CallSub(ErrorMessage,"ScriptFile",V.Caller.ScriptFile,"CurrentSubroutine",V.Ambient.CurrentSubroutine)
+	F.Intrinsic.Control.CallSub(F_Mat_Req_UnLoad)
+F.Intrinsic.Control.EndTry
+Program.Sub.F_Rej_Notes_UnLoad.End
+
+Program.Sub.Serialize.Start
+V.Local.Serialize.Declare
+F.Intrinsic.Control.Try
+
+'GridView - gvMaterialReq
+Gui.F_Mat_Req.gsgcMatReq.Serialize("gvMaterialReq",V.Local.Serialize)
+F.Global.Registry.AddValue(V.Caller.User,V.Caller.CompanyCode,"GVMATERIALREQ",6005,1000,False,"Serialize",False,0,-999.0,1/1/1980,12:00:00 AM,V.Local.Serialize)
+
+F.Intrinsic.Control.Catch
+	F.Intrinsic.Control.CallSub(ErrorMessage,"ScriptFile",V.Caller.ScriptFile,"CurrentSubroutine",V.Ambient.CurrentSubroutine)
+	F.Intrinsic.Control.CallSub(F_Mat_Req_UnLoad)
+F.Intrinsic.Control.EndTry
+Program.Sub.Serialize.End
+
+Program.Sub.Deserialize.Start
+V.Local.Serialize.Declare
+F.Intrinsic.Control.Try
+
+'GridView - gvMaterialReq
+F.Global.Registry.ReadValue(V.Caller.User,V.Caller.CompanyCode,"GVMATERIALREQ",6005,1000,6,"",V.Local.Serialize)
+F.Intrinsic.Control.If(V.Local.Serialize.Trim,<>,"")
+	Gui.F_Mat_Req.gsgcMatReq.Deserialize(V.Local.Serialize)
+F.Intrinsic.Control.EndIf
+
+F.Intrinsic.Control.Catch
+	F.Intrinsic.Control.CallSub(ErrorMessage,"ScriptFile",V.Caller.ScriptFile,"CurrentSubroutine",V.Ambient.CurrentSubroutine)
+	F.Intrinsic.Control.CallSub(F_Mat_Req_UnLoad)
+F.Intrinsic.Control.EndTry
+Program.Sub.Deserialize.End
+
+Program.Sub.SaveAutoRefresh.Start
+F.Intrinsic.Control.Try
+
+'Interval - timerAutoRefresh
+F.Global.Registry.AddValue(V.Caller.User,V.Caller.CompanyCode,"REFRESHINTERVAL",6005,100,False,"AutoRefreshSettings",V.Screen.F_Mat_Req!chkAutoRefresh.CheckedAsBoolean,V.Global.iInterval,-999.0,1/1/1980,12:00:00 AM,"")
+
+F.Intrinsic.Control.Catch
+	F.Intrinsic.Control.CallSub(ErrorMessage,"ScriptFile",V.Caller.ScriptFile,"CurrentSubroutine",V.Ambient.CurrentSubroutine)
+	F.Intrinsic.Control.CallSub(F_Mat_Req_UnLoad)
+F.Intrinsic.Control.EndTry
+Program.Sub.SaveAutoRefresh.End
+
+Program.Sub.LoadAutoRefresh.Start
+V.Local.iInterval.Declare
+V.Local.bEnabled.Declare
+F.Intrinsic.Control.Try
+
+'Interval - timerAutoRefresh
+F.Global.Registry.ReadValue(V.Caller.User,V.Caller.CompanyCode,"REFRESHINTERVAL",6005,100,1,300000,V.Global.iInterval)
+F.Global.Registry.ReadValue(V.Caller.User,V.Caller.CompanyCode,"REFRESHINTERVAL",6005,100,0,False,V.Local.bEnabled)
+F.Intrinsic.Math.Div(V.Global.iInterval,60000,V.Local.iInterval)
+Gui.F_Mat_Req.txtAutoRefresh.Text(V.Local.iInterval.String)
+Gui.F_Mat_Req.timerAutoRefresh.Interval(V.Global.iInterval)
+Gui.F_Mat_Req.chkAutoRefresh.Value(V.Local.bEnabled.Long)
+
+F.Intrinsic.Control.Catch
+	F.Intrinsic.Control.CallSub(ErrorMessage,"ScriptFile",V.Caller.ScriptFile,"CurrentSubroutine",V.Ambient.CurrentSubroutine)
+	F.Intrinsic.Control.CallSub(F_Mat_Req_UnLoad)
+F.Intrinsic.Control.EndTry
+Program.Sub.LoadAutoRefresh.End
+
+Program.Sub.cmdProcess_Click.Start
+V.Local.sDateReq.Declare
+V.Local.sTimeReq.Declare
+V.Local.sMsg.Declare
+V.Local.sSQLWhere.Declare
+V.Local.sSQLDelete.Declare
+V.Local.sSQL.Declare
+V.Local.sSQLGL.Declare
+V.Local.sDate.Declare
+V.Local.sTime.Declare
+V.Local.sQty.Declare
+V.Local.sLog.Declare
+V.Local.sFile.Declare
+V.Local.sFileString.Declare
+V.Local.sPart.Declare
+V.Local.sFilter.Declare
+V.Local.sFilterDate.Declare
+V.Local.sFilterTime.Declare
+V.Local.sRef.Declare
+V.Local.iRet.Declare
+V.Local.iCnt.Declare
+V.Local.iLotBin.Declare
+V.Local.iUseGL.Declare
+V.Local.bExists.Declare
+F.Intrinsic.Control.Try
+
+F.Data.DataView.Create("dtMaterialReq","dvApprove")
+F.Data.DataView.Create("dtMaterialReq","dvReject")
+
+F.Data.DataView.SetFilter("dtMaterialReq","dvApprove","[APPROVE]")
+F.Data.DataView.SetFilter("dtMaterialReq","dvReject","[REJECT] and [REJECT_NOTES_PRESENT]")
+
+F.Intrinsic.Control.If(V.DataView.dtMaterialReq!dvApprove.RowCount,=,0,and,V.DataView.dtMaterialReq!dvReject.RowCount,=,0)
+	'No rows selected, exit sub
+	F.Data.DataView.Close("dtMaterialReq","dvApprove")
+	F.Data.DataView.Close("dtMaterialReq","dvReject")
+	F.Intrinsic.Control.ExitSub
+F.Intrinsic.Control.EndIf
+
+F.Data.DataView.SetFilter("dtMaterialReq","dvApprove","[APPROVE] and isnull([USE_GL], True) <> True and isnull([SEQ], '') = ''")
+
+F.Intrinsic.Control.If(V.DataView.dtMaterialReq!dvApprove.RowCount,>,0)
+	'Missing sequences, flag them as red and exit
+	F.Intrinsic.String.Build("Some approved records do not have their Seq selected. If you continue, {0} approved record(s) will be skipped.{1}{1}Do you want to continue?",V.DataView.dtMaterialReq!dvApprove.RowCount,V.Ambient.NewLine,V.Local.sMsg)
+	F.Intrinsic.UI.Msgbox(V.Local.sMsg,"MISSING SEQS",4,V.Local.iRet)
+	F.Data.DataView.SetValue("dtMaterialReq","dvApprove",-1,"SEQ_FLAG",True)
+	F.Intrinsic.Control.If(V.Local.iRet,=,V.Ambient.MsgBoxNo)
+		F.Data.DataView.Close("dtMaterialReq","dvApprove")
+		F.Data.DataView.Close("dtMaterialReq","dvReject")
+		F.Intrinsic.Control.ExitSub
+	F.Intrinsic.Control.EndIf
+F.Intrinsic.Control.EndIf
+
+F.Data.DataView.SetFilter("dtMaterialReq","dvApprove","[APPROVE] and isnull([USE_GL], False) <> False and isnull([GL_ACCOUNT], '') = ''")
+
+F.Intrinsic.Control.If(V.DataView.dtMaterialReq!dvApprove.RowCount,>,0)
+	'Missing GL Accounts, flag them as red and exit
+	F.Intrinsic.String.Build("Some approved records do not have their GL Account selected. If you continue, {0} approved record(s) will be skipped.{1}{1}Do you want to continue?",V.DataView.dtMaterialReq!dvApprove.RowCount,V.Ambient.NewLine,V.Local.sMsg)
+	F.Intrinsic.UI.Msgbox(V.Local.sMsg,"MISSING SEQS",4,V.Local.iRet)
+	F.Data.DataView.SetValue("dtMaterialReq","dvApprove",-1,"GL_FLAG",True)
+	F.Intrinsic.Control.If(V.Local.iRet,=,V.Ambient.MsgBoxNo)
+		F.Data.DataView.Close("dtMaterialReq","dvApprove")
+		F.Data.DataView.Close("dtMaterialReq","dvReject")
+		F.Intrinsic.Control.ExitSub
+	F.Intrinsic.Control.EndIf
+F.Intrinsic.Control.EndIf
+
+F.Data.DataView.SetFilter("dtMaterialReq","dvApprove","[APPROVE] and [QTY_FLAG] = False")
+
+F.Intrinsic.Control.If(V.DataView.dtMaterialReq!dvApprove.RowCount,>,0)
+	'Some approved rows don't have their qty selected, ask if the user wants to continue
+	F.Intrinsic.String.Build("Some approved records do not have their Lot/Bin records selected. If you continue, {0} approved record(s) will be skipped.{1}{1}Do you want to continue?",V.DataView.dtMaterialReq!dvApprove.RowCount,V.Ambient.NewLine,V.Local.sMsg)
+	F.Intrinsic.UI.Msgbox(V.Local.sMsg,"MISSING LOT BIN RECORDS",4,V.Local.iRet)
+	F.Intrinsic.Control.If(V.Local.iRet,=,V.Ambient.MsgBoxNo)
+		F.Data.DataView.Close("dtMaterialReq","dvApprove")
+		F.Data.DataView.Close("dtMaterialReq","dvReject")
+		F.Intrinsic.Control.ExitSub
+	F.Intrinsic.Control.EndIf
+F.Intrinsic.Control.EndIf
+
+F.Data.DataView.SetFilter("dtMaterialReq","dvApprove","[APPROVE] and (isnull([SEQ], '') <> '' or [GL_ACCOUNT] <> '') and [QTY_FLAG]")
+
+Gui.F_Mat_Req..Enabled(False)
+
+F.Intrinsic.String.Format(V.Ambient.Date,"YYYY-MM-DD",V.Local.sDate)
+F.Intrinsic.String.Format(V.Ambient.Now,"YYYY-MM-DD HH:NN:SS",V.Local.sTime)
+
+F.Intrinsic.String.Build("Summary of transactions processed at this time: {0} by {1}",V.Local.sTime,V.Caller.User,V.Local.sLog)
+
+'Reject stuff
+F.ODBC.Connection!con.OpenCompanyConnection
+F.Intrinsic.Control.For(V.Local.iCnt,0,V.DataView.dtMaterialReq!dvReject.RowCount--,1)
+	F.Intrinsic.String.Format(V.DataView.dtMaterialReq!dvReject(V.Local.iCnt).DATE_REQ!FieldVal,"YYYY-MM-DD",V.Local.sDateReq)
+	F.Intrinsic.String.Format(V.DataView.dtMaterialReq!dvReject(V.Local.iCnt).TIME_REQ!FieldVal,"YYYY-MM-DD HH:NN:SS",V.Local.sTimeReq)
+	F.Intrinsic.Control.If(V.DataView.dtMaterialReq!dvReject(V.Local.iCnt).ORIG_GL!FieldValTrim,=,"")
+		V.Local.iUseGL.Set(0)
+	F.Intrinsic.Control.Else
+		V.Local.iUseGL.Set(1)
+	F.Intrinsic.Control.EndIf
+	F.Intrinsic.String.Build("EMPLOYEE = '{0}' and PART = '{1}' and LOCATION = '{2}' and JOB = '{4}' and SUFFIX = '{5}' and isnull(SEQ, '') = '' and GL_ACCOUNT = '{8}' and TIME_REQ >= '{7}.000' and TIME_REQ <= '{7}.999'",V.DataView.dtMaterialReq!dvReject(V.Local.iCnt).EMPLOYEE!FieldVal,V.DataView.dtMaterialReq!dvReject(V.Local.iCnt).PART!FieldVal,V.DataView.dtMaterialReq!dvReject(V.Local.iCnt).LOCATION!FieldVal,V.DataView.dtMaterialReq!dvReject(V.Local.iCnt).QTY_REQ!FieldValString,V.DataView.dtMaterialReq!dvReject(V.Local.iCnt).ORIG_JOB!FieldVal,V.DataView.dtMaterialReq!dvReject(V.Local.iCnt).ORIG_SUFFIX!FieldVal,V.DataView.dtMaterialReq!dvReject(V.Local.iCnt).SEQ!FieldVal,V.Local.sTimeReq,V.DataView.dtMaterialReq!dvReject(V.Local.iCnt).ORIG_GL!FieldVal,V.Local.sSQLWhere)
+	
+	F.Intrinsic.String.Build("delete from GCG_6005_MATREQ_Q where {0};",V.Local.sSQLWhere,V.Local.sSQLDelete)
+	F.Intrinsic.String.Build("select 1 from GCG_6005_MATREQ_Q where {0};",V.Local.sSQLWhere,V.Local.sSQL)
+	F.ODBC.Connection!con.ExecuteAndReturn(V.Local.sSQL,V.Local.sSQL)
+	F.Intrinsic.Control.If(V.Ambient.ExecuteAndReturnEOF.Not)
+		'Record is still in queue waiting to be processed so process it
+		F.ODBC.Connection!con.Execute(V.Local.sSQLDelete)
+		F.Intrinsic.String.Build("insert into GCG_6005_MAT_APPRV (EMPLOYEE, PART, LOCATION, QTY_REQ, JOB, SUFFIX, SEQ, DATE_REQ, TIME_REQ, ORIGIN_REQ, DATE_APPRV, TIME_APPRV, USER_APPRV, REJ_NOTES, APPRV_STATUS, USE_GL, GL_ACCOUNT) values ('{0}', '{1}', '{2}', {3}, '{4}', '{5}', '', '{7}', '{8}.000', '{9}', '{10}', '{11}.000', '{12}', '{13}', 'R', {14}, {15});",V.DataView.dtMaterialReq!dvReject(V.Local.iCnt).EMPLOYEE!FieldVal,V.DataView.dtMaterialReq!dvReject(V.Local.iCnt).PART!FieldVal,V.DataView.dtMaterialReq!dvReject(V.Local.iCnt).LOCATION!FieldVal,V.DataView.dtMaterialReq!dvReject(V.Local.iCnt).QTY_REQ!FieldValString,V.DataView.dtMaterialReq!dvReject(V.Local.iCnt).ORIG_JOB!FieldVal,V.DataView.dtMaterialReq!dvReject(V.Local.iCnt).ORIG_SUFFIX!FieldVal,"",V.Local.sDateReq,V.Local.sTimeReq,V.DataView.dtMaterialReq!dvReject(V.Local.iCnt).ORIGIN_REQ!FieldVal,V.Local.sDate,V.Local.sTime,V.Caller.User,V.DataView.dtMaterialReq!dvReject(V.Local.iCnt).REJECT_NOTES!FieldVal,V.Local.iUseGL.String,V.DataView.dtMaterialReq!dvReject(V.Local.iCnt).ORIG_GL!FieldVal,V.Local.sSQL)
+		F.ODBC.Connection!con.Execute(V.Local.sSQL)
+		
+		F.Intrinsic.String.Build("{0}{1}REJECTED: Qty {2} of Part {3} (Loc: {4}) to WO {5}",V.Local.sLog,V.Ambient.NewLine,V.DataView.dtMaterialReq!dvReject(V.Local.iCnt).QTY_REQ!FieldValString,V.DataView.dtMaterialReq!dvReject(V.Local.iCnt).PART!FieldVal,V.DataView.dtMaterialReq!dvReject(V.Local.iCnt).LOCATION!FieldVal,V.DataView.dtMaterialReq!dvReject(V.Local.iCnt).JOB!FieldVal,V.Local.sLog)
+		F.Intrinsic.Control.If(V.DataView.dtMaterialReq!dvReject(V.Local.iCnt).SUFFIX!FieldValTrim,!=,"")
+			F.Intrinsic.String.Build("{0}-{1}",V.Local.sLog,V.DataView.dtMaterialReq!dvReject(V.Local.iCnt).SUFFIX!FieldVal,V.Local.sLog)
+		F.Intrinsic.Control.EndIf
+		F.Intrinsic.String.Build("{0} {2}{3}Requested by Employee {4} on {5}",V.Local.sLog,V.DataView.dtMaterialReq!dvReject(V.Local.iCnt).SEQ!FieldVal,V.Ambient.NewLine,V.Ambient.Tab,V.DataView.dtMaterialReq!dvReject(V.Local.iCnt).EMPLOYEE!FieldVal,V.Local.sTimeReq,V.Local.sLog)
+	F.Intrinsic.Control.Else
+		'Record is no longer in queue, make a log?
+		F.Intrinsic.String.Build("{0}{1}FAILED REJECTION: Item has already been processed by another user/Qty {2} of Part {3} (Loc: {4})",V.Local.sLog,V.Ambient.NewLine,V.DataView.dtMaterialReq!dvReject(V.Local.iCnt).QTY_REQ!FieldValString,V.DataView.dtMaterialReq!dvReject(V.Local.iCnt).PART!FieldVal,V.DataView.dtMaterialReq!dvReject(V.Local.iCnt).LOCATION!FieldVal,V.Local.sLog)
+		F.Intrinsic.String.Build("{0}{2}{3}Requested by Employee {4} on {5}",V.Local.sLog,"",V.Ambient.NewLine,V.Ambient.Tab,V.DataView.dtMaterialReq!dvReject(V.Local.iCnt).EMPLOYEE!FieldVal,V.Local.sTimeReq,V.Local.sLog)
+	F.Intrinsic.Control.EndIf
+F.Intrinsic.Control.Next(V.Local.iCnt)
+
+F.Data.DataView.Create("dtLotBin","dvApprove")
+
+'Approve stuff
+F.Intrinsic.Control.For(V.Local.iCnt,0,V.DataView.dtMaterialReq!dvApprove.RowCount--,1)
+	F.Intrinsic.String.Format(V.DataView.dtMaterialReq!dvApprove(V.Local.iCnt).DATE_REQ!FieldVal,"YYYY-MM-DD",V.Local.sDateReq)
+	F.Intrinsic.String.Format(V.DataView.dtMaterialReq!dvApprove(V.Local.iCnt).TIME_REQ!FieldVal,"YYYY-MM-DD HH:NN:SS",V.Local.sTimeReq)
+	F.Intrinsic.Control.If(V.DataView.dtMaterialReq!dvApprove(V.Local.iCnt).USE_GL!FieldValNot)
+		V.Local.iUseGL.Set(0)
+	F.Intrinsic.Control.Else
+		V.Local.iUseGL.Set(1)
+	F.Intrinsic.Control.EndIf
+	F.Intrinsic.String.Build("EMPLOYEE = '{0}' and PART = '{1}' and LOCATION = '{2}' and JOB = '{4}' and SUFFIX = '{5}' and isnull(SEQ, '') = '' and GL_ACCOUNT = '{8}' and TIME_REQ >= '{7}.000' and TIME_REQ <= '{7}.999'",V.DataView.dtMaterialReq!dvApprove(V.Local.iCnt).EMPLOYEE!FieldVal,V.DataView.dtMaterialReq!dvApprove(V.Local.iCnt).PART!FieldVal,V.DataView.dtMaterialReq!dvApprove(V.Local.iCnt).LOCATION!FieldVal,V.DataView.dtMaterialReq!dvApprove(V.Local.iCnt).QTY_REQ!FieldValString,V.DataView.dtMaterialReq!dvApprove(V.Local.iCnt).ORIG_JOB!FieldVal,V.DataView.dtMaterialReq!dvApprove(V.Local.iCnt).ORIG_SUFFIX!FieldVal,V.DataView.dtMaterialReq!dvApprove(V.Local.iCnt).SEQ!FieldVal,V.Local.sTimeReq,V.DataView.dtMaterialReq!dvApprove(V.Local.iCnt).ORIG_GL!FieldVal,V.Local.sSQLWhere)
+	
+	F.Intrinsic.String.Build("delete from GCG_6005_MATREQ_Q where {0};",V.Local.sSQLWhere,V.Local.sSQLDelete)
+	F.Intrinsic.String.Build("select 1 from GCG_6005_MATREQ_Q where {0};",V.Local.sSQLWhere,V.Local.sSQL)
+	F.ODBC.Connection!con.ExecuteAndReturn(V.Local.sSQL,V.Local.sSQL)
+	F.Intrinsic.Control.If(V.Ambient.ExecuteAndReturnEOF.Not)
+		'Record is still in queue waiting to be processed so process it
+		F.Intrinsic.String.Build("insert into GCG_6005_MAT_APPRV (EMPLOYEE, PART, LOCATION, QTY_REQ, JOB, SUFFIX, SEQ, DATE_REQ, TIME_REQ, ORIGIN_REQ, DATE_APPRV, TIME_APPRV, USER_APPRV, REJ_NOTES, APPRV_STATUS, USE_GL, GL_ACCOUNT) values ('{0}', '{1}', '{2}', {3}, '{4}', '{5}', '{6}', '{7}', '{8}.000', '{9}', '{10}', '{11}.000', '{12}', '', 'A', {13}, '{14}');",V.DataView.dtMaterialReq!dvApprove(V.Local.iCnt).EMPLOYEE!FieldVal,V.DataView.dtMaterialReq!dvApprove(V.Local.iCnt).PART!FieldVal,V.DataView.dtMaterialReq!dvApprove(V.Local.iCnt).LOCATION!FieldVal,V.DataView.dtMaterialReq!dvApprove(V.Local.iCnt).QTY_REQ!FieldValString,V.DataView.dtMaterialReq!dvApprove(V.Local.iCnt).JOB!FieldVal,V.DataView.dtMaterialReq!dvApprove(V.Local.iCnt).SUFFIX!FieldVal,V.DataView.dtMaterialReq!dvApprove(V.Local.iCnt).SEQ!FieldVal,V.Local.sDateReq,V.Local.sTimeReq,V.DataView.dtMaterialReq!dvApprove(V.Local.iCnt).ORIGIN_REQ!FieldVal,V.Local.sDate,V.Local.sTime,V.Caller.User,V.Local.iUseGL.String,V.DataView.dtMaterialReq!dvApprove(V.Local.iCnt).GL_ACCOUNT!FieldVal,V.Local.sSQL)
+		F.ODBC.Connection!con.Execute(V.Local.sSQL)
+		
+		F.Intrinsic.String.RPad(V.DataView.dtMaterialReq!dvApprove(V.Local.iCnt).PART!FieldVal," ",20,V.Local.sPart)
+		F.Intrinsic.String.Format(V.DataView.dtMaterialReq!dvApprove(V.Local.iCnt).DATE_REQ!FieldVal,"M/D/YYYY",V.Local.sFilterDate)
+		F.Intrinsic.String.Format(V.DataView.dtMaterialReq!dvApprove(V.Local.iCnt).TIME_REQ!FieldVal,"M/D/YYYY H:N:S AMPM",V.Local.sFilterTime)
+		F.Intrinsic.String.Build("[PART] = '{0}' and [LOC] = '{1}' and [EMPLOYEE] = '{2}' and [JOB] = '{3}' and [SUFFIX] = '{4}' and [GL_ACCOUNT] = '{7}' and [DATE_REQ] = #{5}# and [TIME_REQ] = #{6}# and [QTY_REQ] > 0",V.DataView.dtMaterialReq!dvApprove(V.Local.iCnt).PART!FieldVal,V.DataView.dtMaterialReq!dvApprove(V.Local.iCnt).LOCATION!FieldVal,V.DataView.dtMaterialReq!dvApprove(V.Local.iCnt).EMPLOYEE!FieldVal,V.DataView.dtMaterialReq!dvApprove(V.Local.iCnt).ORIG_JOB!FieldVal,V.DataView.dtMaterialReq!dvApprove(V.Local.iCnt).ORIG_SUFFIX!FieldVal,V.Local.sFilterDate,V.Local.sFilterTime,V.DataView.dtMaterialReq!dvApprove(V.Local.iCnt).ORIG_GL!FieldVal,V.Local.sFilter)
+		F.Data.DataView.SetFilter("dtLotBin","dvApprove",V.Local.sFilter)
+		
+		F.Intrinsic.Control.If(v.DataView.dtMaterialReq!dvApprove(V.Local.iCnt).USE_GL!FieldVal)
+			'First check that the GL Account exists
+			F.Intrinsic.String.Build("select 1 from V_GL_MASTER where GL_ACCOUNT = '{0}';",V.DataView.dtMaterialReq!dvApprove(V.Local.iCnt).GL_ACCOUNT!FieldVal,V.Local.sSQLGL)
+			F.ODBC.Connection!con.ExecuteAndReturn(V.Local.sSQLGL,V.Local.sSQLGL)
+			F.Intrinsic.Control.If(V.Ambient.ExecuteAndReturnEOF.Not)
+				'GL Account exists, loop and issue
+				F.ODBC.Connection!con.Execute(V.Local.sSQLDelete)
+				F.Intrinsic.String.Build("REQD EMP {0}",V.DataView.dtMaterialReq!dvApprove(V.Local.iCnt).EMPLOYEE!FieldVal,V.Local.sRef)
+				F.Intrinsic.Control.For(V.Local.iLotBin,0,V.DataView.dtLotBin!dvApprove.RowCount--,1)
+					F.Intrinsic.String.Split(V.DataView.dtLotBin!dvApprove(V.Local.iLotBin).QTY_REQ!FieldValString,".",V.Local.sQty)
+					F.Intrinsic.Control.If(V.Local.sQty.UBound,=,1)
+						F.Intrinsic.String.Join(V.Local.sQty,".",V.Local.sQty)
+						V.Local.sQty.RedimPreserve(0,0)
+					F.Intrinsic.Control.Else
+						F.Intrinsic.String.Build("{0}.",V.Local.sQty,V.Local.sQty)
+					F.Intrinsic.Control.EndIf
+					'Standalone Issue stuff
+					F.Data.DataTable.AddRow("StandAloneIssueReceipts","PART",V.DataView.dtMaterialReq!dvApprove(V.Local.iCnt).PART!FieldVal,"LOCATION",V.DataView.dtMaterialReq!dvApprove(V.Local.iCnt).LOCATION!FieldVal,"QTY",V.Local.sQty,"REFERENCE",V.Local.sRef,"LOT",V.DataView.dtLotBin!dvApprove(V.Local.iLotBin).LOT!FieldVal,"BIN",V.DataView.dtLotBin!dvApprove(V.Local.iLotBin).BIN!FieldVal,"HEAT",V.DataView.dtLotBin!dvApprove(V.Local.iLotBin).HEAT!FieldVal,"SERIAL",V.DataView.dtLotBin!dvApprove(V.Local.iLotBin).SERIAL!FieldVal,"ISSUE_RECEIPT","I","GL_ACCOUNT",V.DataView.dtMaterialReq!dvApprove(V.Local.iCnt).GL_ACCOUNT!FieldVal,"COST",V.DataView.dtLotBin!dvApprove(V.Local.iLotBin).COST!FieldValString,"ALLOW_ZERO_COST_FLAG","N")
+				F.Intrinsic.Control.Next(V.Local.iLotBin)
+				
+				F.Intrinsic.String.Build("{0}{1}APPROVED: Qty {2} of Part {3} (Loc: {4}) to GL Account {5}",V.Local.sLog,V.Ambient.NewLine,V.DataView.dtMaterialReq!dvApprove(V.Local.iCnt).QTY_REQ!FieldValString,V.DataView.dtMaterialReq!dvApprove(V.Local.iCnt).PART!FieldVal,V.DataView.dtMaterialReq!dvApprove(V.Local.iCnt).LOCATION!FieldVal,V.DataView.dtMaterialReq!dvApprove(V.Local.iCnt).GL_ACCOUNT!FieldVal,V.Local.sLog)
+				F.Intrinsic.String.Build("{0}{2}{3}Requested by Employee {4} on {5}",V.Local.sLog,V.DataView.dtMaterialReq!dvApprove(V.Local.iCnt).SEQ!FieldVal,V.Ambient.NewLine,V.Ambient.Tab,V.DataView.dtMaterialReq!dvApprove(V.Local.iCnt).EMPLOYEE!FieldVal,V.Local.sTimeReq,V.Local.sLog)
+			F.Intrinsic.Control.Else
+				'GL Account does not exist, log and do nothing
+				F.Intrinsic.String.Build("{0}{1}FAILED APPROVAL: Qty {2} of Part {3} (Loc: {4}) to GL Account {5}",V.Local.sLog,V.Ambient.NewLine,V.DataView.dtMaterialReq!dvApprove(V.Local.iCnt).QTY_REQ!FieldValString,V.DataView.dtMaterialReq!dvApprove(V.Local.iCnt).PART!FieldVal,V.DataView.dtMaterialReq!dvApprove(V.Local.iCnt).LOCATION!FieldVal,V.DataView.dtMaterialReq!dvApprove(V.Local.iCnt).GL_ACCOUNT!FieldVal,V.Local.sLog)
+				F.Intrinsic.String.Build("{0}{2}{3}Requested by Employee {4} on {5}{2}{3}GL Account {1} could not be found",V.Local.sLog,V.DataView.dtMaterialReq!dvApprove(V.Local.iCnt).GL_ACCOUNT!FieldVal,V.Ambient.NewLine,V.Ambient.Tab,V.DataView.dtMaterialReq!dvApprove(V.Local.iCnt).EMPLOYEE!FieldVal,V.Local.sTimeReq,V.Local.sLog)
+			F.Intrinsic.Control.EndIf
+		F.Intrinsic.Control.Else
+			'Now issue the material to job based on the data provided
+			F.ODBC.Connection!con.Execute(V.Local.sSQLDelete)
+			F.Intrinsic.Control.For(V.Local.iLotBin,0,V.DataView.dtLotBin!dvApprove.RowCount--,1)
+				F.Intrinsic.String.Split(V.DataView.dtLotBin!dvApprove(V.Local.iLotBin).QTY_REQ!FieldValString,".",V.Local.sQty)
+				F.Intrinsic.Control.If(V.Local.sQty.UBound,=,1)
+					F.Intrinsic.String.Join(V.Local.sQty,".",V.Local.sQty)
+					V.Local.sQty.RedimPreserve(0,0)
+				F.Intrinsic.Control.Else
+					F.Intrinsic.String.Build("{0}.",V.Local.sQty,V.Local.sQty)
+				F.Intrinsic.Control.EndIf
+				'Issue Material to Job
+				F.Intrinsic.Control.If(V.Global.bUseRev)
+					F.Data.DataTable.AddRow("450100","Part",V.Local.sPart.Left17,"Rev",V.Local.sPart.Right3,"Location",V.DataView.dtMaterialReq!dvApprove(V.Local.iCnt).LOCATION!FieldVal,"Quantity",V.Local.sQty,"WONumber",V.DataView.dtMaterialReq!dvApprove(V.Local.iCnt).JOB!FieldVal,"WOSuffix",V.DataView.dtMaterialReq!dvApprove(V.Local.iCnt).SUFFIX!FieldVal,"WOSeq",V.DataView.dtMaterialReq!dvApprove(V.Local.iCnt).SEQ!FieldVal,"Lot",V.DataView.dtLotBin!dvApprove(V.Local.iLotBin).LOT!FieldVal,"Bin",V.DataView.dtLotBin!dvApprove(V.Local.iLotBin).BIN!FieldVal,"Heat",V.DataView.dtLotBin!dvApprove(V.Local.iLotBin).HEAT!FieldVal,"Serial",V.DataView.dtLotBin!dvApprove(V.Local.iLotBin).SERIAL!FieldVal)
+				F.Intrinsic.Control.Else
+					F.Data.DataTable.AddRow("450100","Part",V.DataView.dtMaterialReq!dvApprove(V.Local.iCnt).PART!FieldVal,"Location",V.DataView.dtMaterialReq!dvApprove(V.Local.iCnt).LOCATION!FieldVal,"Quantity",V.Local.sQty,"WONumber",V.DataView.dtMaterialReq!dvApprove(V.Local.iCnt).JOB!FieldVal,"WOSuffix",V.DataView.dtMaterialReq!dvApprove(V.Local.iCnt).SUFFIX!FieldVal,"WOSeq",V.DataView.dtMaterialReq!dvApprove(V.Local.iCnt).SEQ!FieldVal,"Lot",V.DataView.dtLotBin!dvApprove(V.Local.iLotBin).LOT!FieldVal,"Bin",V.DataView.dtLotBin!dvApprove(V.Local.iLotBin).BIN!FieldVal,"Heat",V.DataView.dtLotBin!dvApprove(V.Local.iLotBin).HEAT!FieldVal,"Serial",V.DataView.dtLotBin!dvApprove(V.Local.iLotBin).SERIAL!FieldVal)
+				F.Intrinsic.Control.EndIf
+			F.Intrinsic.Control.Next(V.Local.iLotBin)
+			
+			F.Intrinsic.String.Build("{0}{1}APPROVED: Qty {2} of Part {3} (Loc: {4}) to WO {5}",V.Local.sLog,V.Ambient.NewLine,V.DataView.dtMaterialReq!dvApprove(V.Local.iCnt).QTY_REQ!FieldValString,V.DataView.dtMaterialReq!dvApprove(V.Local.iCnt).PART!FieldVal,V.DataView.dtMaterialReq!dvApprove(V.Local.iCnt).LOCATION!FieldVal,V.DataView.dtMaterialReq!dvApprove(V.Local.iCnt).JOB!FieldVal,V.Local.sLog)
+			F.Intrinsic.Control.If(V.DataView.dtMaterialReq!dvApprove(V.Local.iCnt).SUFFIX!FieldValTrim,!=,"")
+				F.Intrinsic.String.Build("{0}-{1}",V.Local.sLog,V.DataView.dtMaterialReq!dvApprove(V.Local.iCnt).SUFFIX!FieldVal,V.Local.sLog)
+			F.Intrinsic.Control.EndIf
+			F.Intrinsic.String.Build("{0} Seq {1}{2}{3}Requested by Employee {4} on {5}",V.Local.sLog,V.DataView.dtMaterialReq!dvApprove(V.Local.iCnt).SEQ!FieldVal,V.Ambient.NewLine,V.Ambient.Tab,V.DataView.dtMaterialReq!dvApprove(V.Local.iCnt).EMPLOYEE!FieldVal,V.Local.sTimeReq,V.Local.sLog)
+		F.Intrinsic.Control.EndIf
+	F.Intrinsic.Control.Else
+		'Record is no longer in queue, make a log?
+		F.Intrinsic.String.Build("{0}{1}FAILED APPROVAL: Item has already been processed by another user/Qty {2} of Part {3} (Loc: {4}) to WO {5}",V.Local.sLog,V.Ambient.NewLine,V.DataView.dtMaterialReq!dvApprove(V.Local.iCnt).QTY_REQ!FieldValString,V.DataView.dtMaterialReq!dvApprove(V.Local.iCnt).PART!FieldVal,V.DataView.dtMaterialReq!dvApprove(V.Local.iCnt).LOCATION!FieldVal,V.DataView.dtMaterialReq!dvApprove(V.Local.iCnt).JOB!FieldVal,V.Local.sLog)
+		F.Intrinsic.Control.If(V.DataView.dtMaterialReq!dvApprove(V.Local.iCnt).SUFFIX!FieldValTrim,!=,"")
+			F.Intrinsic.String.Build("{0}-{1}",V.Local.sLog,V.DataView.dtMaterialReq!dvApprove(V.Local.iCnt).SUFFIX!FieldVal,V.Local.sLog)
+		F.Intrinsic.Control.EndIf
+		F.Intrinsic.String.Build("{0} Seq {1}{2}{3}Requested by Employee {4} on {5}",V.Local.sLog,V.DataView.dtMaterialReq!dvApprove(V.Local.iCnt).SEQ!FieldVal,V.Ambient.NewLine,V.Ambient.Tab,V.DataView.dtMaterialReq!dvApprove(V.Local.iCnt).EMPLOYEE!FieldVal,V.Local.sTimeReq,V.Local.sLog)
+	F.Intrinsic.Control.EndIf
+F.Intrinsic.Control.Next(V.Local.iCnt)
+F.ODBC.Connection!con.Close
+
+'Issue material if they are ready to be issued
+F.Intrinsic.Control.If(V.DataTable.450100.RowCount,>,0)
+	F.Intrinsic.Control.CallSub(450100Sync)
+F.Intrinsic.Control.EndIf
+
+F.Intrinsic.Control.If(V.DataTable.StandAloneIssueReceipts.RowCount,>,0)
+	F.Intrinsic.Control.CallSub(StandAloneIssueReceipts,"UseRev",V.Global.bUseRev)
+F.Intrinsic.Control.EndIf
+
+'write log file to temp folder
+F.Intrinsic.String.Build("{0}GCG_6005_LOG_{1}.txt",V.Caller.LocalGSSTempDir,V.Caller.PID,V.Local.sFile)
+F.Intrinsic.File.Exists(V.Local.sFile,V.Local.bExists)
+F.Intrinsic.Control.If(V.Local.bExists)
+	'Log file exists for this session, read it in and add new log data
+	F.Intrinsic.File.File2String(V.Local.sFile,V.Local.sFileString)
+	F.Intrinsic.String.Build("{0}{1}{2}",V.Local.sFileString,V.Ambient.NewLine,V.Local.sLog,V.Local.sLog)
+F.Intrinsic.Control.EndIf
+F.Intrinsic.File.String2File(V.Local.sFile,V.Local.sLog)
+
+Gui.F_Mat_Req.cmdLog.Enabled(True)
+
+F.Intrinsic.Control.CallSub(cmdRefresh_Click)
+
+Gui.F_Mat_Req..Enabled(True)
+Gui.F_Mat_Req..SetFocus
+
+F.Intrinsic.Control.Catch
+	F.Intrinsic.Control.CallSub(ErrorMessage,"ScriptFile",V.Caller.ScriptFile,"CurrentSubroutine",V.Ambient.CurrentSubroutine)
+	F.Intrinsic.Control.CallSub(F_Mat_Req_UnLoad)
+F.Intrinsic.Control.EndTry
+Program.Sub.cmdProcess_Click.End
+
+Program.Sub.cmdLog_Click.Start
+V.Local.sFile.Declare
+V.Local.bExists.Declare
+F.Intrinsic.Control.Try
+
+F.Intrinsic.String.Build("{0}GCG_6005_LOG_{1}.txt",V.Caller.LocalGSSTempDir,V.Caller.PID,V.Local.sFile)
+F.Intrinsic.File.Exists(V.Local.sFile,V.Local.bExists)
+F.Intrinsic.Control.If(V.Local.bExists)
+	F.Intrinsic.Task.ShellExec(0,"",V.Local.sFile,"","",1)
+F.Intrinsic.Control.Else
+	F.Intrinsic.UI.Msgbox("ERROR: Log file cannot be found. Please check that your anti-virus settings have your local temp directory added to its white listed directories.")
+F.Intrinsic.Control.EndIf
+
+F.Intrinsic.Control.Catch
+	F.Intrinsic.Control.CallSub(ErrorMessage,"ScriptFile",V.Caller.ScriptFile,"CurrentSubroutine",V.Ambient.CurrentSubroutine)
+	F.Intrinsic.Control.CallSub(F_Mat_Req_UnLoad)
+F.Intrinsic.Control.EndTry
+Program.Sub.cmdLog_Click.End
+
+Program.Sub.gsgcLotBin_CellValueChanged.Start
+V.Local.sFilter.Declare
+V.Local.sFilterDate.Declare
+V.Local.sFilterTime.Declare
+V.Local.fQty.Declare
+V.Local.fDiff.Declare
+F.Intrinsic.Control.Try
+
+F.Intrinsic.Control.SelectCase(V.Args.Column.UCase)
+	F.Intrinsic.Control.Case("QTY_REQ")
+		F.Intrinsic.Control.If(V.Args.Value.String,!=,"")
+			F.Intrinsic.Control.If(V.Args.Value,<=,0)
+				F.Data.DataTable.SetValue("dtLotBin",V.Args.RowIndex,"QTY_REQ",0)
+			F.Intrinsic.Control.ElseIf(V.Args.Value,>,V.DataTable.dtLotBin(V.Args.RowIndex).QUANTITY!FieldVal)
+				F.Data.DataTable.SetValue("dtLotBin",V.Args.RowIndex,"QTY_REQ",V.DataTable.dtLotBin(V.Args.RowIndex).QUANTITY!FieldVal)
+			F.Intrinsic.Control.EndIf
+		F.Intrinsic.Control.Else
+			F.Data.DataTable.SetValue("dtLotBin",V.Args.RowIndex,"QTY_REQ",0)
+		F.Intrinsic.Control.EndIf
+		F.Intrinsic.String.Format(V.DataTable.dtMaterialReq(V.Global.iLotBin).DATE_REQ!FieldVal,"M/D/YYYY",V.Local.sFilterDate)
+		F.Intrinsic.String.Format(V.DataTable.dtMaterialReq(V.Global.iLotBin).TIME_REQ!FieldVal,"M/D/YYYY H:N:S AMPM",V.Local.sFilterTime)
+		F.Intrinsic.String.Build("[PART] = '{0}' and [LOC] = '{1}' and [EMPLOYEE] = '{2}' and [JOB] = '{3}' and [SUFFIX] = '{4}' and [GL_ACCOUNT] = '{7}' and [DATE_REQ] = #{5}# and [TIME_REQ] = #{6}#",V.DataTable.dtMaterialReq(V.Global.iLotBin).PART!FieldVal,V.DataTable.dtMaterialReq(V.Global.iLotBin).LOCATION!FieldVal,V.DataTable.dtMaterialReq(V.Global.iLotBin).EMPLOYEE!FieldVal,V.DataTable.dtMaterialReq(V.Global.iLotBin).ORIG_JOB!FieldVal,V.DataTable.dtMaterialReq(V.Global.iLotBin).ORIG_SUFFIX!FieldVal,V.Local.sFilterDate,V.Local.sFilterTime,V.DataTable.dtMaterialReq(V.Global.iLotBin).ORIG_GL!FieldVal,V.Local.sFilter)
+		F.Data.DataView.SetFilter("dtLotBin","dvPart",V.Local.sFilter)
+		F.Data.DataTable.Compute("dtLotBin","sum(QTY_REQ)",V.Local.sFilter,V.Local.fQty)
+		F.Intrinsic.Math.Sub(V.DataTable.dtMaterialReq(V.Global.iLotBin).QTY_REQ!FieldVal,V.Local.fQty,V.Local.fDiff)
+		F.Intrinsic.Control.If(V.Local.fDiff,<,0)
+			F.Intrinsic.Math.Add(V.DataTable.dtLotBin(V.Args.RowIndex).QTY_REQ!FieldVal,V.Local.fDiff,V.Local.fQty)
+			F.Data.DataTable.SetValue("dtLotBin",V.Args.RowIndex,"QTY_REQ",V.Local.fQty)
+			F.Data.DataTable.SetValue("dtMaterialReq",V.Global.iLotBin,"QTY_FLAG",True)
+		F.Intrinsic.Control.ElseIf(V.Local.fDiff,=,0)
+			F.Data.DataTable.SetValue("dtMaterialReq",V.Global.iLotBin,"QTY_FLAG",True)
+		F.Intrinsic.Control.Else
+			F.Data.DataTable.SetValue("dtMaterialReq",V.Global.iLotBin,"QTY_FLAG",False)
+		F.Intrinsic.Control.EndIf
+F.Intrinsic.Control.EndSelect
+
+F.Intrinsic.Control.Catch
+	F.Intrinsic.Control.CallSub(ErrorMessage,"ScriptFile",V.Caller.ScriptFile,"CurrentSubroutine",V.Ambient.CurrentSubroutine)
+	F.Intrinsic.Control.CallSub(F_Mat_Req_UnLoad)
+F.Intrinsic.Control.EndTry
+Program.Sub.gsgcLotBin_CellValueChanged.End
+
+Program.Sub.cmdRpt_Click.Start
+V.Local.iBIRunID.Declare
+V.Local.iBILogID.Declare
+V.Local.iRptID.Declare
+V.Local.iRet.Declare
+F.Intrinsic.Control.Try
+
+F.Global.BI.GetIDFromName("Material Request History (100220).rpt",V.Local.iRptID)
+
+F.Intrinsic.Control.If(V.Local.iRptID,=,-1)
+	F.Intrinsic.Control.ExitSub
+F.Intrinsic.Control.EndIf
+Gui.F_Mat_Req..Enabled(False)
+
+F.Global.BI.GetRunID(V.Local.iBIRunID.Declare)
+
+F.Global.BI.StartLogging(V.Local.iBIRunID,V.Local.iRptID,0,"",V.Local.iBILogID)
+
+F.Global.BI.StopLogging(V.Local.iBILogID)
+
+F.Global.BI.RunReportPreProcessor(V.Local.iBIRunID,V.Local.iBILogID,"""","""","""",16,True,"""",-1,"""",-1,"""","""",V.Local.iRet)
+
+Gui.F_Mat_Req..Enabled(True)
+Gui.F_Mat_Req..SetFocus
+
+F.Intrinsic.Control.Catch
+	F.Intrinsic.Control.CallSub(ErrorMessage,"ScriptFile",V.Caller.ScriptFile,"CurrentSubroutine",V.Ambient.CurrentSubroutine)
+	F.Intrinsic.Control.CallSub(F_Mat_Req_UnLoad)
+F.Intrinsic.Control.EndTry
+Program.Sub.cmdRpt_Click.End
+
+Program.Sub.gsgcMatReq_CellValueChanged.Start
+V.Local.sFilterDate.Declare
+V.Local.sFilterTime.Declare
+V.Local.sFilter.Declare
+V.Local.fValue.Declare
+V.Local.fQty.Declare
+F.Intrinsic.Control.Try
+
+F.Intrinsic.String.Format(V.DataTable.dtMaterialReq(V.Args.RowIndex).DATE_REQ!FieldVal,"M/D/YYYY",V.Local.sFilterDate)
+F.Intrinsic.String.Format(V.DataTable.dtMaterialReq(V.Args.RowIndex).TIME_REQ!FieldVal,"M/D/YYYY H:N:S AMPM",V.Local.sFilterTime)
+F.Intrinsic.String.Build("[PART] = '{0}' and [LOC] = '{1}' and [EMPLOYEE] = '{2}' and [JOB] = '{3}' and [SUFFIX] = '{4}' and [GL_ACCOUNT] = '{7}' and [DATE_REQ] = #{5}# and [TIME_REQ] = #{6}#",V.DataTable.dtMaterialReq(V.Args.RowIndex).PART!FieldVal,V.DataTable.dtMaterialReq(V.Args.RowIndex).LOCATION!FieldVal,V.DataTable.dtMaterialReq(V.Args.RowIndex).EMPLOYEE!FieldVal,V.DataTable.dtMaterialReq(V.Args.RowIndex).ORIG_JOB!FieldVal,V.DataTable.dtMaterialReq(V.Args.RowIndex).ORIG_SUFFIX!FieldVal,V.Local.sFilterDate,V.Local.sFilterTime,V.DataTable.dtMaterialReq(V.Args.RowIndex).ORIG_GL!FieldVal,V.Local.sFilter)
+F.Data.DataView.SetFilter("dtLotBin","dvPart",V.Local.sFilter)
+V.Global.iLotBin.Set(V.Args.RowIndex)
+
+F.Intrinsic.Control.SelectCase(V.Args.Column.UCase)
+	F.Intrinsic.Control.Case("QTY_REQ")
+		F.Intrinsic.Control.If(V.Args.Value.String,=,"")
+			V.Local.fValue.Set(0)
+		F.Intrinsic.Control.Else
+			V.Local.fValue.Set(V.Args.Value)
+		F.Intrinsic.Control.EndIf
+		
+		F.Data.DataTable.Compute("dtLotBin","sum(QTY_REQ)",V.Local.sFilter,V.Local.fQty)
+		F.Intrinsic.Control.If(V.Local.fValue,<=,0)
+			F.Intrinsic.Control.If(V.Local.fQty,>,0)
+				F.Data.DataTable.SetValue("dtMaterialReq",V.Args.RowIndex,"QTY_REQ",V.Local.fValue,"QTY_FLAG",True)
+			F.Intrinsic.Control.Else
+				F.Data.DataTable.SetValue("dtMaterialReq",V.Args.RowIndex,"QTY_REQ",1,"QTY_FLAG",False)
+			F.Intrinsic.Control.EndIf
+		F.Intrinsic.Control.ElseIf(V.Local.fValue,<=,V.Local.fQty)
+			F.Data.DataTable.SetValue("dtMaterialReq",V.Args.RowIndex,"QTY_REQ",V.Local.fValue,"QTY_FLAG",True)
+		F.Intrinsic.Control.Else
+			F.Data.DataTable.SetValue("dtMaterialReq",V.Args.RowIndex,"QTY_FLAG",False)
+		F.Intrinsic.Control.EndIf
+F.Intrinsic.Control.EndSelect
+
+F.Intrinsic.Control.Catch
+	F.Intrinsic.Control.CallSub(ErrorMessage,"ScriptFile",V.Caller.ScriptFile,"CurrentSubroutine",V.Ambient.CurrentSubroutine)
+	F.Intrinsic.Control.CallSub(F_Mat_Req_UnLoad)
+F.Intrinsic.Control.EndTry
+Program.Sub.gsgcMatReq_CellValueChanged.End
+
+Program.Sub.gsgcLotBin_GotFocus.Start
+V.Local.sRow.Declare
+V.Local.sFilterDate.Declare
+V.Local.sFilterTime.Declare
+V.Local.sFilter.Declare
+F.Intrinsic.Control.Try
+
+Gui.F_Mat_Req.gsgcMatReq.GetSelectedRows("gvMaterialReq",V.Local.sRow)
+F.Intrinsic.Control.If(V.Local.sRow.Long,!=,V.Global.iLotBin)
+	V.Global.iLotBin.Set(V.Local.sRow.Long)
+	F.Intrinsic.String.Format(V.DataTable.dtMaterialReq(V.Global.iLotBin).DATE_REQ!FieldVal,"M/D/YYYY",V.Local.sFilterDate)
+	F.Intrinsic.String.Format(V.DataTable.dtMaterialReq(V.Global.iLotBin).TIME_REQ!FieldVal,"M/D/YYYY H:N:S AMPM",V.Local.sFilterTime)
+	F.Intrinsic.String.Build("[PART] = '{0}' and [LOC] = '{1}' and [EMPLOYEE] = '{2}' and [JOB] = '{3}' and [SUFFIX] = '{4}' and [GL_ACCOUNT] = '{7}' and [DATE_REQ] = #{5}# and [TIME_REQ] = #{6}#",V.DataTable.dtMaterialReq(V.Global.iLotBin).PART!FieldVal,V.DataTable.dtMaterialReq(V.Global.iLotBin).LOCATION!FieldVal,V.DataTable.dtMaterialReq(V.Global.iLotBin).EMPLOYEE!FieldVal,V.DataTable.dtMaterialReq(V.Global.iLotBin).ORIG_JOB!FieldVal,V.DataTable.dtMaterialReq(V.Global.iLotBin).ORIG_SUFFIX!FieldVal,V.Local.sFilterDate,V.Local.sFilterTime,V.DataTable.dtMaterialReq(V.Global.iLotBin).ORIG_GL!FieldVal,V.Local.sFilter)
+	F.Data.DataView.SetFilter("dtLotBin","dvPart",V.Local.sFilter)
+F.Intrinsic.Control.EndIf
+
+F.Intrinsic.Control.Catch
+	F.Intrinsic.Control.CallSub(ErrorMessage,"ScriptFile",V.Caller.ScriptFile,"CurrentSubroutine",V.Ambient.CurrentSubroutine)
+	F.Intrinsic.Control.CallSub(F_Mat_Req_UnLoad)
+F.Intrinsic.Control.EndTry
+Program.Sub.gsgcLotBin_GotFocus.End
