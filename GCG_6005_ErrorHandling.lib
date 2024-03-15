@@ -1,0 +1,33 @@
+﻿Program.Sub.Preflight.Start
+Program.Sub.Preflight.End
+
+Program.Sub.ErrorMessage.Start
+'Arguments: ScriptFile, CurrentSubroutine
+V.Local.sError.Declare
+F.Intrinsic.String.Build("Project: {0}{1}{1}Subroutine: {2}{1}Error Occurred {3} with description {4}{1}{1}GAB Version: {5}",V.Args.ScriptFile,V.Ambient.Newline,V.Args.CurrentSubroutine,V.Ambient.ErrorNumber,V.Ambient.ErrorDescription,V.Ambient.GABVersion,V.Local.sError)
+F.Intrinsic.UI.Msgbox(V.Local.sError)
+Program.Sub.ErrorMessage.End
+
+Program.Sub.ErrorLog.Start
+'Arguments: ScriptFile, CurrentSubroutine, FolderName
+V.Local.sError.Declare
+V.Local.sFile.Declare
+V.Local.sFileString.Declare
+V.Local.bExists.Declare
+F.Intrinsic.String.Build("Project: {0}{1}{1}Subroutine: {2}{1}Error Occurred {3} with description {4}{1}{1}GAB Version: {5}",V.Args.ScriptFile,V.Ambient.Newline,V.Args.CurrentSubroutine,V.Ambient.ErrorNumber,V.Ambient.ErrorDescription,V.Ambient.GABVersion,V.Local.sError)
+F.Intrinsic.String.Build("{0}\CUSTOM\{1}\{2}\",V.Caller.GlobalDir,V.Args.FolderName,V.Caller.CompanyCode,V.Local.sFile)
+F.Intrinsic.File.CreateDir(V.Local.sFile)
+F.Intrinsic.String.Build("{0}ERR_LOG_{1}.log",V.Local.sFile,V.Ambient.Date.FormatYYYYMMDD,V.Local.sFile)
+F.Intrinsic.File.Exists(V.Local.sFile,V.Local.bExists)
+F.Intrinsic.Control.If(V.Local.bExists)
+	F.Intrinsic.File.File2String(V.Local.sFile,V.Local.sFileString)
+	F.Intrinsic.String.Build("{0}{1}{1}",V.Local.sFileString,V.Ambient.NewLine,V.Local.sFileString)
+F.Intrinsic.Control.EndIf
+F.Intrinsic.String.Build("{0}Logged: {1}{2}{3}",V.Local.sFileString,V.Ambient.Time.FormatHH:NN:SS,V.Ambient.NewLine,V.Local.sError,V.Local.sFileString)
+F.Intrinsic.File.String2File(V.Local.sFile,V.Local.sFileString)
+Program.Sub.ErrorLog.End
+
+Program.Sub.Comments.Start
+${$5$}$3.0.0.0$}$0
+${$6$}$bbaker$}$20200319091743923$}$pM7xsHplA2E9VCTenDTJ47gi1rF/t66WjoUfLL22f6Lo6fyM3rCyFamzJGK8LKPmteW8ozez7aw=
+Program.Sub.Comments.End
