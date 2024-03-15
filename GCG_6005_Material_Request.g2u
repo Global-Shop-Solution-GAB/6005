@@ -1,0 +1,1166 @@
+Program.Sub.ScreenSU.Start
+Gui.F_Mat_Req..Create
+Gui.F_Mat_Req..Caption("Material Request Dashboard")
+Gui.F_Mat_Req..Size(8925,4965)
+Gui.F_Mat_Req..MinX(0)
+Gui.F_Mat_Req..MinY(0)
+Gui.F_Mat_Req..Position(0,0)
+Gui.F_Mat_Req..BackColor(-2147483633)
+Gui.F_Mat_Req..MousePointer(0)
+Gui.F_Mat_Req..Event(UnLoad,F_Mat_Req_UnLoad)
+Gui.F_Mat_Req.gsgcMatReq.Create(GsGridControl)
+Gui.F_Mat_Req.gsgcMatReq.Size(8805,4680)
+Gui.F_Mat_Req.gsgcMatReq.Position(0,0)
+Gui.F_Mat_Req.gsgcMatReq.Anchor(15)
+Gui.F_Mat_Req.gsgcMatReq.Event(RowCellClick,gsgcMatReq_RowCellClick)
+Gui.F_Mat_Req.gsgcMatReq.Event(CellValueChanged,gsgcMatReq_CellValueChanged)
+Gui.F_Font..Create
+Gui.F_Font..Caption("Set Font Size")
+Gui.F_Font..Size(3720,1200)
+Gui.F_Font..MinX(0)
+Gui.F_Font..MinY(0)
+Gui.F_Font..Position(0,0)
+Gui.F_Font..BackColor(-2147483633)
+Gui.F_Font..MousePointer(0)
+Gui.F_Font..Event(UnLoad,F_Font_UnLoad)
+Gui.F_Font..MaxButton(False)
+Gui.F_Font..Sizeable(False)
+Gui.F_Font.txtFont.Create(TextBox,"12",True,975,300,0,75,75,True,1,"Arial",8,-2147483643,1)
+Gui.F_Font.txtFont.TabStop(True)
+Gui.F_Font.txtFont.TabIndex(1)
+Gui.F_Font.txtFont.NumericOnly(2)
+Gui.F_Font.cmdPlus.Create(Button)
+Gui.F_Font.cmdPlus.Size(345,345)
+Gui.F_Font.cmdPlus.Position(1140,60)
+Gui.F_Font.cmdPlus.Caption("+")
+Gui.F_Font.cmdPlus.Event(Click,cmdPlus_Click)
+Gui.F_Font.cmdMinus.Create(Button)
+Gui.F_Font.cmdMinus.Size(345,345)
+Gui.F_Font.cmdMinus.Position(1575,60)
+Gui.F_Font.cmdMinus.Caption("-")
+Gui.F_Font.cmdMinus.Event(Click,cmdMinus_Click)
+Gui.F_Font.cmdUpdate.Create(Button)
+Gui.F_Font.cmdUpdate.Size(855,375)
+Gui.F_Font.cmdUpdate.Position(135,435)
+Gui.F_Font.cmdUpdate.TabStop(True)
+Gui.F_Font.cmdUpdate.TabIndex(2)
+Gui.F_Font.cmdUpdate.Caption("Update")
+Gui.F_Font.cmdUpdate.Event(Click,cmdUpdate_Click)
+Gui.F_Notes..Create
+Gui.F_Notes..Caption("Notes (Optional)")
+Gui.F_Notes..Size(5610,3840)
+Gui.F_Notes..MinX(0)
+Gui.F_Notes..MinY(0)
+Gui.F_Notes..Position(0,0)
+Gui.F_Notes..BackColor(-2147483633)
+Gui.F_Notes..MaxButton(False)
+Gui.F_Notes..MousePointer(0)
+Gui.F_Notes..Sizeable(False)
+Gui.F_Notes..Event(UnLoad,F_Notes_UnLoad)
+Gui.F_Notes.txtNotes.Create(TextboxM)
+Gui.F_Notes.txtNotes.Size(5505,3045)
+Gui.F_Notes.txtNotes.Position(0,345)
+Gui.F_Notes.lblNotes.Create(Label,"Exit screen when finished",True,2100,255,0,60,105,True,0,"Arial",8,-2147483633,0)
+Gui.F_QtyReq..Create
+Gui.F_QtyReq..Caption("Qty")
+Gui.F_QtyReq..Size(2685,5280)
+Gui.F_QtyReq..MinX(0)
+Gui.F_QtyReq..MinY(0)
+Gui.F_QtyReq..Position(0,0)
+Gui.F_QtyReq..AlwaysOnTop(True)
+Gui.F_QtyReq..BackColor(-2147483633)
+Gui.F_QtyReq..MaxButton(False)
+Gui.F_QtyReq..MousePointer(0)
+Gui.F_QtyReq..Event(UnLoad,F_QtyReq_UnLoad)
+Gui.F_QtyReq.txtQtyReq.Create(TextBox,"",True,2325,450,0,210,255,True,1,"Arial",15,-2147483643,1)
+Gui.F_QtyReq.txtQtyReq.NumericOnly(1)
+Gui.F_QtyReq.txtQtyReq.Event(LostFocus,txtQtyReq_LostFocus)
+Gui.F_QtyReq.txtQtyReq.Event(KeyPressEnter,txtQtyReq_KeyPressEnter)
+Gui.F_QtyReq.cmdC.Create(Button)
+Gui.F_QtyReq.cmdC.Size(660,660)
+Gui.F_QtyReq.cmdC.Position(255,990)
+Gui.F_QtyReq.cmdC.Caption("C")
+Gui.F_QtyReq.cmdC.FontSize(15)
+Gui.F_QtyReq.cmdC.Event(Click,cmdNumPad_Click)
+Gui.F_QtyReq.cmdDel.Create(Button)
+Gui.F_QtyReq.cmdDel.Size(1440,660)
+Gui.F_QtyReq.cmdDel.Position(1050,990)
+Gui.F_QtyReq.cmdDel.Caption("DEL")
+Gui.F_QtyReq.cmdDel.FontSize(15)
+Gui.F_QtyReq.cmdDel.Event(Click,cmdNumPad_Click)
+Gui.F_QtyReq.cmd7.Create(Button)
+Gui.F_QtyReq.cmd7.Size(660,660)
+Gui.F_QtyReq.cmd7.Position(270,1770)
+Gui.F_QtyReq.cmd7.Caption("7")
+Gui.F_QtyReq.cmd7.FontSize(15)
+Gui.F_QtyReq.cmd7.Event(Click,cmdNumPad_Click)
+Gui.F_QtyReq.cmd8.Create(Button)
+Gui.F_QtyReq.cmd8.Size(660,660)
+Gui.F_QtyReq.cmd8.Position(1050,1770)
+Gui.F_QtyReq.cmd8.Caption("8")
+Gui.F_QtyReq.cmd8.FontSize(15)
+Gui.F_QtyReq.cmd8.Event(Click,cmdNumPad_Click)
+Gui.F_QtyReq.cmd9.Create(Button)
+Gui.F_QtyReq.cmd9.Size(660,660)
+Gui.F_QtyReq.cmd9.Position(1830,1770)
+Gui.F_QtyReq.cmd9.Caption("9")
+Gui.F_QtyReq.cmd9.FontSize(15)
+Gui.F_QtyReq.cmd9.Event(Click,cmdNumPad_Click)
+Gui.F_QtyReq.cmd4.Create(Button)
+Gui.F_QtyReq.cmd4.Size(660,660)
+Gui.F_QtyReq.cmd4.Position(270,2565)
+Gui.F_QtyReq.cmd4.Caption("4")
+Gui.F_QtyReq.cmd4.FontSize(15)
+Gui.F_QtyReq.cmd4.Event(Click,cmdNumPad_Click)
+Gui.F_QtyReq.cmd5.Create(Button)
+Gui.F_QtyReq.cmd5.Size(660,660)
+Gui.F_QtyReq.cmd5.Position(1050,2565)
+Gui.F_QtyReq.cmd5.Caption("5")
+Gui.F_QtyReq.cmd5.FontSize(15)
+Gui.F_QtyReq.cmd5.Event(Click,cmdNumPad_Click)
+Gui.F_QtyReq.cmd6.Create(Button)
+Gui.F_QtyReq.cmd6.Size(660,660)
+Gui.F_QtyReq.cmd6.Position(1830,2565)
+Gui.F_QtyReq.cmd6.Caption("6")
+Gui.F_QtyReq.cmd6.FontSize(15)
+Gui.F_QtyReq.cmd6.Event(Click,cmdNumPad_Click)
+Gui.F_QtyReq.cmd1.Create(Button)
+Gui.F_QtyReq.cmd1.Size(660,660)
+Gui.F_QtyReq.cmd1.Position(270,3345)
+Gui.F_QtyReq.cmd1.Caption("1")
+Gui.F_QtyReq.cmd1.FontSize(15)
+Gui.F_QtyReq.cmd1.Event(Click,cmdNumPad_Click)
+Gui.F_QtyReq.cmd2.Create(Button)
+Gui.F_QtyReq.cmd2.Size(660,660)
+Gui.F_QtyReq.cmd2.Position(1050,3345)
+Gui.F_QtyReq.cmd2.Caption("2")
+Gui.F_QtyReq.cmd2.FontSize(15)
+Gui.F_QtyReq.cmd2.Event(Click,cmdNumPad_Click)
+Gui.F_QtyReq.cmd3.Create(Button)
+Gui.F_QtyReq.cmd3.Size(660,660)
+Gui.F_QtyReq.cmd3.Position(1830,3345)
+Gui.F_QtyReq.cmd3.Caption("3")
+Gui.F_QtyReq.cmd3.FontSize(15)
+Gui.F_QtyReq.cmd3.Event(Click,cmdNumPad_Click)
+Gui.F_QtyReq.cmd0.Create(Button)
+Gui.F_QtyReq.cmd0.Size(1440,660)
+Gui.F_QtyReq.cmd0.Position(270,4125)
+Gui.F_QtyReq.cmd0.Caption("0")
+Gui.F_QtyReq.cmd0.FontSize(15)
+Gui.F_QtyReq.cmd0.Event(Click,cmdNumPad_Click)
+Gui.F_QtyReq.cmdDec.Create(Button)
+Gui.F_QtyReq.cmdDec.Size(660,660)
+Gui.F_QtyReq.cmdDec.Position(1830,4125)
+Gui.F_QtyReq.cmdDec.Caption(".")
+Gui.F_QtyReq.cmdDec.FontSize(15)
+Gui.F_QtyReq.cmdDec.Event(Click,cmdNumPad_Click)
+Program.Sub.ScreenSU.End
+
+Program.Sub.Preflight.Start
+Program.External.Include.Library("GCG_6005_ErrorHandling.lib")
+V.Global.sEmployee.Declare
+V.Global.iQtyRow.Declare
+V.Global.bUseRev.Declare
+V.Global.bNotesShow.Declare
+'WIDTHS
+V.Global.iEmployeeW.Declare(Long,80)
+V.Global.iNameW.Declare(Long,150)
+V.Global.iDeptW.Declare(Long,70)
+V.Global.iPartW.Declare(Long,125)
+V.Global.iDescW.Declare(Long,150)
+V.Global.iQOHW.Declare(Long,75)
+V.Global.iCostW.Declare(Long,75)
+V.Global.iQtyReqW.Declare(Long,75)
+V.Global.iJobW.Declare(Long,75)
+V.Global.iSuffixW.Declare(Long,75)
+V.Global.iUseGLW.Declare(Long,50)
+V.Global.iGLW.Declare(Long,85)
+Program.Sub.Preflight.End
+
+Program.Sub.Main.Start
+'Author: BixRB
+'Date: 4 Jun 2020
+'GCG_6005_Material_Request.g2u
+'Atec Inc.
+'Dashboard for requesting material from Shop Floor Control GUI
+F.Intrinsic.Control.Try
+
+F.Intrinsic.Control.If(V.Caller.Hook,=,15780)
+	'OLU OLS001 Script 3 hook
+	V.Global.sEmployee.Set(V.Passed.009993.Trim)
+F.Intrinsic.Control.ElseIf(V.Caller.Hook,=,15710)
+	'OLU OLS001 Populate Hook
+	V.Passed.000021.Set("Mat Req")
+	F.Intrinsic.Control.End
+F.Intrinsic.Control.EndIf
+
+F.Global.General.ReadOption("070008",0,False,"0000",V.Global.bUseRev)
+
+F.Intrinsic.UI.InvokeWaitDialog("Loading Data","Material Request Dashboard")
+
+F.Intrinsic.Control.CallSub(GetDataTable)
+'Returns V.Args.Employees and V.Args.Parts
+
+F.Intrinsic.UI.ChangeWaitStatus("Setting up grid",4,0,4)
+
+F.Intrinsic.Control.CallSub(SetupGridView,"Employees",V.Args.Employees,"Parts",V.Args.Parts)
+
+Gui.F_Mat_Req..ContextMenuCreate("ctxF_Mat_Req")
+Gui.F_Mat_Req..ContextMenuAddItem("ctxF_Mat_Req","SetFontSize",0,"Set Font Size")
+Gui.F_Mat_Req..ContextMenuSetItemEventHandler("ctxF_Mat_Req","SetFontSize",SetFontSize)
+Gui.F_Mat_Req.gsgcMatReq.ContextMenuAttach("ctxF_Mat_Req")
+
+F.Intrinsic.UI.CloseWaitDialog
+
+Gui.F_Mat_Req..Show
+Gui.F_Mat_Req..SetFocus
+
+F.Intrinsic.Control.Catch
+	F.Intrinsic.Control.CallSub(ErrorMessage,"ScriptFile",V.Caller.ScriptFile,"CurrentSubroutine",V.Ambient.CurrentSubroutine)
+	F.Intrinsic.Control.CallSub(F_Mat_Req_UnLoad)
+F.Intrinsic.Control.EndTry
+Program.Sub.Main.End
+
+Program.Sub.F_Mat_Req_UnLoad.Start
+F.Intrinsic.Control.Try
+F.Intrinsic.Control.CallSub(Serialize)
+F.Intrinsic.Control.End
+F.Intrinsic.Control.Catch
+	F.Intrinsic.Control.CallSub(ErrorMessage,"ScriptFile",V.Caller.ScriptFile,"CurrentSubroutine",V.Ambient.CurrentSubroutine)
+	F.Intrinsic.Control.End
+F.Intrinsic.Control.EndTry
+Program.Sub.F_Mat_Req_UnLoad.End
+
+Program.Sub.GetDataTable.Start
+'Build Material Request DataTable, we need Employee Number List, Part List, WO/Suffix/Sequence List, Dictionaries for Employee Name, Department
+V.Local.sJobs.Declare
+V.Local.sEmployees.Declare
+V.Local.sParts.Declare
+F.Intrinsic.Control.Try
+
+F.ODBC.Connection!con.OpenCompanyConnection
+F.Intrinsic.UI.ChangeWaitStatus("Loading Employee Data",0,0,4)
+F.Data.DataTable.CreateFromSQL("dtEmployees","con","select rtrim(EMPLOYEE) as EMPLOYEE, rtrim(NAME) as NAME, rtrim(DEPT_EMPLOYEE) as DEPT from V_EMPLOYEE_MSTR order by EMPLOYEE;",True)
+F.Intrinsic.UI.ChangeWaitStatus("Loading Material Data",1,0,4)
+F.Data.DataTable.CreateFromSQL("dtParts","con","select rtrim(PART) as PART, rtrim(LOCATION) as LOCATION, PART+LOCATION as PARTLOC, rtrim(DESCRIPTION) as DESCRIPTION, QTY_ONHAND from V_INVENTORY_MSTR order by PART, LOCATION;",True)
+F.ODBC.Connection!con.ExecuteAndReturn("select distinct rtrim(PART) as PART from V_INVENTORY_MSTR where QTY_ONHAND > 0 order by PART",V.Local.sParts)
+F.Data.Dictionary.CreateFromSQL("dictPartCost", "con","select PART+LOCN, COST from V_INVENTORY_COST;")
+F.Intrinsic.UI.ChangeWaitStatus("Loading Job Data",2,0,4)
+'F.Data.DataTable.CreateFromSQL("dtJobs","con","select JOB+SUFFIX as WO from V_JOB_HEADER where DATE_CLOSED = '1900-01-01';",True)
+F.Data.DataTable.CreateFromSQL("dtJobs","con","select JOB, SUFFIX, PART, DESCRIPTION, DATE_DUE from V_JOB_HEADER where DATE_CLOSED = '1900-01-01' order by JOB, SUFFIX;",True)
+F.Data.DataView.Create("dtJobs","dvJobs")
+'F.Data.DataView.ToString("dtJobs","dvJobs","WO","","*!*",V.Local.sJobs)
+'F.Data.DataTable.ColumnToString("dtJobs","WO",V.Local.sJobs)
+'F.Intrinsic.String.Replace(V.Local.sJobs,"*!*","', '",V.Local.sJobs)
+'F.Intrinsic.String.Build("select rtrim(JOB) as JOB, rtrim(SUFFIX) as SUFFIX, rtrim(SEQ) as SEQ, rtrim(PART) as PART, LOCN as LOCATION, PART + LOCN as PARTLOC, rtrim(DESCRIPTION) as DESCRIPTION, HOURS_ESTIMATED as QTY_EST, HOURS_ACTUAL as QTY_ACT, if(HOURS_ESTIMATED - HOURS_ACTUAL > 0, HOURS_ESTIMATED - HOURS_ACTUAL, 0) as QTY_REM from V_JOB_OPERATIONS where LMO = 'M' and JOB+SUFFIX in ('{0}') order by JOB, SUFFIX, SEQ;",V.Local.sJobs,V.Local.sJobs)
+'F.Data.DataTable.CreateFromSQL("dtJobOps","con",V.Local.sJobs,True)
+F.ODBC.Connection!con.Close
+
+'F.Data.DataTable.Close("dtJobs")
+
+F.Intrinsic.UI.ChangeWaitStatus("Processing Data",3,0,4)
+
+F.Data.DataView.Create("dtEmployees","dvEmployees")
+F.Data.DataView.ToString("dtEmployees","dvEmployees","EMPLOYEE","","*!*",V.Local.sEmployees)
+'F.Data.DataTable.ColumnToString("dtEmployees","EMPLOYEE",V.Local.sEmployees)
+F.Data.Dictionary.CreateFromDataTable("dictEmplNames","dtEmployees","EMPLOYEE","NAME")
+F.Data.Dictionary.SetDefaultReturn("dictEmplNames","***EMPLOYEE NOT FOUND***")
+F.Data.Dictionary.CreateFromDataTable("dictEmplDepts","dtEmployees","EMPLOYEE","DEPT")
+F.Data.Dictionary.SetDefaultReturn("dictEmplDepts","")
+
+F.Intrinsic.String.Replace(V.Local.sParts,"#$#","*!*",V.Local.sParts)
+F.Data.Dictionary.CreateFromDataTable("dictPartDescr","dtParts","PARTLOC","DESCRIPTION")
+F.Data.Dictionary.SetDefaultReturn("dictPartDescr","***PART NOT FOUND***")
+F.Data.Dictionary.CreateFromDataTable("dictPartQtyOnHand","dtParts","PARTLOC","QTY_ONHAND")
+F.Data.Dictionary.SetDefaultReturn("dictPartQtyOnHand",0)
+F.Data.Dictionary.SetDefaultReturn("dictPartCost",0)
+F.Data.DataTable.AddColumn("dtParts","COST","Float")
+F.Data.DataTable.FillFromDictionary("dtParts","dictPartCost","PARTLOC","COST")
+F.Data.DataTable.RemoveColumn("dtParts","PARTLOC")
+F.Data.DataView.Create("dtParts","dvParts")
+F.Data.DataView.SetFilter("dtParts","dvParts","[QTY_ONHAND] > 0")
+
+'F.Data.DataTable.AddColumn("dtJobOps","QTY_ONHAND","Float")
+'F.Data.Dictionary.SetDefaultReturn("dictPartQtyOnHand",-1)
+'F.Data.DataTable.FillFromDictionary("dtJobOps","dictPartQtyOnHand","PARTLOC","QTY_ONHAND")
+'F.Data.DataView.Create("dtJobOps","dvJobOps")
+'F.Data.DataView.SetFilter("dtJobOps","dvJobOps","[QTY_ONHAND] <> 0")
+'F.Data.Dictionary.SetDefaultReturn("dictPartQtyOnHand",0)
+
+F.Data.DataTable.Create("dtMaterialReq",True)
+F.Data.DataTable.AddColumn("dtMaterialReq","EMPLOYEE","String")
+F.Data.DataTable.AddColumn("dtMaterialReq","NAME","String")
+F.Data.DataTable.AddColumn("dtMaterialReq","DEPT","String")
+F.Data.DataTable.AddColumn("dtMaterialReq","PART","String")
+F.Data.DataTable.AddColumn("dtMaterialReq","LOCATION","String")
+F.Data.DataTable.AddExpressionColumn("dtMaterialReq","PARTLOC","String","SUBSTRING([PART] + '                    ', 1, 20) + SUBSTRING([LOCATION] + '  ', 1, 2)")
+F.Data.DataTable.AddColumn("dtMaterialReq","DESCRIPTION","String")
+F.Data.DataTable.AddColumn("dtMaterialReq","QTY_ONHAND","Float")
+F.Data.DataTable.AddColumn("dtMaterialReq","COST","Float")
+F.Data.DataTable.AddColumn("dtMaterialReq","QTY_REQ","Float")
+F.Data.DataTable.AddColumn("dtMaterialReq","JOB","String")
+F.Data.DataTable.AddColumn("dtMaterialReq","SUFFIX","String")
+'F.Data.DataTable.AddColumn("dtMaterialReq","SEQ","String")
+F.Data.DataTable.AddColumn("dtMaterialReq","EMPLOYEE_BRW","String")
+F.Data.DataTable.AddColumn("dtMaterialReq","PART_BRW","String")
+F.Data.DataTable.AddColumn("dtMaterialReq","WOSEQ_BRW","String")
+F.Data.DataTable.AddColumn("dtMaterialReq","SUBMIT_CMD","String")
+F.Data.DataTable.AddColumn("dtMaterialReq","EMPLOYEE_FLAG","Boolean",False)
+F.Data.DataTable.AddColumn("dtMaterialReq","PART_FLAG","Boolean",False)
+F.Data.DataTable.AddColumn("dtMaterialReq","QTY_FLAG","Boolean",False)
+F.Data.DataTable.AddColumn("dtMaterialReq","JOB_FLAG","Boolean",False)
+F.Data.DataTable.AddColumn("dtMaterialReq","USE_GL","Boolean",False)
+F.Data.DataTable.AddColumn("dtMaterialReq","GL_ACCOUNT","String")
+F.Data.DataTable.AddColumn("dtMaterialReq","GL_FLAG","Boolean",False)
+F.Intrinsic.Control.If(V.Global.sEmployee,=,"")
+'	F.Data.DataTable.AddRow("dtMaterialReq","EMPLOYEE","","PART","","LOCATION","","JOB","","SUFFIX","","SEQ","")
+	F.Data.DataTable.AddRow("dtMaterialReq","EMPLOYEE","","PART","","LOCATION","","JOB","","SUFFIX","","GL_ACCOUNT","")
+F.Intrinsic.Control.Else
+	F.Data.DataTable.AddRow("dtMaterialReq","EMPLOYEE",V.Global.sEmployee,"NAME",V.Dictionary.dictEmplNames![V.Global.sEmployee],"DEPT",V.Dictionary.dictEmplDepts![V.Global.sEmployee],"PART","","LOCATION","","JOB","","SUFFIX","","GL_ACCOUNT","")
+F.Intrinsic.Control.EndIf
+
+F.Intrinsic.Variable.AddRV("Employees",V.Local.sEmployees)
+F.Intrinsic.Variable.AddRV("Parts",V.Local.sParts)
+
+F.Intrinsic.Control.Catch
+	F.Intrinsic.Control.CallSub(ErrorMessage,"ScriptFile",V.Caller.ScriptFile,"CurrentSubroutine",V.Ambient.CurrentSubroutine)
+	F.Intrinsic.Control.CallSub(F_Mat_Req_UnLoad)
+F.Intrinsic.Control.EndTry
+Program.Sub.GetDataTable.End
+
+Program.Sub.SetupGridView.Start
+'Build Material Req Grid View
+V.Local.iVisibleIndex.Declare
+F.Intrinsic.Control.Try
+
+Gui.F_Mat_Req.gsgcMatReq.AddGridviewFromDataTable("gvMaterialReq","dtMaterialReq")
+
+'Gui.F_Mat_Req.gsgcMatReq.SetGridviewProperty("gvMaterialReq","MultiSelect",False)
+Gui.F_Mat_Req.gsgcMatReq.SetGridviewProperty("gvMaterialReq","AllowSort",False)
+Gui.F_Mat_Req.gsgcMatReq.SetGridviewProperty("gvMaterialReq","AllowFilter",False)
+Gui.F_Mat_Req.gsgcMatReq.SetGridviewProperty("gvMaterialReq","ShowDetailTabs",False)
+Gui.F_Mat_Req.gsgcMatReq.SetGridviewProperty("gvMaterialReq","AllowColumnMoving",False)
+Gui.F_Mat_Req.gsgcMatReq.SetGridviewProperty("gvMaterialReq","MultiSelectMode",1)
+Gui.F_Mat_Req.gsgcMatReq.SetGridviewProperty("gvMaterialReq","OptionsViewColumnAutoWidth",False)
+Gui.F_Mat_Req.gsgcMatReq.SetGridviewProperty("gvMaterialReq","OptionsViewShowFilterPanelMode",False)
+
+V.Local.iVisibleIndex.Set(-1)
+Gui.F_Mat_Req.gsgcMatReq.SetColumnProperty("gvMaterialReq","EMPLOYEE","VisibleIndex",V.Local.iVisibleIndex.++)
+Gui.F_Mat_Req.gsgcMatReq.SetColumnProperty("gvMaterialReq","EMPLOYEE_BRW","VisibleIndex",V.Local.iVisibleIndex.++)
+Gui.F_Mat_Req.gsgcMatReq.SetColumnProperty("gvMaterialReq","NAME","VisibleIndex",V.Local.iVisibleIndex.++)
+Gui.F_Mat_Req.gsgcMatReq.SetColumnProperty("gvMaterialReq","DEPT","VisibleIndex",V.Local.iVisibleIndex.++)
+Gui.F_Mat_Req.gsgcMatReq.SetColumnProperty("gvMaterialReq","PART","VisibleIndex",V.Local.iVisibleIndex.++)
+'Gui.F_Mat_Req.gsgcMatReq.SetColumnProperty("gvMaterialReq","LOCATION","VisibleIndex",V.Local.iVisibleIndex.++)
+Gui.F_Mat_Req.gsgcMatReq.SetColumnProperty("gvMaterialReq","PART_BRW","VisibleIndex",V.Local.iVisibleIndex.++)
+Gui.F_Mat_Req.gsgcMatReq.SetColumnProperty("gvMaterialReq","DESCRIPTION","VisibleIndex",V.Local.iVisibleIndex.++)
+Gui.F_Mat_Req.gsgcMatReq.SetColumnProperty("gvMaterialReq","QTY_ONHAND","VisibleIndex",V.Local.iVisibleIndex.++)
+Gui.F_Mat_Req.gsgcMatReq.SetColumnProperty("gvMaterialReq","COST","VisibleIndex",V.Local.iVisibleIndex.++)
+Gui.F_Mat_Req.gsgcMatReq.SetColumnProperty("gvMaterialReq","QTY_REQ","VisibleIndex",V.Local.iVisibleIndex.++)
+Gui.F_Mat_Req.gsgcMatReq.SetColumnProperty("gvMaterialReq","JOB","VisibleIndex",V.Local.iVisibleIndex.++)
+Gui.F_Mat_Req.gsgcMatReq.SetColumnProperty("gvMaterialReq","SUFFIX","VisibleIndex",V.Local.iVisibleIndex.++)
+'Gui.F_Mat_Req.gsgcMatReq.SetColumnProperty("gvMaterialReq","SEQ","VisibleIndex",V.Local.iVisibleIndex.++)
+Gui.F_Mat_Req.gsgcMatReq.SetColumnProperty("gvMaterialReq","WOSEQ_BRW","VisibleIndex",V.Local.iVisibleIndex.++)
+Gui.F_Mat_Req.gsgcMatReq.SetColumnProperty("gvMaterialReq","USE_GL","VisibleIndex",V.Local.iVisibleIndex.++)
+Gui.F_Mat_Req.gsgcMatReq.SetColumnProperty("gvMaterialReq","GL_ACCOUNT","VisibleIndex",V.Local.iVisibleIndex.++)
+Gui.F_Mat_Req.gsgcMatReq.SetColumnProperty("gvMaterialReq","SUBMIT_CMD","VisibleIndex",V.Local.iVisibleIndex.++)
+
+Gui.F_Mat_Req.gsgcMatReq.SetColumnProperty("gvMaterialReq","PARTLOC","Visible",False)
+Gui.F_Mat_Req.gsgcMatReq.SetColumnProperty("gvMaterialReq","PARTLOC","AllowShowHide",False)
+Gui.F_Mat_Req.gsgcMatReq.SetColumnProperty("gvMaterialReq","EMPLOYEE_FLAG","Visible",False)
+Gui.F_Mat_Req.gsgcMatReq.SetColumnProperty("gvMaterialReq","EMPLOYEE_FLAG","AllowShowHide",False)
+Gui.F_Mat_Req.gsgcMatReq.SetColumnProperty("gvMaterialReq","PART_FLAG","Visible",False)
+Gui.F_Mat_Req.gsgcMatReq.SetColumnProperty("gvMaterialReq","PART_FLAG","AllowShowHide",False)
+Gui.F_Mat_Req.gsgcMatReq.SetColumnProperty("gvMaterialReq","QTY_FLAG","Visible",False)
+Gui.F_Mat_Req.gsgcMatReq.SetColumnProperty("gvMaterialReq","QTY_FLAG","AllowShowHide",False)
+Gui.F_Mat_Req.gsgcMatReq.SetColumnProperty("gvMaterialReq","JOB_FLAG","Visible",False)
+Gui.F_Mat_Req.gsgcMatReq.SetColumnProperty("gvMaterialReq","JOB_FLAG","AllowShowHide",False)
+Gui.F_Mat_Req.gsgcMatReq.SetColumnProperty("gvMaterialReq","LOCATION","Visible",False)
+Gui.F_Mat_Req.gsgcMatReq.SetColumnProperty("gvMaterialReq","LOCATION","AllowShowHide",False)
+Gui.F_Mat_Req.gsgcMatReq.SetColumnProperty("gvMaterialReq","GL_FLAG","Visible",False)
+Gui.F_Mat_Req.gsgcMatReq.SetColumnProperty("gvMaterialReq","GL_FLAG","AllowShowHide",False)
+
+Gui.F_Mat_Req.gsgcMatReq.SetColumnProperty("gvMaterialReq","EMPLOYEE","AllowShowHide",False)
+Gui.F_Mat_Req.gsgcMatReq.SetColumnProperty("gvMaterialReq","EMPLOYEE_BRW","AllowShowHide",False)
+Gui.F_Mat_Req.gsgcMatReq.SetColumnProperty("gvMaterialReq","NAME","AllowShowHide",False)
+Gui.F_Mat_Req.gsgcMatReq.SetColumnProperty("gvMaterialReq","DEPT","AllowShowHide",False)
+Gui.F_Mat_Req.gsgcMatReq.SetColumnProperty("gvMaterialReq","PART","AllowShowHide",False)
+Gui.F_Mat_Req.gsgcMatReq.SetColumnProperty("gvMaterialReq","PART_BRW","AllowShowHide",False)
+Gui.F_Mat_Req.gsgcMatReq.SetColumnProperty("gvMaterialReq","DESCRIPTION","AllowShowHide",False)
+Gui.F_Mat_Req.gsgcMatReq.SetColumnProperty("gvMaterialReq","QTY_ONHAND","AllowShowHide",False)
+Gui.F_Mat_Req.gsgcMatReq.SetColumnProperty("gvMaterialReq","COST","AllowShowHide",False)
+Gui.F_Mat_Req.gsgcMatReq.SetColumnProperty("gvMaterialReq","QTY_REQ","AllowShowHide",False)
+Gui.F_Mat_Req.gsgcMatReq.SetColumnProperty("gvMaterialReq","JOB","AllowShowHide",False)
+Gui.F_Mat_Req.gsgcMatReq.SetColumnProperty("gvMaterialReq","SUFFIX","AllowShowHide",False)
+'Gui.F_Mat_Req.gsgcMatReq.SetColumnProperty("gvMaterialReq","SEQ","AllowShowHide",False)
+Gui.F_Mat_Req.gsgcMatReq.SetColumnProperty("gvMaterialReq","WOSEQ_BRW","AllowShowHide",False)
+Gui.F_Mat_Req.gsgcMatReq.SetColumnProperty("gvMaterialReq","USE_GL","AllowShowHide",False)
+Gui.F_Mat_Req.gsgcMatReq.SetColumnProperty("gvMaterialReq","GL_ACCOUNT","AllowShowHide",False)
+Gui.F_Mat_Req.gsgcMatReq.SetColumnProperty("gvMaterialReq","SUBMIT_CMD","AllowShowHide",False)
+
+Gui.F_Mat_Req.gsgcMatReq.SetColumnProperty("gvMaterialReq","EMPLOYEE","Caption","Employee No.")
+Gui.F_Mat_Req.gsgcMatReq.SetColumnProperty("gvMaterialReq","EMPLOYEE_BRW","ShowCaption",False)
+Gui.F_Mat_Req.gsgcMatReq.SetColumnProperty("gvMaterialReq","NAME","Caption","Name")
+Gui.F_Mat_Req.gsgcMatReq.SetColumnProperty("gvMaterialReq","DEPT","Caption","Department")
+F.Intrinsic.Control.If(V.Global.bUseRev)
+	Gui.F_Mat_Req.gsgcMatReq.SetColumnProperty("gvMaterialReq","PART","Caption","Part/Rev")
+F.Intrinsic.Control.Else
+	Gui.F_Mat_Req.gsgcMatReq.SetColumnProperty("gvMaterialReq","PART","Caption","Part")
+F.Intrinsic.Control.EndIf
+Gui.F_Mat_Req.gsgcMatReq.SetColumnProperty("gvMaterialReq","LOCATION","Caption","Loc")
+Gui.F_Mat_Req.gsgcMatReq.SetColumnProperty("gvMaterialReq","PART_BRW","ShowCaption",False)
+Gui.F_Mat_Req.gsgcMatReq.SetColumnProperty("gvMaterialReq","DESCRIPTION","Caption","Description")
+Gui.F_Mat_Req.gsgcMatReq.SetColumnProperty("gvMaterialReq","QTY_ONHAND","Caption","Qty On Hand")
+Gui.F_Mat_Req.gsgcMatReq.SetColumnProperty("gvMaterialReq","COST","Caption","Unit Cost")
+Gui.F_Mat_Req.gsgcMatReq.SetColumnProperty("gvMaterialReq","QTY_REQ","Caption","Qty to Issue")
+Gui.F_Mat_Req.gsgcMatReq.SetColumnProperty("gvMaterialReq","JOB","Caption","Job")
+Gui.F_Mat_Req.gsgcMatReq.SetColumnProperty("gvMaterialReq","SUFFIX","Caption","Suffix")
+'Gui.F_Mat_Req.gsgcMatReq.SetColumnProperty("gvMaterialReq","SEQ","Caption","Seq")
+Gui.F_Mat_Req.gsgcMatReq.SetColumnProperty("gvMaterialReq","WOSEQ_BRW","ShowCaption",False)
+Gui.F_Mat_Req.gsgcMatReq.SetColumnProperty("gvMaterialReq","USE_GL","Caption","Use GL?")
+Gui.F_Mat_Req.gsgcMatReq.SetColumnProperty("gvMaterialReq","GL_ACCOUNT","Caption","GL Account")
+Gui.F_Mat_Req.gsgcMatReq.SetColumnProperty("gvMaterialReq","SUBMIT_CMD","ShowCaption",False)
+
+F.Intrinsic.Control.If(V.Global.sEmployee,=,"")
+	Gui.F_Mat_Req.gsgcMatReq.SetColumnProperty("gvMaterialReq","EMPLOYEE","ReadOnly",False)
+F.Intrinsic.Control.Else
+	Gui.F_Mat_Req.gsgcMatReq.SetColumnProperty("gvMaterialReq","EMPLOYEE","AllowEdit",False)
+F.Intrinsic.Control.EndIf
+Gui.F_Mat_Req.gsgcMatReq.SetColumnProperty("gvMaterialReq","EMPLOYEE_BRW","AllowEdit",False)
+Gui.F_Mat_Req.gsgcMatReq.SetColumnProperty("gvMaterialReq","NAME","AllowEdit",False)
+Gui.F_Mat_Req.gsgcMatReq.SetColumnProperty("gvMaterialReq","DEPT","AllowEdit",False)
+Gui.F_Mat_Req.gsgcMatReq.SetColumnProperty("gvMaterialReq","PART","ReadOnly",False)
+Gui.F_Mat_Req.gsgcMatReq.SetColumnProperty("gvMaterialReq","LOCATION","ReadOnly",False)
+Gui.F_Mat_Req.gsgcMatReq.SetColumnProperty("gvMaterialReq","PART_BRW","AllowEdit",False)
+Gui.F_Mat_Req.gsgcMatReq.SetColumnProperty("gvMaterialReq","DESCRIPTION","AllowEdit",False)
+Gui.F_Mat_Req.gsgcMatReq.SetColumnProperty("gvMaterialReq","QTY_ONHAND","AllowEdit",False)
+Gui.F_Mat_Req.gsgcMatReq.SetColumnProperty("gvMaterialReq","COST","AllowEdit",False)
+'Gui.F_Mat_Req.gsgcMatReq.SetColumnProperty("gvMaterialReq","QTY_REQ","ReadOnly",False)
+Gui.F_Mat_Req.gsgcMatReq.SetColumnProperty("gvMaterialReq","QTY_REQ","AllowEdit",False)
+Gui.F_Mat_Req.gsgcMatReq.SetColumnProperty("gvMaterialReq","JOB","AllowEdit",False)
+Gui.F_Mat_Req.gsgcMatReq.SetColumnProperty("gvMaterialReq","SUFFIX","AllowEdit",False)
+'Gui.F_Mat_Req.gsgcMatReq.SetColumnProperty("gvMaterialReq","SEQ","AllowEdit",False)
+Gui.F_Mat_Req.gsgcMatReq.SetColumnProperty("gvMaterialReq","WOSEQ_BRW","AllowEdit",False)
+Gui.F_Mat_Req.gsgcMatReq.SetColumnProperty("gvMaterialReq","USE_GL","AllowEdit",False)
+Gui.F_Mat_Req.gsgcMatReq.SetColumnProperty("gvMaterialReq","GL_ACCOUNT","AllowEdit",False)
+Gui.F_Mat_Req.gsgcMatReq.SetColumnProperty("gvMaterialReq","SUBMIT_CMD","AllowEdit",False)
+
+F.Intrinsic.Control.If(V.Global.sEmployee,=,"")
+	Gui.F_Mat_Req.gsgcMatReq.SetColumnProperty("gvMaterialReq","EMPLOYEE_BRW","Icon","^")
+F.Intrinsic.Control.EndIf
+Gui.F_Mat_Req.gsgcMatReq.SetColumnProperty("gvMaterialReq","PART_BRW","Icon","^")
+Gui.F_Mat_Req.gsgcMatReq.SetColumnProperty("gvMaterialReq","WOSEQ_BRW","Icon","^")
+
+F.Intrinsic.Control.If(V.Global.sEmployee,=,"")
+	Gui.F_Mat_Req.gsgcMatReq.ColumnEdit("gvMaterialReq","EMPLOYEE","ComboBox",V.Args.Employees)
+F.Intrinsic.Control.EndIf
+Gui.F_Mat_Req.gsgcMatReq.ColumnEdit("gvMaterialReq","PART","ComboBox",V.Args.Parts)
+Gui.F_Mat_Req.gsgcMatReq.ColumnEdit("gvMaterialReq","SUBMIT_CMD","EditorButton","Submit")
+
+F.Intrinsic.Control.If(V.Global.sEmployee,=,"")
+	Gui.F_Mat_Req.gsgcMatReq.AddStyleFormatCondition("gvMaterialReq","EMPLOYEE","ChangeEmployee","Expression","[EMPLOYEE_FLAG]")
+	Gui.F_Mat_Req.gsgcMatReq.AddStyleFormatCondition("gvMaterialReq","EMPLOYEE","ChangeEmployeeNot","Expression","[EMPLOYEE_FLAG] = False")
+F.Intrinsic.Control.EndIf
+Gui.F_Mat_Req.gsgcMatReq.AddStyleFormatCondition("gvMaterialReq","PART","ChangePart","Expression","[PART_FLAG]")
+Gui.F_Mat_Req.gsgcMatReq.AddStyleFormatCondition("gvMaterialReq","PART","ChangePartNot","Expression","[PART_FLAG] = False")
+Gui.F_Mat_Req.gsgcMatReq.AddStyleFormatCondition("gvMaterialReq","LOCATION","ChangeLoc","Expression","[PART_FLAG]")
+Gui.F_Mat_Req.gsgcMatReq.AddStyleFormatCondition("gvMaterialReq","LOCATION","ChangeLocNot","Expression","[PART_FLAG] = False")
+Gui.F_Mat_Req.gsgcMatReq.AddStyleFormatCondition("gvMaterialReq","QTY_REQ","ChangeQty","Expression","[QTY_FLAG]")
+Gui.F_Mat_Req.gsgcMatReq.AddStyleFormatCondition("gvMaterialReq","QTY_REQ","ChangeQtyNot","Expression","[QTY_FLAG] = False")
+Gui.F_Mat_Req.gsgcMatReq.AddStyleFormatCondition("gvMaterialReq","JOB","ChangeJob","Expression","[JOB_FLAG] and [USE_GL] = False")
+Gui.F_Mat_Req.gsgcMatReq.AddStyleFormatCondition("gvMaterialReq","JOB","ChangeJobNot","Expression","[JOB_FLAG] = False and [USE_GL] = False")
+Gui.F_Mat_Req.gsgcMatReq.AddStyleFormatCondition("gvMaterialReq","SUFFIX","ChangeSuffix","Expression","[JOB_FLAG] and [USE_GL] = False")
+Gui.F_Mat_Req.gsgcMatReq.AddStyleFormatCondition("gvMaterialReq","SUFFIX","ChangeSuffixNot","Expression","[JOB_FLAG] = False and [USE_GL] = False")
+'Gui.F_Mat_Req.gsgcMatReq.AddStyleFormatCondition("gvMaterialReq","SEQ","ChangeSeq","Expression","[JOB_FLAG]")
+'Gui.F_Mat_Req.gsgcMatReq.AddStyleFormatCondition("gvMaterialReq","SEQ","ChangeSeqNot","Expression","[JOB_FLAG] = False")
+Gui.F_Mat_Req.gsgcMatReq.AddStyleFormatCondition("gvMaterialReq","GL_ACCOUNT","ChangeGL","Expression","[GL_FLAG] and [USE_GL]")
+Gui.F_Mat_Req.gsgcMatReq.AddStyleFormatCondition("gvMaterialReq","GL_ACCOUNT","ChangeGLNot","Expression","[GL_FLAG] = False and [USE_GL]")
+F.Intrinsic.Control.If(V.Global.sEmployee,=,"")
+	Gui.F_Mat_Req.gsgcMatReq.SetStyleFormatConditionProperty("gvMaterialReq","EMPLOYEE","ChangeEmployee","BackColor","Pink")
+	Gui.F_Mat_Req.gsgcMatReq.SetStyleFormatConditionProperty("gvMaterialReq","EMPLOYEE","ChangeEmployeeNot","BackColor","LightYellow")
+F.Intrinsic.Control.EndIf
+Gui.F_Mat_Req.gsgcMatReq.SetStyleFormatConditionProperty("gvMaterialReq","PART","ChangePart","BackColor","Pink")
+Gui.F_Mat_Req.gsgcMatReq.SetStyleFormatConditionProperty("gvMaterialReq","PART","ChangePartNot","BackColor","LightYellow")
+Gui.F_Mat_Req.gsgcMatReq.SetStyleFormatConditionProperty("gvMaterialReq","LOCATION","ChangeLoc","BackColor","Pink")
+Gui.F_Mat_Req.gsgcMatReq.SetStyleFormatConditionProperty("gvMaterialReq","LOCATION","ChangeLocNot","BackColor","LightYellow")
+Gui.F_Mat_Req.gsgcMatReq.SetStyleFormatConditionProperty("gvMaterialReq","QTY_REQ","ChangeQty","BackColor","Pink")
+Gui.F_Mat_Req.gsgcMatReq.SetStyleFormatConditionProperty("gvMaterialReq","QTY_REQ","ChangeQtyNot","BackColor","LightYellow")
+Gui.F_Mat_Req.gsgcMatReq.SetStyleFormatConditionProperty("gvMaterialReq","JOB","ChangeJob","BackColor","Pink")
+Gui.F_Mat_Req.gsgcMatReq.SetStyleFormatConditionProperty("gvMaterialReq","JOB","ChangeJobNot","BackColor","LightYellow")
+Gui.F_Mat_Req.gsgcMatReq.SetStyleFormatConditionProperty("gvMaterialReq","SUFFIX","ChangeSuffix","BackColor","Pink")
+Gui.F_Mat_Req.gsgcMatReq.SetStyleFormatConditionProperty("gvMaterialReq","SUFFIX","ChangeSuffixNot","BackColor","LightYellow")
+Gui.F_Mat_Req.gsgcMatReq.SetStyleFormatConditionProperty("gvMaterialReq","GL_ACCOUNT","ChangeGL","BackColor","Pink")
+Gui.F_Mat_Req.gsgcMatReq.SetStyleFormatConditionProperty("gvMaterialReq","GL_ACCOUNT","ChangeGLNot","BackColor","LightYellow")
+'Gui.F_Mat_Req.gsgcMatReq.SetStyleFormatConditionProperty("gvMaterialReq","SEQ","ChangeSeq","BackColor","Pink")
+'Gui.F_Mat_Req.gsgcMatReq.SetStyleFormatConditionProperty("gvMaterialReq","SEQ","ChangeSeqNot","BackColor","LightYellow")
+
+F.Intrinsic.Control.If(V.Global.sEmployee,=,"")
+	Gui.F_Mat_Req.gsgcMatReq.SetColumnProperty("gvMaterialReq","EMPLOYEE","CellForeColor","Black")
+F.Intrinsic.Control.EndIf
+Gui.F_Mat_Req.gsgcMatReq.SetColumnProperty("gvMaterialReq","PART","CellForeColor","Black")
+Gui.F_Mat_Req.gsgcMatReq.SetColumnProperty("gvMaterialReq","LOCATION","CellForeColor","Black")
+Gui.F_Mat_Req.gsgcMatReq.SetColumnProperty("gvMaterialReq","QTY_REQ","CellForeColor","Black")
+Gui.F_Mat_Req.gsgcMatReq.SetColumnProperty("gvMaterialReq","JOB","CellForeColor","Black")
+Gui.F_Mat_Req.gsgcMatReq.SetColumnProperty("gvMaterialReq","SUFFIX","CellForeColor","Black")
+Gui.F_Mat_Req.gsgcMatReq.SetColumnProperty("gvMaterialReq","GL_ACCOUNT","CellForeColor","Black")
+'Gui.F_Mat_Req.gsgcMatReq.SetColumnProperty("gvMaterialReq","SEQ","CellForeColor","Black")
+
+Gui.F_Mat_Req.gsgcMatReq.MainView("gvMaterialReq")
+
+Gui.F_Mat_Req.gsgcMatReq.SetColumnProperty("gvMaterialReq","EMPLOYEE","FixedWidth",True)
+Gui.F_Mat_Req.gsgcMatReq.SetColumnProperty("gvMaterialReq","EMPLOYEE","Width",V.Global.iEmployeeW)
+Gui.F_Mat_Req.gsgcMatReq.SetColumnProperty("gvMaterialReq","EMPLOYEE_BRW","FixedWidth",True)
+Gui.F_Mat_Req.gsgcMatReq.SetColumnProperty("gvMaterialReq","EMPLOYEE_BRW","Width",40)
+Gui.F_Mat_Req.gsgcMatReq.SetColumnProperty("gvMaterialReq","NAME","FixedWidth",True)
+Gui.F_Mat_Req.gsgcMatReq.SetColumnProperty("gvMaterialReq","NAME","Width",V.Global.iNameW)
+Gui.F_Mat_Req.gsgcMatReq.SetColumnProperty("gvMaterialReq","DEPT","FixedWidth",True)
+Gui.F_Mat_Req.gsgcMatReq.SetColumnProperty("gvMaterialReq","DEPT","Width",V.Global.iDeptW)
+Gui.F_Mat_Req.gsgcMatReq.SetColumnProperty("gvMaterialReq","PART","FixedWidth",True)
+Gui.F_Mat_Req.gsgcMatReq.SetColumnProperty("gvMaterialReq","PART","Width",V.Global.iPartW)
+Gui.F_Mat_Req.gsgcMatReq.SetColumnProperty("gvMaterialReq","PART_BRW","FixedWidth",True)
+Gui.F_Mat_Req.gsgcMatReq.SetColumnProperty("gvMaterialReq","PART_BRW","Width",40)
+Gui.F_Mat_Req.gsgcMatReq.SetColumnProperty("gvMaterialReq","DESCRIPTION","FixedWidth",True)
+Gui.F_Mat_Req.gsgcMatReq.SetColumnProperty("gvMaterialReq","DESCRIPTION","Width",V.Global.iDescW)
+Gui.F_Mat_Req.gsgcMatReq.SetColumnProperty("gvMaterialReq","QTY_ONHAND","FixedWidth",True)
+Gui.F_Mat_Req.gsgcMatReq.SetColumnProperty("gvMaterialReq","QTY_ONHAND","Width",V.Global.iQOHW)
+Gui.F_Mat_Req.gsgcMatReq.SetColumnProperty("gvMaterialReq","COST","FixedWidth",True)
+Gui.F_Mat_Req.gsgcMatReq.SetColumnProperty("gvMaterialReq","COST","Width",V.Global.iCostW)
+Gui.F_Mat_Req.gsgcMatReq.SetColumnProperty("gvMaterialReq","QTY_REQ","FixedWidth",True)
+Gui.F_Mat_Req.gsgcMatReq.SetColumnProperty("gvMaterialReq","QTY_REQ","Width",V.Global.iQtyReqW)
+Gui.F_Mat_Req.gsgcMatReq.SetColumnProperty("gvMaterialReq","JOB","FixedWidth",True)
+Gui.F_Mat_Req.gsgcMatReq.SetColumnProperty("gvMaterialReq","JOB","Width",V.Global.iJobW)
+Gui.F_Mat_Req.gsgcMatReq.SetColumnProperty("gvMaterialReq","SUFFIX","FixedWidth",True)
+Gui.F_Mat_Req.gsgcMatReq.SetColumnProperty("gvMaterialReq","SUFFIX","Width",V.Global.iSuffixW)
+'Gui.F_Mat_Req.gsgcMatReq.SetColumnProperty("gvMaterialReq","SEQ","Width",75)
+Gui.F_Mat_Req.gsgcMatReq.SetColumnProperty("gvMaterialReq","WOSEQ_BRW","FixedWidth",True)
+Gui.F_Mat_Req.gsgcMatReq.SetColumnProperty("gvMaterialReq","WOSEQ_BRW","Width",40)
+Gui.F_Mat_Req.gsgcMatReq.SetColumnProperty("gvMaterialReq","USE_GL","FixedWidth",True)
+Gui.F_Mat_Req.gsgcMatReq.SetColumnProperty("gvMaterialReq","USE_GL","Width",V.Global.iUseGLW)
+Gui.F_Mat_Req.gsgcMatReq.SetColumnProperty("gvMaterialReq","GL_ACCOUNT","FixedWidth",True)
+Gui.F_Mat_Req.gsgcMatReq.SetColumnProperty("gvMaterialReq","GL_ACCOUNT","Width",V.Global.iGLW)
+
+F.Intrinsic.Control.CallSub(Deserialize)
+
+F.Intrinsic.Control.Catch
+	F.Intrinsic.Control.CallSub(ErrorMessage,"ScriptFile",V.Caller.ScriptFile,"CurrentSubroutine",V.Ambient.CurrentSubroutine)
+	F.Intrinsic.Control.CallSub(F_Mat_Req_UnLoad)
+F.Intrinsic.Control.EndTry
+Program.Sub.SetupGridView.End
+
+Program.Sub.gsgcMatReq_CellValueChanged.Start
+V.Local.sPartLoc.Declare
+F.Intrinsic.Control.Try
+
+F.Intrinsic.Control.SelectCase(V.Args.Column.UCase)
+	F.Intrinsic.Control.Case("EMPLOYEE")
+		F.Intrinsic.Control.If(V.Args.Value.Trim,!=,"")
+			F.Data.DataTable.SetValue("dtMaterialReq",V.Args.RowIndex,"NAME",V.Dictionary.dictEmplNames![V.Args.Value],"DEPT",V.Dictionary.dictEmplDepts![V.Args.Value],"EMPLOYEE_FLAG",False)
+			F.Intrinsic.Control.If(V.Args.RowIndex,=,V.DataTable.dtMaterialReq.RowCount--)
+				F.Intrinsic.Control.If(V.Global.sEmployee,=,"")
+'					F.Data.DataTable.AddRow("dtMaterialReq","EMPLOYEE","","PART","","LOCATION","","JOB","","SUFFIX","","SEQ","")
+					F.Data.DataTable.AddRow("dtMaterialReq","EMPLOYEE","","PART","","LOCATION","","JOB","","SUFFIX","")
+					Gui.F_Mat_Req.gsgcMatReq.SetColumnProperty("gvMaterialReq","EMPLOYEE_BRW","Icon","^")
+				F.Intrinsic.Control.Else
+'					F.Data.DataTable.AddRow("dtMaterialReq","EMPLOYEE",V.Global.sEmployee,"NAME",V.Dictionary.dictEmplNames![V.Global.sEmployee],"DEPT",V.Dictionary.dictEmplDepts![V.Global.sEmployee],"PART","","LOCATION","","JOB","","SUFFIX","","SEQ","")
+					F.Data.DataTable.AddRow("dtMaterialReq","EMPLOYEE",V.Global.sEmployee,"NAME",V.Dictionary.dictEmplNames![V.Global.sEmployee],"DEPT",V.Dictionary.dictEmplDepts![V.Global.sEmployee],"PART","","LOCATION","","JOB","","SUFFIX","")
+				F.Intrinsic.Control.EndIf
+				Gui.F_Mat_Req.gsgcMatReq.SetColumnProperty("gvMaterialReq","PART_BRW","Icon","^")
+				Gui.F_Mat_Req.gsgcMatReq.SetColumnProperty("gvMaterialReq","WOSEQ_BRW","Icon","^")
+			F.Intrinsic.Control.EndIf
+		F.Intrinsic.Control.Else
+			F.Data.DataTable.SetValue("dtMaterialReq",V.Args.RowIndex,"EMPLOYEE","","NAME","","DEPT","","EMPLOYEE_FLAG",False)
+'			F.Intrinsic.Control.If(V.DataTable.dtMaterialReq(V.Args.RowIndex).EMPLOYEE!FieldValTrim,=,"",and,V.DataTable.dtMaterialReq(V.Args.RowIndex).PART!FieldValTrim,=,"",V.DataTable.dtMaterialReq(V.Args.RowIndex).LOCATION!FieldValTrim,=,"",V.DataTable.dtMaterialReq(V.Args.RowIndex).JOB!FieldValTrim,=,"",V.DataTable.dtMaterialReq(V.Args.RowIndex).SUFFIX!FieldValTrim,=,"",V.DataTable.dtMaterialReq(V.Args.RowIndex).SEQ!FieldValTrim,=,"",V.Args.RowIndex,<,V.DataTable.dtMaterialReq.RowCount--)
+			F.Intrinsic.Control.If(V.DataTable.dtMaterialReq(V.Args.RowIndex).EMPLOYEE!FieldValTrim,=,"",and,V.DataTable.dtMaterialReq(V.Args.RowIndex).PART!FieldValTrim,=,"",V.DataTable.dtMaterialReq(V.Args.RowIndex).LOCATION!FieldValTrim,=,"",V.DataTable.dtMaterialReq(V.Args.RowIndex).JOB!FieldValTrim,=,"",V.DataTable.dtMaterialReq(V.Args.RowIndex).SUFFIX!FieldValTrim,=,"",V.Args.RowIndex,<,V.DataTable.dtMaterialReq.RowCount--)
+				F.Data.DataTable.DeleteRow("dtMaterialReq",V.Args.RowIndex)
+				F.Data.DataTable.AcceptChanges("dtMaterialReq")
+			F.Intrinsic.Control.EndIf
+		F.Intrinsic.Control.EndIf
+	F.Intrinsic.Control.CaseAny("PART","LOCATION")
+		F.Intrinsic.Control.If(V.DataTable.dtMaterialReq(V.Args.RowIndex).PART!FieldValTrim,!=,"")
+			'This is required, trust me
+			F.Data.DataTable.SetValue("dtMaterialReq",V.Args.RowIndex,V.Args.Column,"")
+			F.Data.DataTable.AcceptChanges("dtMaterialReq")
+			F.Data.DataTable.SetValue("dtMaterialReq",V.Args.RowIndex,V.Args.Column,V.Args.Value.Trim)
+			V.Local.sPartLoc.Set(V.DataTable.dtMaterialReq(V.Args.RowIndex).PARTLOC!FieldVal)
+			F.Data.DataTable.SetValue("dtMaterialReq",V.Args.RowIndex,"DESCRIPTION",V.Dictionary.dictPartDescr![V.Local.sPartLoc],"QTY_ONHAND",V.Dictionary.dictPartQtyOnHand![V.Local.sPartLoc],"COST",V.Dictionary.dictPartCost![V.Local.sPartLoc],"PART_FLAG",False)
+			F.Intrinsic.Control.If(V.Args.RowIndex,=,V.DataTable.dtMaterialReq.RowCount--)
+				F.Intrinsic.Control.If(V.Global.sEmployee,=,"")
+'					F.Data.DataTable.AddRow("dtMaterialReq","EMPLOYEE","","PART","","LOCATION","","JOB","","SUFFIX","","SEQ","")
+					F.Data.DataTable.AddRow("dtMaterialReq","EMPLOYEE","","PART","","LOCATION","","JOB","","SUFFIX","")
+					Gui.F_Mat_Req.gsgcMatReq.SetColumnProperty("gvMaterialReq","EMPLOYEE_BRW","Icon","^")
+				F.Intrinsic.Control.Else
+'					F.Data.DataTable.AddRow("dtMaterialReq","EMPLOYEE",V.Global.sEmployee,"NAME",V.Dictionary.dictEmplNames![V.Global.sEmployee],"DEPT",V.Dictionary.dictEmplDepts![V.Global.sEmployee],"PART","","LOCATION","","JOB","","SUFFIX","","SEQ","")
+					F.Data.DataTable.AddRow("dtMaterialReq","EMPLOYEE",V.Global.sEmployee,"NAME",V.Dictionary.dictEmplNames![V.Global.sEmployee],"DEPT",V.Dictionary.dictEmplDepts![V.Global.sEmployee],"PART","","LOCATION","","JOB","","SUFFIX","")
+				F.Intrinsic.Control.EndIf
+				Gui.F_Mat_Req.gsgcMatReq.SetColumnProperty("gvMaterialReq","PART_BRW","Icon","^")
+				Gui.F_Mat_Req.gsgcMatReq.SetColumnProperty("gvMaterialReq","WOSEQ_BRW","Icon","^")
+			F.Intrinsic.Control.EndIf
+		F.Intrinsic.Control.Else
+			F.Data.DataTable.SetValue("dtMaterialReq",V.Args.RowIndex,"PART","","DESCRIPTION","","QTY_ONHAND",V.Ambient.DBNull,"COST",V.Ambient.DBNull,"PART_FLAG",False)
+'			F.Intrinsic.Control.If(V.DataTable.dtMaterialReq(V.Args.RowIndex).EMPLOYEE!FieldValTrim,=,"",and,V.DataTable.dtMaterialReq(V.Args.RowIndex).PART!FieldValTrim,=,"",V.DataTable.dtMaterialReq(V.Args.RowIndex).LOCATION!FieldValTrim,=,"",V.DataTable.dtMaterialReq(V.Args.RowIndex).JOB!FieldValTrim,=,"",V.DataTable.dtMaterialReq(V.Args.RowIndex).SUFFIX!FieldValTrim,=,"",V.DataTable.dtMaterialReq(V.Args.RowIndex).SEQ!FieldValTrim,=,"",V.Args.RowIndex,<,V.DataTable.dtMaterialReq.RowCount--)
+			F.Intrinsic.Control.If(V.DataTable.dtMaterialReq(V.Args.RowIndex).EMPLOYEE!FieldValTrim,=,"",and,V.DataTable.dtMaterialReq(V.Args.RowIndex).PART!FieldValTrim,=,"",V.DataTable.dtMaterialReq(V.Args.RowIndex).LOCATION!FieldValTrim,=,"",V.DataTable.dtMaterialReq(V.Args.RowIndex).JOB!FieldValTrim,=,"",V.DataTable.dtMaterialReq(V.Args.RowIndex).SUFFIX!FieldValTrim,=,"",V.Args.RowIndex,<,V.DataTable.dtMaterialReq.RowCount--)
+				F.Data.DataTable.DeleteRow("dtMaterialReq",V.Args.RowIndex)
+				F.Data.DataTable.AcceptChanges("dtMaterialReq")
+			F.Intrinsic.Control.EndIf
+		F.Intrinsic.Control.EndIf
+'	F.Intrinsic.Control.Case("QTY_REQ")
+'		F.Intrinsic.Control.If(V.Args.Value.String,!=,"",and,V.Args.Value.Float,>,0)
+'			F.Data.DataTable.SetValue("dtMaterialReq",V.Args.RowIndex,"QTY_FLAG",False)
+'		F.Intrinsic.Control.Else
+'			F.Data.DataTable.SetValue("dtMaterialReq",V.Args.RowIndex,"QTY_REQ",V.Ambient.DBNull,"QTY_FLAG",False)
+'		F.Intrinsic.Control.EndIf
+F.Intrinsic.Control.EndSelect
+
+'Gui.F_Mat_Req.gsgcMatReq.SetColumnProperty("gvMaterialReq","EMPLOYEE_BRW","Icon","^")
+'Gui.F_Mat_Req.gsgcMatReq.SetColumnProperty("gvMaterialReq","PART_BRW","Icon","^")
+'Gui.F_Mat_Req.gsgcMatReq.SetColumnProperty("gvMaterialReq","WOSEQ_BRW","Icon","^")
+
+F.Intrinsic.Control.Catch
+	F.Intrinsic.Control.CallSub(ErrorMessage,"ScriptFile",V.Caller.ScriptFile,"CurrentSubroutine",V.Ambient.CurrentSubroutine)
+	F.Intrinsic.Control.CallSub(F_Mat_Req_UnLoad)
+F.Intrinsic.Control.EndTry
+Program.Sub.gsgcMatReq_CellValueChanged.End
+
+Program.Sub.gsgcMatReq_RowCellClick.Start
+V.Local.sBrowser.Declare
+V.Local.sRet.Declare
+V.Local.sPartLoc.Declare
+V.Local.sSQL.Declare
+V.Local.sNotes.Declare
+V.Local.sDate.Declare
+V.Local.sTime.Declare
+F.Intrinsic.Control.Try
+
+F.Intrinsic.Control.If(V.Args.Button.UCase,!=,"LEFT",or,V.Args.Clicks,!=,1)
+	F.Intrinsic.Control.ExitSub
+F.Intrinsic.Control.EndIf
+
+F.Intrinsic.Control.SelectCase(V.Args.Column.UCase)
+	F.Intrinsic.Control.Case("EMPLOYEE_BRW")
+		F.Intrinsic.Control.If(V.Global.sEmployee,=,"")
+			F.Data.DataView.ToString("dtEmployees","dvEmployees","EMPLOYEE*!*NAME*!*DEPT","*!*","#$#",V.Local.sBrowser)
+			F.Intrinsic.UI.SetBrowserHotTypeAhead(True)
+			F.Intrinsic.UI.BrowserFromString("Employees",V.Local.sBrowser,"*!*","#$#","Employee*!*Name*!*Dept","10*!*25*!*10",V.Local.sRet)
+			
+			F.Intrinsic.Control.If(V.Local.sRet.IsNotCancel)
+				F.Intrinsic.String.Split(V.Local.sRet,"*!*",V.Local.sRet)
+				
+				F.Data.DataTable.SetValue("dtMaterialReq",V.Args.RowIndex,"EMPLOYEE",V.Local.sRet(0),"NAME",V.Local.sRet(1),"DEPT",V.Local.sRet(2),"EMPLOYEE_FLAG",False)
+				F.Intrinsic.Control.If(V.Args.RowIndex,=,V.DataTable.dtMaterialReq.RowCount--)
+					F.Intrinsic.Control.If(V.Global.sEmployee,=,"")
+						F.Data.DataTable.AddRow("dtMaterialReq","EMPLOYEE","","PART","","LOCATION","","JOB","","SUFFIX","")
+						Gui.F_Mat_Req.gsgcMatReq.SetColumnProperty("gvMaterialReq","EMPLOYEE_BRW","Icon","^")
+					F.Intrinsic.Control.Else
+'						F.Data.DataTable.AddRow("dtMaterialReq","EMPLOYEE",V.Global.sEmployee,"NAME",V.Dictionary.dictEmplNames![V.Global.sEmployee],"DEPT",V.Dictionary.dictEmplDepts![V.Global.sEmployee],"PART","","LOCATION","","JOB","","SUFFIX","","SEQ","")
+						F.Data.DataTable.AddRow("dtMaterialReq","EMPLOYEE",V.Global.sEmployee,"NAME",V.Dictionary.dictEmplNames![V.Global.sEmployee],"DEPT",V.Dictionary.dictEmplDepts![V.Global.sEmployee],"PART","","LOCATION","","JOB","","SUFFIX","")
+					F.Intrinsic.Control.EndIf
+					Gui.F_Mat_Req.gsgcMatReq.SetColumnProperty("gvMaterialReq","PART_BRW","Icon","^")
+					Gui.F_Mat_Req.gsgcMatReq.SetColumnProperty("gvMaterialReq","WOSEQ_BRW","Icon","^")
+				F.Intrinsic.Control.EndIf
+			F.Intrinsic.Control.EndIf
+		F.Intrinsic.Control.EndIf
+	F.Intrinsic.Control.Case("PART_BRW")
+		F.Data.DataView.ToString("dtParts","dvParts","PART*!*LOCATION*!*DESCRIPTION*!*QTY_ONHAND*!*COST","*!*","#$#",V.Local.sBrowser)
+		F.Intrinsic.UI.SetBrowserHotTypeAhead(True)
+		F.Intrinsic.UI.BrowserFromString("Parts",V.Local.sBrowser,"*!*","#$#","Part*!*Loc*!*Description*!*Qty On Hand*!*Unit Cost","50*!*5*!*65*!*25*!*25",V.Local.sRet)
+		
+		F.Intrinsic.Control.If(V.Local.sRet.IsNotCancel)
+			F.Intrinsic.String.Split(V.Local.sRet,"*!*",V.Local.sRet)
+			
+			F.Data.DataTable.SetValue("dtMaterialReq",V.Args.RowIndex,"PART",V.Local.sRet(0),"LOCATION",V.Local.sRet(1),"DESCRIPTION",V.Local.sRet(2),"QTY_ONHAND",V.Local.sRet(3).Float,"COST",V.Local.sRet(4).Float,"PART_FLAG",False)
+			F.Intrinsic.Control.If(V.Args.RowIndex,=,V.DataTable.dtMaterialReq.RowCount--)
+				F.Intrinsic.Control.If(V.Global.sEmployee,=,"")
+'					F.Data.DataTable.AddRow("dtMaterialReq","EMPLOYEE","","PART","","LOCATION","","JOB","","SUFFIX","","SEQ","")
+					F.Data.DataTable.AddRow("dtMaterialReq","EMPLOYEE","","PART","","LOCATION","","JOB","","SUFFIX","")
+					Gui.F_Mat_Req.gsgcMatReq.SetColumnProperty("gvMaterialReq","EMPLOYEE_BRW","Icon","^")
+				F.Intrinsic.Control.Else
+'					F.Data.DataTable.AddRow("dtMaterialReq","EMPLOYEE",V.Global.sEmployee,"NAME",V.Dictionary.dictEmplNames![V.Global.sEmployee],"DEPT",V.Dictionary.dictEmplDepts![V.Global.sEmployee],"PART","","LOCATION","","JOB","","SUFFIX","","SEQ","")
+					F.Data.DataTable.AddRow("dtMaterialReq","EMPLOYEE",V.Global.sEmployee,"NAME",V.Dictionary.dictEmplNames![V.Global.sEmployee],"DEPT",V.Dictionary.dictEmplDepts![V.Global.sEmployee],"PART","","LOCATION","","JOB","","SUFFIX","")
+				F.Intrinsic.Control.EndIf
+				Gui.F_Mat_Req.gsgcMatReq.SetColumnProperty("gvMaterialReq","PART_BRW","Icon","^")
+				Gui.F_Mat_Req.gsgcMatReq.SetColumnProperty("gvMaterialReq","WOSEQ_BRW","Icon","^")
+			F.Intrinsic.Control.EndIf
+		F.Intrinsic.Control.EndIf
+	F.Intrinsic.Control.Case("WOSEQ_BRW")
+		F.Intrinsic.Control.If(V.DataTable.dtMaterialReq(V.Args.RowIndex).USE_GL!FieldVal)
+			F.Intrinsic.Control.ExitSub
+		F.Intrinsic.Control.EndIf
+'		F.Data.DataView.ToString("dtJobOps","dvJobOps","JOB*!*SUFFIX*!*SEQ*!*PART*!*LOCATION*!*DESCRIPTION*!*QTY_EST*!*QTY_ACT*!*QTY_REM","*!*","#$#",V.Local.sBrowser)
+		F.Data.DataView.ToString("dtJobs","dvJobs","JOB*!*SUFFIX*!*PART*!*DESCRIPTION*!*DATE_DUE","*!*","#$#",V.Local.sBrowser)
+'		F.Intrinsic.Control.If(V.DataTable.dtMaterialReq(V.Args.RowIndex).PART!FieldValTrim,!=,"",and,V.DataTable.dtMaterialReq(V.Args.RowIndex).DESCRIPTION!FieldVal,!=,"***PART NOT FOUND***")
+'			F.Intrinsic.UI.SetBrowserHotTypeAhead(True)
+'			F.Intrinsic.UI.SetBrowserHotTypeAheadColumn(3)
+'			F.Intrinsic.UI.BrowserFromString("Job Operations by Part",V.Local.sBrowser,"*!*","#$#","Job*!*Suffix*!*Seq*!*Raw Material*!*RM Loc*!*RM Description*!*Qty Est*!*Qct Issued*!*Qty Rem","20*!*5*!*20*!*50*!*5*!*65*!*25*!*25*!*25",15000,7500,V.Local.sRet)
+'			F.Intrinsic.UI.SetBrowserHotTypeAhead(False)
+'		F.Intrinsic.Control.Else
+			F.Intrinsic.UI.SetBrowserHotTypeAhead(True)
+'			F.Intrinsic.UI.BrowserFromString("Job Operations",V.Local.sBrowser,"*!*","#$#","Job*!*Suffix*!*Seq*!*Raw Material*!*RM Loc*!*RM Description*!*Qty Est*!*Qct Issued*!*Qty Rem","20*!*5*!*20*!*50*!*5*!*65*!*25*!*25*!*25",15000,7500,V.Local.sRet)
+			F.Intrinsic.UI.BrowserFromString("Jobs",V.Local.sBrowser,"*!*","#$#","Job*!*Suffix*!*FG Part*!*Description*!*Date Due","20*!*5*!*50*!*65*!*25",15000,7500,V.Local.sRet)
+'		F.Intrinsic.Control.EndIf
+		
+		F.Intrinsic.Control.If(V.Local.sRet.IsNotCancel)
+			F.Intrinsic.String.Split(V.Local.sRet,"*!*",V.Local.sRet)
+'			F.Intrinsic.String.RPad(V.Local.sRet(3)," ",20,V.Local.sPartLoc)
+'			F.Intrinsic.String.Build("{0}{1}  ",V.Local.sPartLoc,V.Local.sRet(4),V.Local.sPartLoc)
+			
+'			F.Data.DataTable.SetValue("dtMaterialReq",V.Args.RowIndex,"JOB",V.Local.sRet(0),"SUFFIX",V.Local.sRet(1),"SEQ",V.Local.sRet(2),"JOB_FLAG",False)
+			F.Data.DataTable.SetValue("dtMaterialReq",V.Args.RowIndex,"JOB",V.Local.sRet(0),"SUFFIX",V.Local.sRet(1),"JOB_FLAG",False)
+'			F.Intrinsic.Control.If(V.DataTable.dtMaterialReq(V.Args.RowIndex).PART!FieldValTrim,=,"",and,V.Local.sRet(2).Long,<,995000,V.Dictionary.dictPartQtyOnHand![V.Local.sPartLoc.Left22],>,0)
+'				F.Data.DataTable.SetValue("dtMaterialReq",V.Args.RowIndex,"PART",V.Local.sRet(3),"LOCATION",V.Local.sRet(4),"DESCRIPTION",V.Dictionary.dictPartDescr![V.Local.sPartLoc.Left22],"QTY_ONHAND",V.Dictionary.dictPartQtyOnHand![V.Local.sPartLoc.Left22],"COST",V.Dictionary.dictPartCost![V.Local.sPartLoc.Left22],"PART_FLAG",False)
+'			F.Intrinsic.Control.EndIf
+			F.Intrinsic.Control.If(V.Args.RowIndex,=,V.DataTable.dtMaterialReq.RowCount--)
+				F.Intrinsic.Control.If(V.Global.sEmployee,=,"")
+'					F.Data.DataTable.AddRow("dtMaterialReq","EMPLOYEE","","PART","","LOCATION","","JOB","","SUFFIX","","SEQ","")
+					F.Data.DataTable.AddRow("dtMaterialReq","EMPLOYEE","","PART","","LOCATION","","JOB","","SUFFIX","")
+					Gui.F_Mat_Req.gsgcMatReq.SetColumnProperty("gvMaterialReq","EMPLOYEE_BRW","Icon","^")
+				F.Intrinsic.Control.Else
+'					F.Data.DataTable.AddRow("dtMaterialReq","EMPLOYEE",V.Global.sEmployee,"NAME",V.Dictionary.dictEmplNames![V.Global.sEmployee],"DEPT",V.Dictionary.dictEmplDepts![V.Global.sEmployee],"PART","","LOCATION","","JOB","","SUFFIX","","SEQ","")
+					F.Data.DataTable.AddRow("dtMaterialReq","EMPLOYEE",V.Global.sEmployee,"NAME",V.Dictionary.dictEmplNames![V.Global.sEmployee],"DEPT",V.Dictionary.dictEmplDepts![V.Global.sEmployee],"PART","","LOCATION","","JOB","","SUFFIX","")
+				F.Intrinsic.Control.EndIf
+				Gui.F_Mat_Req.gsgcMatReq.SetColumnProperty("gvMaterialReq","PART_BRW","Icon","^")
+				Gui.F_Mat_Req.gsgcMatReq.SetColumnProperty("gvMaterialReq","WOSEQ_BRW","Icon","^")
+			F.Intrinsic.Control.EndIf
+		F.Intrinsic.Control.EndIf
+	F.Intrinsic.Control.Case("SUBMIT_CMD")
+		'This will add records to a Material Request Queue to be processed by Shop Floor Managers
+'		F.Intrinsic.Control.If(V.DataTable.dtMaterialReq(V.Args.RowIndex).EMPLOYEE!FieldValTrim,!=,"",and,V.DataTable.dtMaterialReq(V.Args.RowIndex).NAME!FieldVal,!=,"***EMPLOYEE NOT FOUND***",V.DataTable.dtMaterialReq(V.Args.RowIndex).PART!FieldValTrim,!=,"",V.DataTable.dtMaterialReq(V.Args.RowIndex).DESCRIPTION!FieldVal,!=,"***PART NOT FOUND***",V.DataTable.dtMaterialReq(V.Args.RowIndex).QTY_REQ!FieldValString,!=,"",V.DataTable.dtMaterialReq(V.Args.RowIndex).QTY_REQ!FieldValFloat,>,0,V.DataTable.dtMaterialReq(V.Args.RowIndex).JOB!FieldValTrim,!=,"",V.DataTable.dtMaterialReq(V.Args.RowIndex).SEQ!FieldValTrim,!=,"")
+		F.Intrinsic.Control.If(V.DataTable.dtMaterialReq(V.Args.RowIndex).EMPLOYEE!FieldValTrim,!=,"",and,V.DataTable.dtMaterialReq(V.Args.RowIndex).NAME!FieldVal,!=,"***EMPLOYEE NOT FOUND***",V.DataTable.dtMaterialReq(V.Args.RowIndex).PART!FieldValTrim,!=,"",V.DataTable.dtMaterialReq(V.Args.RowIndex).DESCRIPTION!FieldVal,!=,"***PART NOT FOUND***",V.DataTable.dtMaterialReq(V.Args.RowIndex).QTY_REQ!FieldValString,!=,"",V.DataTable.dtMaterialReq(V.Args.RowIndex).QTY_REQ!FieldValFloat,>,0,V.DataTable.dtMaterialReq(V.Args.RowIndex).JOB!FieldValTrim,!=,"",V.DataTable.dtMaterialReq(V.Args.RowIndex).USE_GL!FieldVal,=,False)
+			'Checks went through
+			'Open notes screen
+			Gui.F_Notes.txtNotes.Text("")
+			Gui.F_Mat_Req..Enabled(False)
+			F.Intrinsic.Control.If(V.Global.bNotesShow)
+				Gui.F_Notes..Visible(True)
+			F.Intrinsic.Control.Else
+				Gui.F_Notes..Show
+				V.Global.bNotesShow.Set(True)
+			F.Intrinsic.Control.EndIf
+			Gui.F_Notes..WaitForDismiss
+			Gui.F_Mat_Req..Enabled(True)
+			Gui.F_Mat_Req..SetFocus
+			
+			V.Local.sNotes.Set(V.Screen.F_Notes!txtNotes.Text.Trim)
+			F.Intrinsic.String.Format(V.Ambient.Date,"YYYY-MM-DD",V.Local.sDate)
+			F.Intrinsic.String.Format(V.Ambient.Now,"YYYY-MM-DD HH:NN:SS",V.Local.sTime)
+'			F.Intrinsic.String.Build("insert into GCG_6005_MATREQ_Q (EMPLOYEE, PART, LOCATION, QTY_REQ, JOB, SUFFIX, SEQ, DATE_REQ, TIME_REQ, ORIGIN_REQ) values ('{0}', '{1}', '{2}', {3}, '{4}', '{5}', '{6}', '{8}', '{9}.000', '{7}');",V.DataTable.dtMaterialReq(V.Args.RowIndex).EMPLOYEE!FieldVal,V.DataTable.dtMaterialReq(V.Args.RowIndex).PART!FieldVal,V.DataTable.dtMaterialReq(V.Args.RowIndex).LOCATION!FieldVal,V.DataTable.dtMaterialReq(V.Args.RowIndex).QTY_REQ!FieldValString,V.DataTable.dtMaterialReq(V.Args.RowIndex).JOB!FieldVal,V.DataTable.dtMaterialReq(V.Args.RowIndex).SUFFIX!FieldVal,V.DataTable.dtMaterialReq(V.Args.RowIndex).SEQ!FieldVal,V.Local.sNotes.PSQLFriendly,V.Local.sDate,V.Local.sTime,V.Local.sSQL)
+			F.Intrinsic.String.Build("insert into GCG_6005_MATREQ_Q (EMPLOYEE, PART, LOCATION, QTY_REQ, JOB, SUFFIX, SEQ, DATE_REQ, TIME_REQ, ORIGIN_REQ, USE_GL, GL_ACCOUNT) values ('{0}', '{1}', '{2}', {3}, '{4}', '{5}', '{6}', '{8}', '{9}.000', '{7}', 0, '');",V.DataTable.dtMaterialReq(V.Args.RowIndex).EMPLOYEE!FieldVal,V.DataTable.dtMaterialReq(V.Args.RowIndex).PART!FieldVal,V.DataTable.dtMaterialReq(V.Args.RowIndex).LOCATION!FieldVal,V.DataTable.dtMaterialReq(V.Args.RowIndex).QTY_REQ!FieldValString,V.DataTable.dtMaterialReq(V.Args.RowIndex).JOB!FieldVal,V.DataTable.dtMaterialReq(V.Args.RowIndex).SUFFIX!FieldVal,"",V.Local.sNotes.PSQLFriendly,V.Local.sDate,V.Local.sTime,V.Local.sSQL)
+			
+			F.ODBC.Connection!con.OpenCompanyConnection
+			F.ODBC.Connection!con.Execute(V.Local.sSQL)
+			F.ODBC.Connection!con.Close
+			
+			F.Data.DataTable.DeleteRow("dtMaterialReq",V.Args.RowIndex)
+			F.Data.DataTable.AcceptChanges("dtMaterialReq")
+		F.Intrinsic.Control.ElseIf(V.DataTable.dtMaterialReq(V.Args.RowIndex).EMPLOYEE!FieldValTrim,!=,"",and,V.DataTable.dtMaterialReq(V.Args.RowIndex).NAME!FieldVal,!=,"***EMPLOYEE NOT FOUND***",V.DataTable.dtMaterialReq(V.Args.RowIndex).PART!FieldValTrim,!=,"",V.DataTable.dtMaterialReq(V.Args.RowIndex).DESCRIPTION!FieldVal,!=,"***PART NOT FOUND***",V.DataTable.dtMaterialReq(V.Args.RowIndex).QTY_REQ!FieldValString,!=,"",V.DataTable.dtMaterialReq(V.Args.RowIndex).QTY_REQ!FieldValFloat,>,0,V.DataTable.dtMaterialReq(V.Args.RowIndex).GL_ACCOUNT!FieldValTrim,!=,"",V.DataTable.dtMaterialReq(V.Args.RowIndex).USE_GL!FieldVal,=,True)
+			'Checks went through
+			'Open notes screen
+			Gui.F_Notes.txtNotes.Text("")
+			Gui.F_Mat_Req..Enabled(False)
+			F.Intrinsic.Control.If(V.Global.bNotesShow)
+				Gui.F_Notes..Visible(True)
+			F.Intrinsic.Control.Else
+				Gui.F_Notes..Show
+				V.Global.bNotesShow.Set(True)
+			F.Intrinsic.Control.EndIf
+			Gui.F_Notes..WaitForDismiss
+			Gui.F_Mat_Req..Enabled(True)
+			Gui.F_Mat_Req..SetFocus
+			
+			V.Local.sNotes.Set(V.Screen.F_Notes!txtNotes.Text.Trim)
+			F.Intrinsic.String.Format(V.Ambient.Date,"YYYY-MM-DD",V.Local.sDate)
+			F.Intrinsic.String.Format(V.Ambient.Now,"YYYY-MM-DD HH:NN:SS",V.Local.sTime)
+			F.Intrinsic.String.Build("insert into GCG_6005_MATREQ_Q (EMPLOYEE, PART, LOCATION, QTY_REQ, JOB, SUFFIX, SEQ, DATE_REQ, TIME_REQ, ORIGIN_REQ, USE_GL, GL_ACCOUNT) values ('{0}', '{1}', '{2}', {3}, '', '', '', '{8}', '{9}.000', '{7}', 1, '{10}');",V.DataTable.dtMaterialReq(V.Args.RowIndex).EMPLOYEE!FieldVal,V.DataTable.dtMaterialReq(V.Args.RowIndex).PART!FieldVal,V.DataTable.dtMaterialReq(V.Args.RowIndex).LOCATION!FieldVal,V.DataTable.dtMaterialReq(V.Args.RowIndex).QTY_REQ!FieldValString,V.DataTable.dtMaterialReq(V.Args.RowIndex).JOB!FieldVal,V.DataTable.dtMaterialReq(V.Args.RowIndex).SUFFIX!FieldVal,"",V.Local.sNotes.PSQLFriendly,V.Local.sDate,V.Local.sTime,V.DataTable.dtMaterialReq(V.Args.RowIndex).GL_ACCOUNT!FieldVal,V.Local.sSQL)
+			
+			F.ODBC.Connection!con.OpenCompanyConnection
+			F.ODBC.Connection!con.Execute(V.Local.sSQL)
+			F.ODBC.Connection!con.Close
+			
+			F.Data.DataTable.DeleteRow("dtMaterialReq",V.Args.RowIndex)
+			F.Data.DataTable.AcceptChanges("dtMaterialReq")
+		F.Intrinsic.Control.Else
+			'Something required is missing
+			F.Intrinsic.Control.If(V.DataTable.dtMaterialReq(V.Args.RowIndex).EMPLOYEE!FieldValTrim,=,"",or,V.DataTable.dtMaterialReq(V.Args.RowIndex).NAME!FieldVal,=,"***EMPLOYEE NOT FOUND***")
+				F.Data.DataTable.SetValue("dtMaterialReq",V.Args.RowIndex,"EMPLOYEE_FLAG",True)
+			F.Intrinsic.Control.EndIf
+			F.Intrinsic.Control.If(V.DataTable.dtMaterialReq(V.Args.RowIndex).PART!FieldValTrim,=,"",or,V.DataTable.dtMaterialReq(V.Args.RowIndex).DESCRIPTION!FieldVal,=,"***PART NOT FOUND***")
+				F.Data.DataTable.SetValue("dtMaterialReq",V.Args.RowIndex,"PART_FLAG",True)
+			F.Intrinsic.Control.EndIf
+			F.Intrinsic.Control.If(V.DataTable.dtMaterialReq(V.Args.RowIndex).QTY_REQ!FieldValString,=,"",or,V.DataTable.dtMaterialReq(V.Args.RowIndex).QTY_REQ!FieldValFloat,<=,0)
+				F.Data.DataTable.SetValue("dtMaterialReq",V.Args.RowIndex,"QTY_FLAG",True)
+			F.Intrinsic.Control.EndIf
+'			F.Intrinsic.Control.If(V.DataTable.dtMaterialReq(V.Args.RowIndex).JOB!FieldValTrim,=,"",or,V.DataTable.dtMaterialReq(V.Args.RowIndex).SEQ!FieldValTrim,=,"")
+			F.Intrinsic.Control.If(V.DataTable.dtMaterialReq(V.Args.RowIndex).JOB!FieldValTrim,=,"",and,V.DataTable.dtMaterialReq(V.Args.RowIndex).USE_GL!FieldVal,=,False)
+				F.Data.DataTable.SetValue("dtMaterialReq",V.Args.RowIndex,"JOB_FLAG",True)
+			F.Intrinsic.Control.EndIf
+			F.Intrinsic.Control.If(V.DataTable.dtMaterialReq(V.Args.RowIndex).GL_ACCOUNT!FieldValTrim,=,"",and,V.DataTable.dtMaterialReq(V.Args.RowIndex).USE_GL!FieldVal,=,True)
+				F.Data.DataTable.SetValue("dtMaterialReq",V.Args.RowIndex,"GL_FLAG",True)
+			F.Intrinsic.Control.EndIf
+		F.Intrinsic.Control.EndIf
+	F.Intrinsic.Control.Case("QTY_REQ")
+		'Open touch screen
+		Gui.F_Mat_Req..Enabled(False)
+		
+		Gui.F_QtyReq..Caption("Qty")
+		Gui.F_QtyReq.txtQtyReq.Text(V.Args.CellValue.String)
+		V.Global.iQtyRow.Set(V.Args.RowIndex)
+		Gui.F_QtyReq..Visible(True)
+	F.Intrinsic.Control.Case("USE_GL")
+		F.Data.DataTable.SetValue("dtMaterialReq",V.Args.RowIndex,"USE_GL",V.Args.CellValue.Not,"JOB","","SUFFIX","","GL_ACCOUNT","")
+	F.Intrinsic.Control.Case("GL_ACCOUNT")
+		F.Intrinsic.Control.If(V.DataTable.dtMaterialReq(V.Args.RowIndex).USE_GL!FieldValNot)
+			F.Intrinsic.Control.ExitSub
+		F.Intrinsic.Control.EndIf
+		'Open touch screen
+		Gui.F_Mat_Req..Enabled(False)
+		
+		Gui.F_QtyReq..Caption("GL")
+		Gui.F_QtyReq.txtQtyReq.Text(V.Args.CellValue.String)
+		V.Global.iQtyRow.Set(V.Args.RowIndex)
+		Gui.F_QtyReq..Visible(True)
+F.Intrinsic.Control.EndSelect
+
+F.Intrinsic.Control.Catch
+	F.Intrinsic.Control.CallSub(ErrorMessage,"ScriptFile",V.Caller.ScriptFile,"CurrentSubroutine",V.Ambient.CurrentSubroutine)
+	F.Intrinsic.Control.CallSub(F_Mat_Req_UnLoad)
+F.Intrinsic.Control.EndTry
+Program.Sub.gsgcMatReq_RowCellClick.End
+
+Program.Sub.F_Font_UnLoad.Start
+F.Intrinsic.Control.Try
+
+Gui.F_Font..Visible(False)
+Gui.F_Mat_Req..Enabled(True)
+Gui.F_Mat_Req..SetFocus
+
+F.Intrinsic.Control.Catch
+	F.Intrinsic.Control.CallSub(ErrorMessage,"ScriptFile",V.Caller.ScriptFile,"CurrentSubroutine",V.Ambient.CurrentSubroutine)
+	F.Intrinsic.Control.CallSub(F_Mat_Req_UnLoad)
+F.Intrinsic.Control.EndTry
+Program.Sub.F_Font_UnLoad.End
+
+Program.Sub.cmdPlus_Click.Start
+V.Local.iFont.Declare
+F.Intrinsic.Control.Try
+
+V.Local.iFont.Set(V.Screen.F_Font!txtFont.Text)
+F.Intrinsic.Math.Add(V.Local.iFont,1,V.Local.iFont)
+Gui.F_Font.txtFont.Text(V.Local.iFont.String)
+
+F.Intrinsic.Control.Catch
+	F.Intrinsic.Control.CallSub(ErrorMessage,"ScriptFile",V.Caller.ScriptFile,"CurrentSubroutine",V.Ambient.CurrentSubroutine)
+	F.Intrinsic.Control.CallSub(F_Mat_Req_UnLoad)
+F.Intrinsic.Control.EndTry
+Program.Sub.cmdPlus_Click.End
+
+Program.Sub.cmdMinus_Click.Start
+V.Local.iFont.Declare
+F.Intrinsic.Control.Try
+
+V.Local.iFont.Set(V.Screen.F_Font!txtFont.Text)
+F.Intrinsic.Math.Sub(V.Local.iFont,1,V.Local.iFont)
+F.Intrinsic.Control.If(V.Local.iFont,<=,0)
+	V.Local.iFont.Set(1)
+F.Intrinsic.Control.EndIf
+Gui.F_Font.txtFont.Text(V.Local.iFont.String)
+
+F.Intrinsic.Control.Catch
+	F.Intrinsic.Control.CallSub(ErrorMessage,"ScriptFile",V.Caller.ScriptFile,"CurrentSubroutine",V.Ambient.CurrentSubroutine)
+	F.Intrinsic.Control.CallSub(F_Mat_Req_UnLoad)
+F.Intrinsic.Control.EndTry
+Program.Sub.cmdMinus_Click.End
+
+Program.Sub.cmdUpdate_Click.Start
+V.Local.iFont.Declare
+F.Intrinsic.Control.Try
+
+F.Intrinsic.Control.If(V.Screen.F_Font!txtFont.Text,=,0)
+	F.Intrinsic.UI.Msgbox("Font cannot be zero")
+	F.Intrinsic.Control.ExitSub
+F.Intrinsic.Control.EndIf
+
+Gui.F_Font..Visible(False)
+
+V.Local.iFont.Set(V.Screen.F_Font!txtFont.Text.Long)
+
+F.Intrinsic.Control.CallSub(SetFont,"Font",V.Local.iFont)
+
+Gui.F_Mat_Req..Enabled(True)
+Gui.F_Mat_Req..SetFocus
+
+F.Intrinsic.Control.Catch
+	F.Intrinsic.Control.CallSub(ErrorMessage,"ScriptFile",V.Caller.ScriptFile,"CurrentSubroutine",V.Ambient.CurrentSubroutine)
+	F.Intrinsic.Control.CallSub(F_Mat_Req_UnLoad)
+F.Intrinsic.Control.EndTry
+Program.Sub.cmdUpdate_Click.End
+
+Program.Sub.SetFontSize.Start
+V.Local.iFont.Declare
+F.Intrinsic.Control.Try
+
+Gui.F_Mat_Req..Enabled(False)
+Gui.F_Mat_Req.gsgcMatReq.GetColumnProperty("gvMaterialReq","PART","HeaderFontSize",V.Local.iFont)
+
+Gui.F_Font.txtFont.Text(V.Local.iFont.String)
+
+Gui.F_Font..Show
+
+F.Intrinsic.Control.Catch
+	F.Intrinsic.Control.CallSub(ErrorMessage,"ScriptFile",V.Caller.ScriptFile,"CurrentSubroutine",V.Ambient.CurrentSubroutine)
+	F.Intrinsic.Control.CallSub(F_Mat_Req_UnLoad)
+F.Intrinsic.Control.EndTry
+Program.Sub.SetFontSize.End
+
+Program.Sub.SetFont.Start
+V.Local.iHeader.Declare
+V.Local.fWidth.Declare
+V.Local.iWidth.Declare
+F.Intrinsic.Control.Try
+
+F.Intrinsic.Math.Mult(V.Args.Font,2.5,V.Local.iHeader)
+
+Gui.F_Mat_Req.gsgcMatReq.SuspendLayout
+
+Gui.F_Mat_Req.gsgcMatReq.SetGridviewProperty("gvMaterialReq","OptionsViewRowAutoHeight",True)
+Gui.F_Mat_Req.gsgcMatReq.SetGridviewProperty("gvMaterialReq","ColumnPanelRowHeight",V.Local.iHeader)
+
+Gui.F_Mat_Req.gsgcMatReq.SetColumnProperty("gvMaterialReq","EMPLOYEE","HeaderFontSize",V.Args.Font)
+Gui.F_Mat_Req.gsgcMatReq.SetColumnProperty("gvMaterialReq","NAME","HeaderFontSize",V.Args.Font)
+Gui.F_Mat_Req.gsgcMatReq.SetColumnProperty("gvMaterialReq","DEPT","HeaderFontSize",V.Args.Font)
+Gui.F_Mat_Req.gsgcMatReq.SetColumnProperty("gvMaterialReq","PART","HeaderFontSize",V.Args.Font)
+Gui.F_Mat_Req.gsgcMatReq.SetColumnProperty("gvMaterialReq","LOCATION","HeaderFontSize",V.Args.Font)
+Gui.F_Mat_Req.gsgcMatReq.SetColumnProperty("gvMaterialReq","DESCRIPTION","HeaderFontSize",V.Args.Font)
+Gui.F_Mat_Req.gsgcMatReq.SetColumnProperty("gvMaterialReq","QTY_ONHAND","HeaderFontSize",V.Args.Font)
+Gui.F_Mat_Req.gsgcMatReq.SetColumnProperty("gvMaterialReq","COST","HeaderFontSize",V.Args.Font)
+Gui.F_Mat_Req.gsgcMatReq.SetColumnProperty("gvMaterialReq","QTY_REQ","HeaderFontSize",V.Args.Font)
+Gui.F_Mat_Req.gsgcMatReq.SetColumnProperty("gvMaterialReq","JOB","HeaderFontSize",V.Args.Font)
+Gui.F_Mat_Req.gsgcMatReq.SetColumnProperty("gvMaterialReq","SUFFIX","HeaderFontSize",V.Args.Font)
+'Gui.F_Mat_Req.gsgcMatReq.SetColumnProperty("gvMaterialReq","SEQ","HeaderFontSize",V.Args.Font)
+Gui.F_Mat_Req.gsgcMatReq.SetColumnProperty("gvMaterialReq","USE_GL","HeaderFontSize",V.Args.Font)
+Gui.F_Mat_Req.gsgcMatReq.SetColumnProperty("gvMaterialReq","GL_ACCOUNT","HeaderFontSize",V.Args.Font)
+
+Gui.F_Mat_Req.gsgcMatReq.SetColumnProperty("gvMaterialReq","EMPLOYEE","CellFontSize",V.Args.Font)
+Gui.F_Mat_Req.gsgcMatReq.SetColumnProperty("gvMaterialReq","NAME","CellFontSize",V.Args.Font)
+Gui.F_Mat_Req.gsgcMatReq.SetColumnProperty("gvMaterialReq","DEPT","CellFontSize",V.Args.Font)
+Gui.F_Mat_Req.gsgcMatReq.SetColumnProperty("gvMaterialReq","PART","CellFontSize",V.Args.Font)
+Gui.F_Mat_Req.gsgcMatReq.SetColumnProperty("gvMaterialReq","LOCATION","CellFontSize",V.Args.Font)
+Gui.F_Mat_Req.gsgcMatReq.SetColumnProperty("gvMaterialReq","DESCRIPTION","CellFontSize",V.Args.Font)
+Gui.F_Mat_Req.gsgcMatReq.SetColumnProperty("gvMaterialReq","QTY_ONHAND","CellFontSize",V.Args.Font)
+Gui.F_Mat_Req.gsgcMatReq.SetColumnProperty("gvMaterialReq","COST","CellFontSize",V.Args.Font)
+Gui.F_Mat_Req.gsgcMatReq.SetColumnProperty("gvMaterialReq","QTY_REQ","CellFontSize",V.Args.Font)
+Gui.F_Mat_Req.gsgcMatReq.SetColumnProperty("gvMaterialReq","JOB","CellFontSize",V.Args.Font)
+Gui.F_Mat_Req.gsgcMatReq.SetColumnProperty("gvMaterialReq","SUFFIX","CellFontSize",V.Args.Font)
+'Gui.F_Mat_Req.gsgcMatReq.SetColumnProperty("gvMaterialReq","SEQ","CellFontSize",V.Args.Font)
+Gui.F_Mat_Req.gsgcMatReq.SetColumnProperty("gvMaterialReq","USE_GL","CellFontSize",V.Args.Font)
+Gui.F_Mat_Req.gsgcMatReq.SetColumnProperty("gvMaterialReq","GL_ACCOUNT","CellFontSize",V.Args.Font)
+
+Gui.F_Mat_Req.gsgcMatReq.SetColumnProperty("gvMaterialReq","EMPLOYEE","AllowSize",True)
+Gui.F_Mat_Req.gsgcMatReq.SetColumnProperty("gvMaterialReq","NAME","AllowSize",True)
+Gui.F_Mat_Req.gsgcMatReq.SetColumnProperty("gvMaterialReq","DEPT","AllowSize",True)
+Gui.F_Mat_Req.gsgcMatReq.SetColumnProperty("gvMaterialReq","PART","AllowSize",True)
+Gui.F_Mat_Req.gsgcMatReq.SetColumnProperty("gvMaterialReq","LOCATION","AllowSize",True)
+Gui.F_Mat_Req.gsgcMatReq.SetColumnProperty("gvMaterialReq","DESCRIPTION","AllowSize",True)
+Gui.F_Mat_Req.gsgcMatReq.SetColumnProperty("gvMaterialReq","QTY_ONHAND","AllowSize",True)
+Gui.F_Mat_Req.gsgcMatReq.SetColumnProperty("gvMaterialReq","COST","AllowSize",True)
+Gui.F_Mat_Req.gsgcMatReq.SetColumnProperty("gvMaterialReq","QTY_REQ","AllowSize",True)
+Gui.F_Mat_Req.gsgcMatReq.SetColumnProperty("gvMaterialReq","JOB","AllowSize",True)
+Gui.F_Mat_Req.gsgcMatReq.SetColumnProperty("gvMaterialReq","SUFFIX","AllowSize",True)
+'Gui.F_Mat_Req.gsgcMatReq.SetColumnProperty("gvMaterialReq","SEQ","AllowSize",True)
+Gui.F_Mat_Req.gsgcMatReq.SetColumnProperty("gvMaterialReq","USE_GL","AllowSize",True)
+Gui.F_Mat_Req.gsgcMatReq.SetColumnProperty("gvMaterialReq","GL_ACCOUNT","AllowSize",True)
+
+Gui.F_Mat_Req.gsgcMatReq.SetColumnProperty("gvMaterialReq","EMPLOYEE","HeaderWordWrap","Wrap")
+Gui.F_Mat_Req.gsgcMatReq.SetColumnProperty("gvMaterialReq","NAME","HeaderWordWrap","Wrap")
+Gui.F_Mat_Req.gsgcMatReq.SetColumnProperty("gvMaterialReq","DEPT","HeaderWordWrap","Wrap")
+Gui.F_Mat_Req.gsgcMatReq.SetColumnProperty("gvMaterialReq","PART","HeaderWordWrap","Wrap")
+Gui.F_Mat_Req.gsgcMatReq.SetColumnProperty("gvMaterialReq","LOCATION","HeaderWordWrap","Wrap")
+Gui.F_Mat_Req.gsgcMatReq.SetColumnProperty("gvMaterialReq","DESCRIPTION","HeaderWordWrap","Wrap")
+Gui.F_Mat_Req.gsgcMatReq.SetColumnProperty("gvMaterialReq","QTY_ONHAND","HeaderWordWrap","Wrap")
+Gui.F_Mat_Req.gsgcMatReq.SetColumnProperty("gvMaterialReq","COST","HeaderWordWrap","Wrap")
+Gui.F_Mat_Req.gsgcMatReq.SetColumnProperty("gvMaterialReq","QTY_REQ","HeaderWordWrap","Wrap")
+Gui.F_Mat_Req.gsgcMatReq.SetColumnProperty("gvMaterialReq","JOB","HeaderWordWrap","Wrap")
+Gui.F_Mat_Req.gsgcMatReq.SetColumnProperty("gvMaterialReq","SUFFIX","HeaderWordWrap","Wrap")
+'Gui.F_Mat_Req.gsgcMatReq.SetColumnProperty("gvMaterialReq","SEQ","HeaderWordWrap","Wrap")
+Gui.F_Mat_Req.gsgcMatReq.SetColumnProperty("gvMaterialReq","USE_GL","HeaderWordWrap","Wrap")
+Gui.F_Mat_Req.gsgcMatReq.SetColumnProperty("gvMaterialReq","GL_ACCOUNT","HeaderWordWrap","Wrap")
+
+Gui.F_Mat_Req.gsgcMatReq.SetColumnProperty("gvMaterialReq","NAME","CellWordWrap","Wrap")
+Gui.F_Mat_Req.gsgcMatReq.SetColumnProperty("gvMaterialReq","DEPT","CellWordWrap","Wrap")
+Gui.F_Mat_Req.gsgcMatReq.SetColumnProperty("gvMaterialReq","LOCATION","CellWordWrap","Wrap")
+Gui.F_Mat_Req.gsgcMatReq.SetColumnProperty("gvMaterialReq","DESCRIPTION","CellWordWrap","Wrap")
+Gui.F_Mat_Req.gsgcMatReq.SetColumnProperty("gvMaterialReq","JOB","CellWordWrap","Wrap")
+Gui.F_Mat_Req.gsgcMatReq.SetColumnProperty("gvMaterialReq","SUFFIX","CellWordWrap","Wrap")
+'Gui.F_Mat_Req.gsgcMatReq.SetColumnProperty("gvMaterialReq","SEQ","CellWordWrap","Wrap")
+Gui.F_Mat_Req.gsgcMatReq.SetColumnProperty("gvMaterialReq","GL_ACCOUNT","CellWordWrap","Wrap")
+
+F.Intrinsic.Math.Div(V.Global.iEmployeeW,8,V.Local.fWidth)
+F.Intrinsic.Math.Mult(V.Local.fWidth,V.Args.Font,V.Local.iWidth)
+Gui.F_Mat_Req.gsgcMatReq.SetColumnProperty("gvMaterialReq","EMPLOYEE","Width",V.Local.iWidth)
+F.Intrinsic.Math.Div(V.Global.iNameW,8,V.Local.fWidth)
+F.Intrinsic.Math.Mult(V.Local.fWidth,V.Args.Font,V.Local.iWidth)
+Gui.F_Mat_Req.gsgcMatReq.SetColumnProperty("gvMaterialReq","NAME","Width",V.Local.iWidth)
+F.Intrinsic.Math.Div(V.Global.iDeptW,8,V.Local.fWidth)
+F.Intrinsic.Math.Mult(V.Local.fWidth,V.Args.Font,V.Local.iWidth)
+Gui.F_Mat_Req.gsgcMatReq.SetColumnProperty("gvMaterialReq","DEPT","Width",V.Local.iWidth)
+F.Intrinsic.Math.Div(V.Global.iPartW,8,V.Local.fWidth)
+F.Intrinsic.Math.Mult(V.Local.fWidth,V.Args.Font,V.Local.iWidth)
+Gui.F_Mat_Req.gsgcMatReq.SetColumnProperty("gvMaterialReq","PART","Width",V.Local.iWidth)
+F.Intrinsic.Math.Div(V.Global.iDescW,8,V.Local.fWidth)
+F.Intrinsic.Math.Mult(V.Local.fWidth,V.Args.Font,V.Local.iWidth)
+Gui.F_Mat_Req.gsgcMatReq.SetColumnProperty("gvMaterialReq","DESCRIPTION","Width",V.Local.iWidth)
+F.Intrinsic.Math.Div(V.Global.iQOHW,8,V.Local.fWidth)
+F.Intrinsic.Math.Mult(V.Local.fWidth,V.Args.Font,V.Local.iWidth)
+Gui.F_Mat_Req.gsgcMatReq.SetColumnProperty("gvMaterialReq","QTY_ONHAND","Width",V.Local.iWidth)
+F.Intrinsic.Math.Div(V.Global.iCostW,8,V.Local.fWidth)
+F.Intrinsic.Math.Mult(V.Local.fWidth,V.Args.Font,V.Local.iWidth)
+Gui.F_Mat_Req.gsgcMatReq.SetColumnProperty("gvMaterialReq","COST","Width",V.Local.iWidth)
+F.Intrinsic.Math.Div(V.Global.iQtyReqW,8,V.Local.fWidth)
+F.Intrinsic.Math.Mult(V.Local.fWidth,V.Args.Font,V.Local.iWidth)
+Gui.F_Mat_Req.gsgcMatReq.SetColumnProperty("gvMaterialReq","QTY_REQ","Width",V.Local.iWidth)
+F.Intrinsic.Math.Div(V.Global.iJobW,8,V.Local.fWidth)
+F.Intrinsic.Math.Mult(V.Local.fWidth,V.Args.Font,V.Local.iWidth)
+Gui.F_Mat_Req.gsgcMatReq.SetColumnProperty("gvMaterialReq","JOB","Width",V.Local.iWidth)
+F.Intrinsic.Math.Div(V.Global.iSuffixW,8,V.Local.fWidth)
+F.Intrinsic.Math.Mult(V.Local.fWidth,V.Args.Font,V.Local.iWidth)
+Gui.F_Mat_Req.gsgcMatReq.SetColumnProperty("gvMaterialReq","SUFFIX","Width",V.Local.iWidth)
+F.Intrinsic.Math.Div(V.Global.iUseGLW,8,V.Local.fWidth)
+F.Intrinsic.Math.Mult(V.Local.fWidth,V.Args.Font,V.Local.iWidth)
+Gui.F_Mat_Req.gsgcMatReq.SetColumnProperty("gvMaterialReq","USE_GL","Width",V.Local.iWidth)
+F.Intrinsic.Math.Div(V.Global.iGLW,8,V.Local.fWidth)
+F.Intrinsic.Math.Mult(V.Local.fWidth,V.Args.Font,V.Local.iWidth)
+Gui.F_Mat_Req.gsgcMatReq.SetColumnProperty("gvMaterialReq","GL_ACCOUNT","Width",V.Local.iWidth)
+
+Gui.F_Mat_Req.gsgcMatReq.BestFitColumns("gvMaterialReq")
+Gui.F_Mat_Req.gsgcMatReq.ResumeLayout
+
+F.Intrinsic.Control.Catch
+	F.Intrinsic.Control.CallSub(ErrorMessage,"ScriptFile",V.Caller.ScriptFile,"CurrentSubroutine",V.Ambient.CurrentSubroutine)
+	F.Intrinsic.Control.CallSub(F_Mat_Req_UnLoad)
+F.Intrinsic.Control.EndTry
+Program.Sub.SetFont.End
+
+Program.Sub.Serialize.Start
+V.Local.Serialize.Declare
+V.Local.iFont.Declare
+F.Intrinsic.Control.Try
+
+'GridView - gvMaterialReq
+Gui.F_Mat_Req.gsgcMatReq.Serialize("gvMaterialReq",V.Local.Serialize)
+Gui.F_Mat_Req.gsgcMatReq.GetColumnProperty("gvMaterialReq","PART","HeaderFontSize",V.Local.iFont)
+F.Global.Registry.AddValue(V.Caller.User,V.Caller.CompanyCode,"gvMaterialReq",6005,2000,False,"Serialize",False,V.Local.iFont,-999.0,1/1/1980,12:00:00 AM,V.Local.Serialize)
+
+F.Intrinsic.Control.Catch
+	F.Intrinsic.Control.CallSub(ErrorMessage,"ScriptFile",V.Caller.ScriptFile,"CurrentSubroutine",V.Ambient.CurrentSubroutine)
+	F.Intrinsic.Control.CallSub(F_Mat_Req_UnLoad)
+F.Intrinsic.Control.EndTry
+Program.Sub.Serialize.End
+
+Program.Sub.Deserialize.Start
+V.Local.iFont.Declare
+V.Local.Serialize.Declare
+F.Intrinsic.Control.Try
+
+'GridView - gvMaterialReq
+F.Global.Registry.ReadValue(V.Caller.User,V.Caller.CompanyCode,"gvMaterialReq",6005,2000,6,"",V.Local.Serialize)
+F.Intrinsic.Control.If(V.Local.Serialize.Trim,<>,"")
+	Gui.F_Mat_Req.gsgcMatReq.Deserialize(V.Local.Serialize)
+	F.Global.Registry.ReadValue(V.Caller.User,V.Caller.CompanyCode,"gvMaterialReq",6005,2000,1,"",V.Local.iFont)
+	F.Intrinsic.Control.If(V.Local.iFont,!=,8)
+		F.Intrinsic.Control.CallSub(SetFont,"Font",V.Local.iFont)
+	F.Intrinsic.Control.EndIf
+F.Intrinsic.Control.EndIf
+
+F.Intrinsic.Control.Catch
+	F.Intrinsic.Control.CallSub(ErrorMessage,"ScriptFile",V.Caller.ScriptFile,"CurrentSubroutine",V.Ambient.CurrentSubroutine)
+	F.Intrinsic.Control.CallSub(F_Mat_Req_UnLoad)
+F.Intrinsic.Control.EndTry
+Program.Sub.Deserialize.End
+
+Program.Sub.F_Notes_UnLoad.Start
+F.Intrinsic.Control.Try
+Gui.F_Notes..Visible(False)
+F.Intrinsic.Control.Catch
+	F.Intrinsic.Control.CallSub(ErrorMessage,"ScriptFile",V.Caller.ScriptFile,"CurrentSubroutine",V.Ambient.CurrentSubroutine)
+	F.Intrinsic.Control.CallSub(F_Mat_Req_UnLoad)
+F.Intrinsic.Control.EndTry
+Program.Sub.F_Notes_UnLoad.End
+
+Program.Sub.F_QtyReq_UnLoad.Start
+V.Local.sColumn.Declare
+V.Local.sFlag.Declare
+F.Intrinsic.Control.Try
+
+F.Intrinsic.Control.If(V.Screen.F_QtyReq.Caption,=,"Qty")
+	V.Local.sColumn.Set("QTY_REQ")
+	V.Local.sFlag.Set("QTY_FLAG")
+F.Intrinsic.Control.Else
+	V.Local.sColumn.Set("GL_ACCOUNT")
+	V.Local.sFlag.Set("GL_FLAG")
+F.Intrinsic.Control.EndIf
+
+F.Intrinsic.Control.If(V.Screen.F_QtyReq!txtQtyReq.Text,!=,"")
+	F.Data.DataTable.SetValue("dtMaterialReq",V.Global.iQtyRow,V.Local.sColumn,V.Screen.F_QtyReq!txtQtyReq.Text.Float,V.Local.sFlag,False)
+F.Intrinsic.Control.Else
+	F.Data.DataTable.SetValue("dtMaterialReq",V.Global.iQtyRow,V.Local.sColumn,V.Ambient.DBNull)
+F.Intrinsic.Control.EndIf
+
+Gui.F_QtyReq..Visible(False)
+Gui.F_Mat_Req..Enabled(True)
+Gui.F_Mat_Req..SetFocus
+
+F.Intrinsic.Control.Catch
+	F.Intrinsic.Control.CallSub(ErrorMessage,"ScriptFile",V.Caller.ScriptFile,"CurrentSubroutine",V.Ambient.CurrentSubroutine)
+	F.Intrinsic.Control.CallSub(F_Mat_Req_UnLoad)
+F.Intrinsic.Control.EndTry
+Program.Sub.F_QtyReq_UnLoad.End
+
+Program.Sub.cmdNumPad_Click.Start
+V.Local.sControl.Declare
+V.Local.sQty.Declare
+V.Local.iLen.Declare
+V.Local.bExists.Declare
+F.Intrinsic.Control.Try
+
+V.Local.sControl.Set(V.Args.ControlName.UCase)
+
+F.Intrinsic.Control.If(V.Local.sControl.Right3,=,"DEL")
+	F.Intrinsic.Control.If(V.Screen.F_QtyReq!txtQtyReq.Text,=,"")
+		F.Intrinsic.Control.ExitSub
+	F.Intrinsic.Control.EndIf
+	F.Intrinsic.Math.Sub(V.Screen.F_QtyReq!txtQtyReq.Text.Length,1,V.Local.iLen)
+	Gui.F_QtyReq.txtQtyReq.Text(V.Screen.F_QtyReq!txtQtyReq.Text.Left[V.Local.iLen])
+F.Intrinsic.Control.ElseIf(V.Local.sControl.Right3,=,"DEC")
+	F.Intrinsic.String.IsInString(V.Screen.F_QtyReq!txtQtyReq.Text,".",True,V.Local.bExists)
+	F.Intrinsic.Control.If(V.Local.bExists.Not)
+		F.Intrinsic.String.Build("{0}.",V.Screen.F_QtyReq!txtQtyReq.Text,V.Local.sQty)
+		Gui.F_QtyReq.txtQtyReq.Text(V.Local.sQty)
+	F.Intrinsic.Control.EndIf
+F.Intrinsic.Control.ElseIf(V.Local.sControl.Right1,=,"C")
+	Gui.F_QtyReq.txtQtyReq.Text("")
+F.Intrinsic.Control.Else
+	F.Intrinsic.String.Build("{0}{1}",V.Screen.F_QtyReq!txtQtyReq.Text,V.Local.sControl.Right1,V.Local.sQty)
+	Gui.F_QtyReq.txtQtyReq.Text(V.Local.sQty)
+F.Intrinsic.Control.EndIf
+
+F.Intrinsic.Control.Catch
+	F.Intrinsic.Control.CallSub(ErrorMessage,"ScriptFile",V.Caller.ScriptFile,"CurrentSubroutine",V.Ambient.CurrentSubroutine)
+	F.Intrinsic.Control.CallSub(F_Mat_Req_UnLoad)
+F.Intrinsic.Control.EndTry
+Program.Sub.cmdNumPad_Click.End
+
+Program.Sub.txtQtyReq_LostFocus.Start
+F.Intrinsic.Control.Try
+
+F.Intrinsic.Control.If(V.Screen.F_QtyReq!txtQtyReq.Text.Float,<,0)
+	Gui.F_QtyReq.txtQtyReq.Text("")
+F.Intrinsic.Control.EndIf
+
+F.Intrinsic.Control.Catch
+	F.Intrinsic.Control.CallSub(ErrorMessage,"ScriptFile",V.Caller.ScriptFile,"CurrentSubroutine",V.Ambient.CurrentSubroutine)
+	F.Intrinsic.Control.CallSub(F_Mat_Req_UnLoad)
+F.Intrinsic.Control.EndTry
+Program.Sub.txtQtyReq_LostFocus.End
+
+Program.Sub.txtQtyReq_KeyPressEnter.Start
+F.Intrinsic.Control.CallSub(F_QtyReq_UnLoad)
+Program.Sub.txtQtyReq_KeyPressEnter.End
+
+
