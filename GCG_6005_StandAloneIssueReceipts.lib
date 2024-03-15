@@ -1,0 +1,66 @@
+Program.Sub.Preflight.Start
+F.Data.DataTable.Create("StandAloneIssueReceipts",True)
+F.Data.DataTable.AddColumn("StandAloneIssueReceipts","PART","String","")
+F.Data.DataTable.AddColumn("StandAloneIssueReceipts","LOCATION","String","")
+F.Data.DataTable.AddColumn("StandAloneIssueReceipts","QTY","String","")
+F.Data.DataTable.AddColumn("StandAloneIssueReceipts","REFERENCE","String","")
+F.Data.DataTable.AddColumn("StandAloneIssueReceipts","LOT","String","")
+F.Data.DataTable.AddColumn("StandAloneIssueReceipts","BIN","String","")
+F.Data.DataTable.AddColumn("StandAloneIssueReceipts","HEAT","String","")
+F.Data.DataTable.AddColumn("StandAloneIssueReceipts","SERIAL","String","")
+F.Data.DataTable.AddColumn("StandAloneIssueReceipts","ISSUE_RECEIPT","String","")
+F.Data.DataTable.AddColumn("StandAloneIssueReceipts","GL_ACCOUNT","String","")
+F.Data.DataTable.AddColumn("StandAloneIssueReceipts","COST","String","")
+F.Data.DataTable.AddColumn("StandAloneIssueReceipts","ALLOW_ZERO_COST_FLAG","String","")
+F.Data.DataTable.AddColumn("StandAloneIssueReceipts","WIDTH","String","")
+F.Data.DataTable.AddColumn("StandAloneIssueReceipts","LENGTH","String","")
+F.Data.DataTable.AddColumn("StandAloneIssueReceipts","UM_WIDTH","String","")
+F.Data.DataTable.AddColumn("StandAloneIssueReceipts","UM_LENGTH","String","")
+Program.Sub.Preflight.End
+
+Program.Sub.StandAloneIssueReceipts.Start
+'V.Args.UseRev
+V.Local.sPart.Declare
+V.Local.sRev.Declare
+V.Local.sLine.Declare
+V.Local.sFileString.Declare
+V.Local.sFileName.Declare
+V.Local.sFilePath.Declare
+V.Local.iCnt.Declare
+F.Intrinsic.Control.Try
+
+F.Intrinsic.Control.For(V.Local.iCnt,0,V.DataTable.StandAloneIssueReceipts.RowCount--,1)
+	F.Intrinsic.Control.If(V.Args.UseRev)
+		F.Intrinsic.String.RPad(V.DataTable.StandAloneIssueReceipts(V.Local.iCnt).PART!FieldVal," ",20,V.Local.sPart)
+		V.Local.sRev.Set(V.Local.sPart.Right3)
+		V.Local.sPart.Set(V.Local.sPart.Left17)
+	F.Intrinsic.Control.Else
+		V.Local.sPart.Set(V.DataTable.StandAloneIssueReceipts(V.Local.iCnt).PART!FieldVal)
+		V.Local.sRev.Set("")
+	F.Intrinsic.Control.EndIf
+	F.Intrinsic.String.Build("{0},{1},{2},{3},{4},{5},{6},{7},{8},{11},{9},{10},{12},{13},{14},{15},{16}",V.Local.sPart,V.Local.sRev,V.DataTable.StandAloneIssueReceipts(V.Local.iCnt).LOCATION!FieldVal,V.DataTable.StandAloneIssueReceipts(V.Local.iCnt).QTY!FieldVal,V.DataTable.StandAloneIssueReceipts(V.Local.iCnt).REFERENCE!FieldVal,V.DataTable.StandAloneIssueReceipts(V.Local.iCnt).LOT!FieldVal,V.DataTable.StandAloneIssueReceipts(V.Local.iCnt).BIN!FieldVal,V.DataTable.StandAloneIssueReceipts(V.Local.iCnt).HEAT!FieldVal,V.DataTable.StandAloneIssueReceipts(V.Local.iCnt).SERIAL!FieldVal,V.DataTable.StandAloneIssueReceipts(V.Local.iCnt).GL_ACCOUNT!FieldVal,V.DataTable.StandAloneIssueReceipts(V.Local.iCnt).COST!FieldVal,V.DataTable.StandAloneIssueReceipts(V.Local.iCnt).ISSUE_RECEIPT!FieldVal,V.DataTable.StandAloneIssueReceipts(V.Local.iCnt).ALLOW_ZERO_COST_FLAG!FieldVal,V.DataTable.StandAloneIssueReceipts(V.Local.iCnt).WIDTH!FieldVal,V.DataTable.StandAloneIssueReceipts(V.Local.iCnt).LENGTH!FieldVal,V.DataTable.StandAloneIssueReceipts(V.Local.iCnt).UM_WIDTH!FieldVal,V.DataTable.StandAloneIssueReceipts(V.Local.iCnt).UM_LENGTH!FieldVal,V.Local.sLine)
+	F.Intrinsic.Control.If(V.Local.sFileString,!=,"")
+		F.Intrinsic.String.Build("{0}{1}",V.Local.sFileString,V.Ambient.NewLine,V.Local.sFileString)
+	F.Intrinsic.Control.EndIf
+	F.Intrinsic.String.Build("{0}{1}",V.Local.sFileString,V.Local.sLine,V.Local.sFileString)
+F.Intrinsic.Control.Next(V.Local.iCnt)
+
+F.Data.DataTable.DeleteRow("StandAloneIssueReceipts")
+F.Data.DataTable.AcceptChanges("StandAloneIssueReceipts")
+
+F.Intrinsic.Control.If(V.Local.sFileString,!=,"")
+	'write file and process upload
+	V.Local.sFileName.Set("ISSREC.txt")
+	F.Intrinsic.String.Build("{0}\{1}",V.Caller.FilesDir,V.Local.sFileName,V.Local.sFilePath)
+	F.Intrinsic.File.String2File(V.Local.sFilePath,V.Local.sFileString)
+	Function.Intrinsic.Debug.Stop
+	F.Global.Callwrapper.New("IssueReceipt","Inventory.StandAloneIssueReceipts")
+	F.Global.Callwrapper.SetProperty("IssueReceipt","FileName",V.Local.sFileName)
+	F.Global.Callwrapper.Run("IssueReceipt")
+	F.Intrinsic.File.DeleteFile(V.Local.sFilePath)
+F.Intrinsic.Control.EndIf
+
+F.Intrinsic.Control.Catch
+	
+F.Intrinsic.Control.EndTry
+Program.Sub.StandAloneIssueReceipts.End
